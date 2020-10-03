@@ -9,6 +9,12 @@ class GuestController extends CI_Controller {
 	function index(){
 		$this->load->view('session');
 	}
+	function referral(){ 
+		$this->load->view('referral');
+	}
+ 	function settings(){ 
+		$this->load->view('profile');
+	} 
 
 	  
 }
