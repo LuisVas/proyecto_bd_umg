@@ -10,12 +10,12 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="social-media-fb">
-										<a href="#"><img src="images/fb.png"></a>
+										<a href="#"><img src="<?php echo base_url()?>images/fb.png"></a>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="social-media-insta">
-										<a href="#"><img src="images/insta.png"></a>
+										<a href="#"><img src="<?php echo base_url()?>images/insta.png"></a>
 									</div>
 								</div>
 							</div>

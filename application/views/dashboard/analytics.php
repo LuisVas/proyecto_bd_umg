@@ -46,50 +46,25 @@
                                                         <div class="data-analytics">
                                                             <p>Total</p>
                                                             <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <?php
-                                                                    if ($suma > 1000){
-                                                                	?>
-                                                                    	<h1>+<?php echo round($perMil, 1, PHP_ROUND_HALF_UP); ?>k</h1>
-                                                                    <?php 
-                                                                    }else{
-                                                                    ?>
-																		<h1><?php echo $suma; ?></h1>
-																	<?php 
-                                                                    }
-                                                                    ?>	
+                                                                <div class="col-md-6"> 
+                                                                    <h1>100</h1>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <p>Puntos</p>
-                                                                    <?php 
-                                                                	?>
-                                                                    <h2><?php echo number_format((float)$perPoints, 2, '.', ''); ?>%</h2>
-                                                                    <?php 
-                                                                    ?>
-                                                                    <p>Sellos</p>
-                                                                    <?php 
-                                                                	?>
-                                                                    <h2><?php echo number_format((float)$perSellos, 2, '.', ''); ?>%</h2>
-                                                                    <?php 
-                                                                    ?>
+                                                                    <p>Puntos</p> 
+                                                                    <h2>10%</h2>
+                                                                    <p>Sellos</p> 
+                                                                    <h2>90%</h2>
+                                                                    
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <div class="row">
                                                                         <div class="col-md-2">
-                                                                            <h1>Médicos</h1>
-                                                                            <?php 
-		                                                                	?>
-		                                                                    <p><?php echo $count_doctor; ?></p>
-		                                                                    <?php 
-		                                                                    ?>
+                                                                            <h1>Médicos</h1> 
+		                                                                    <p>10></p> 
                                                                         </div>
                                                                         <div class="col-md-10">
-                                                                            <h1>Pacientes</h1>
-                                                                            <?php 
-		                                                                	?>
-		                                                                    <p><?php echo $count_patient; ?></p>
-		                                                                    <?php 
-		                                                                    ?>
+                                                                            <h1>Pacientes</h1> 
+		                                                                    <p>10</p> 
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -102,13 +77,13 @@
                                                             <p>Total</p>
                                                             <div class="row">
                                                                 <div class="col-md-6">
-                                                                    <h1><?php echo $count_swaps;?></h1>
+                                                                    <h1>3</h1>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <p>Redimidos</p>
-                                                                    <h2><?php echo $count_swaps_red;?></h2>
+                                                                    <h2>3</h2>
                                                                     <p>No redimidos</p>
-                                                                    <h2><?php echo $count_swaps_not_red;?></h2>
+                                                                    <h2>3</h2>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -119,12 +94,8 @@
                                                             <p>Total</p>
                                                             <div class="row">
                                                                 <div class="col-md-12">
-                                                                    <div class="users-points">
-                                                                    	<?php 
-                                                                    	?>
-                                                                        <h1><?php echo $count_all; ?></h1>
-                                                                        <?php 
-                                                                        ?>
+                                                                    <div class="users-points"> 
+                                                                        <h1>20</h1> 
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-12">
@@ -152,20 +123,13 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-12">
-                                                                            <div class="row">
-                                                                            	<?php foreach($users as $rec): ?>
-                                                                            	<?php if($rec->id_usuario !== 1){?>
-	                                                                                <div class="col-md-8">
-	                                                                                    <p><?php echo $rec->nombre; ?></p>
-	                                                                                </div>
-	                                                                                <div class="col-md-4">
-	                                                                                    <p class="top-3"><?php echo $rec->puntos; ?></p>
-	                                                                                </div>
-	                                                                            <?php }else{?>
-	                                                                            <?php }?>
-																				 <?php if($rec->id_usuario !== 1){?>
-																				 <?php } ?>
-                                            									<?php endforeach;?>
+                                                                            <div class="row"> 
+                                                                                <div class="col-md-8">
+                                                                                    <p>test</p>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                    <p class="top-3">100</p>
+                                                                                </div> 
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -187,26 +151,16 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-12">
-                                                                            <div class="row">
-                                                                            	<?php foreach($prizes as $rec): ?>
+                                                                            <div class="row"> 
                                                                                 <div class="col-md-4">
-                                                                                    <p><?php echo $rec->nombre_premio; ?></p>
+                                                                                    <p>test</p>
                                                                                 </div>
-                                                                                <div class="col-md-3">
-                                                                            	<?php if($rec->valor_sellos > 0){?>
-							                                                    	<p><?php echo $rec->valor_sellos; ?> sellos</p>
-							                                                    <?php }else{?>
-							                                                    	<p><?php echo $rec->valor_puntos; ?> puntos</p>
-							                                                    <?php }?>
+                                                                                <div class="col-md-3"> 
+							                                                    	<p>10 puntos</p> 
                                                                                 </div>
-                                                                                <div class="col-md-3">
-                                                                            	<?php if($rec->status_premio == 1){?>
-							                                                    	<p>Activo</p>
-							                                                    <?php }else{?>
-							                                                    	<p>Desactivado</p>
-							                                                    <?php }?>
-                                                                                </div>
-								                                                <?php endforeach;?>
+                                                                                <div class="col-md-3"> 
+							                                                    	<p>Activo</p> 
+                                                                                </div> 
                                                                             </div>
                                                                         </div>
                                                                     </div>

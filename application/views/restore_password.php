@@ -46,7 +46,7 @@
   <div id="carousel-example-generic" class="carousel slide coverhome1">
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="images/cover.jpg" alt="">
+          <img src="<?php echo base_url()?>images/cover.jpg" alt="">
         </div>
     </div>
   </div>  

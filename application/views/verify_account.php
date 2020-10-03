@@ -30,25 +30,13 @@
     <div class="container-in">
       <div class="form-login">
         <div class="back-login">
-          <div class="login">
-            <?php
-            if ($verify){
-            ?>
+          <div class="login"> 
             <div class="form-activate">
                 <h1>¡Cuenta verificada exitosamente!</h1>
                 <p>Inicia sesión para poder ingresar al programa de lealtad.</p>
                 <a href="login">Iniciar sesión</a>
             </div>
-
-            <?php }else{ ?>
-
-            <div class="form-activate">
-                <h1>¡El código de registro no es válido o ya ha sido usado!</h1>
-                <p>Registra nuevamente tu cuenta o contacta al proveedor.</p>
-                <a href="register">Registrar cuenta</a>
-            </div>
-
-            <?php } ?>
+ 
           </div>
         </div>
       </div>

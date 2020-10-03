@@ -31,32 +31,15 @@
       <div class="form-login">
         <div class="back-login">
           <div class="login">
-            <div class="form-restore-password">
-              <?php 
-                  if($user){
-               ?>
+            <div class="form-restore-password"> 
               <h1>¡Cambia tu contraseña!</h1>
               <p>Ingresa la nueva contraseña que utilizarás para ingresar al tu sistema de lealtad.</p>
               <form class="form-login-body" autocomplete="off" id="resetPassForm" action="validate" method="POST">
 
-                  <input type="hidden" id="id_usuario" value="<?= $user->id_usuario; ?>">
+                  <input type="hidden" id="id_usuario" value=" ">
                   <input id="ResetPassword" autocomplete="off" type="password" name="password" placeholder="Ingresa tu nueva contraseña" required>
                   <button id="resetPass" type="submit" value="resetpass">Reestablecer contraseña</button>
-              </form>
-              <?php 
-                  }else{
-              ?>
-
-              <div class="form-activate">
-                  
-                  <h1>¡Ooops, el código para cambiar tu contraseña no es válido, ya ha sido usado o venció!</h1>
-                  <p>Envía de nuevo tu solicitud para cambiar tu contraseña.</p>
-                  <a href="restore_password">Reiniciar contraseña</a>
-              </div>
-              <?php
-
-                  }
-              ?>
+              </form> 
             </div>
           </div>
         </div>

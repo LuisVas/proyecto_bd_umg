@@ -40,27 +40,27 @@
 	                                <div class="row">
 	                                    <div class="col-md-4">
 	                                        <h1>Nombre de comercial</h1>
-	                                        <input type="text" name="nombre" id="nombre" value="<?= $user->nombre; ?>">
+	                                        <input type="text" name="nombre" id="nombre" value=" ">
 	                                    </div>
 	                                    <div class="col-md-4">
 	                                        <h1>Página web</h1>
-	                                        <input type="text" name="website" id="website" value="<?= $user->website; ?>">
+	                                        <input type="text" name="website" id="website" value=" ">
 	                                    </div>
 	                                    <div class="col-md-4">
 	                                        <h1>Correo electrónico</h1>
-	                                        <input type="tel" name="correo" id="correo" placeholder="<?= $user->correo; ?>" readonly>
+	                                        <input type="tel" name="correo" id="correo" placeholder=" " readonly>
 	                                    </div>
 	                                    <div class="col-md-4">
 	                                        <h1>Nombre del contacto</h1>
-	                                        <input type="text" name="nombre_contacto" id="nombre_contacto" value="<?= $user->nombre_contacto; ?>">
+	                                        <input type="text" name="nombre_contacto" id="nombre_contacto" value="">
 	                                    </div>
 	                                    <div class="col-md-4">
 	                                        <h1>Teléfono del contacto</h1>
-	                                        <input type="tel" name="tel_contacto" id="tel_contacto" value="<?= $user->tel_contacto; ?>">
+	                                        <input type="tel" name="tel_contacto" id="tel_contacto" value=" ">
 	                                    </div>
 	                                    <div class="col-md-4">
 	                                        <h1>Puesto del contacto</h1>
-	                                        <input type="text" name="puesto_contacto" id="puesto_contacto" value="<?= $user->puesto_contacto; ?>">
+	                                        <input type="text" name="puesto_contacto" id="puesto_contacto" value=" ">
 	                                    </div>
 	                                </div>
 	                                <h2 class="company-comercial-information">Información comercial de la empresa</h2>
@@ -68,15 +68,15 @@
 	                                <div class="row">
 	                                    <div class="col-md-4">
 	                                        <h1>NIT</h1>
-	                                        <input type="number" name="nit" id="nit" value="<?= $user->nit; ?>">
+	                                        <input type="number" name="nit" id="nit" value=" >">
 	                                    </div>
 	                                    <div class="col-md-4">
 	                                        <h1>Razón social</h1>
-	                                        <input type="text" name="r_social" id="r_social" value="<?= $user->r_social; ?>">
+	                                        <input type="text" name="r_social" id="r_social" value=" ">
 	                                    </div>
 	                                    <div class="col-md-4">
 	                                        <h1>Dirección física</h1>
-	                                        <input type="text" name="direccion" id="direccion" value="<?= $user->direccion; ?>">
+	                                        <input type="text" name="direccion" id="direccion" value=" >">
 	                                    </div>
 	                                </div>
 	                                

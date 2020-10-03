@@ -44,19 +44,13 @@
                                                     <th scope="col">Acciones</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                            	<?php foreach($prizes as $rec): ?>
+                                            <tbody> 
                                                 <tr>
-                                                    <th><?php echo $rec->nombre_premio; ?></th>
-                                                    <td><?php echo $rec->desc_premio; ?></td>
-                                                    <?php if($rec->status_premio == 1){?>
-                                                    	<td>Activo</td>
-                                                    <?php }else{?>
-                                                    	<td>Desactivado</td>
-                                                    <?php }?>
-                                                    <td><a href="#" id="editPrize" value="<?php echo $rec->id_premio; ?>" name="<?php echo $rec->nombre_premio; ?>" puntos="<?php echo $rec->valor_puntos; ?>" sellos="<?php echo $rec->valor_sellos; ?>" description="<?php echo $rec->desc_premio; ?>" status="<?php echo $rec->status_premio; ?>" img="<?php echo $rec->img_premio; ?>"  data-toggle="modal" data-target="#prizeDetail" class="prizeDetail">Editar</a></td>
-                                                </tr>
-                                                <?php endforeach;?>
+                                                    <th>test</th>
+                                                    <td>test</td>
+                                                    <td>Activo</td> 
+                                                    <td><a href="#" id="editPrize" data-toggle="modal" data-target="#prizeDetail" class="prizeDetail">Editar</a></td>
+                                                </tr> 
                                             </tbody>
                                         </table>
                                     </div>

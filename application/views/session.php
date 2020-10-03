@@ -23,8 +23,8 @@
           <div class="points">
             <h1>Mis puntos</h1>
             <div class="points-detail">
-              <p>Puntos acumulados: <span><?= $user->puntos; ?></span></p>
-              <p>Sellos acumulados: <span><?= $user->sellos; ?></span></p>
+              <p>Puntos acumulados: <span></span></p>
+              <p>Sellos acumulados: <span></span></p>
             </div>
             <div class="tags">
               <div class="row">
@@ -179,47 +179,28 @@
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="disponibles">
-          <div class="row">
-          	<?php foreach($prizes as $rec): ?>
-	            <div class="col-md-4">
-	              <div class="back-prize">
-                      	<?php if($rec->status_premio == 2){?>
-                        <div class="disabled-prize">
-                        	<img src="images/lock.png">
-                        	<h1>Premio bloqueado</h1>
-                        	<p>El premio ha sido bloqueado o desactivado por Meykoclub, contacta a servicio al cliente para mayor información.</p>
-                        </div>
-                        <?php }else{?>
-                        <div class="disabled-prize" style="display:none"></div>
-						<?php }?>
+          <div class="row"> 
 	                <div class="img-prize">
-	                  <img src="<?php echo $rec->img_premio; ?>">
+	                  <img src="">
 	                </div>
 	                <div class="prize-info">
-	                  <h1><?php echo $rec->nombre_premio; ?></h1>
-	                  <p><?php echo $rec->desc_premio; ?></p>
+	                  <h1>1231</h1>
+	                  <p>123</p>
 	                  <div class="val-prize">
 	                    <div class="row">
 	                      <div class="col-md-4">
-	                        <button class="change-prize" points="<?php echo $rec->valor_puntos; ?>" sellos="<?php echo $rec->valor_sellos; ?>" name="<?php echo $rec->nombre_premio; ?>" value="<?php echo $rec->id_premio; ?>" data-toggle="modal" data-target="#canjePremio">Canjear</button>
+	                        <button class="change-prize" data-toggle="modal" data-target="#canjePremio">Canjear</button>
 	                      </div>
 	                      <div class="col-md-8">
 	                        <img src="images/icon-prize.png">
-	                        <?php if($rec->valor_puntos == 0){?>
-								<p>x <span><?php echo $rec->valor_sellos; ?> sellos</span>
-							<?php }else{?>
-								<p>x <span><?php echo $rec->valor_puntos; ?> puntos</span>
-							<?php }?>
-							 <?php if($rec->valor_sellos !== 0){?>
-							    </p>
-							 <?php } ?>
+	                         
+								<p>x <span>1 sellos</span> </p> 
 	                      </div>
 	                    </div>
 	                  </div>
 	                </div>
 	              </div>
 	            </div>
-	         <?php endforeach;?>
           </div>
         </div>
       </div>

@@ -54,7 +54,7 @@
             <div class="helper">
               <div class="row">
                 <div class="col-md-12">
-                  <p>¿Ya tienes cuenta?<a href="<?php base_url()?>login">Iniciar sesión</a></p>
+                  <p>¿Ya tienes cuenta?<a href="<?php echo base_url()?>login">Iniciar sesión</a></p>
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@
   <div id="carousel-example-generic" class="carousel slide coverhome1">
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="images/cover.jpg" alt="">
+          <img src="<?php echo base_url()?>images/cover.jpg" alt="">
         </div>
     </div>
   </div>  
@@ -230,10 +230,10 @@
     <div class="marcas-body">
       <div class="row">
         <div class="col-md-6">
-          <img src="images/Logo-medtronic.png">
+          <img src="<?php echo base_url()?>images/Logo-medtronic.png">
         </div>
         <div class="col-md-6">
-          <img src="images/Logo-health-care.png">
+          <img src="<?php echo base_url()?>images/Logo-health-care.png">
         </div>
       </div>
     </div>

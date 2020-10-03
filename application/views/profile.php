@@ -21,13 +21,13 @@
     <div class="profile-content">
       <h1>MI PERFIL</h1>
       <form id="profile" method="POST">
-        <input type="hidden" id="id_usuario" value="<?= $user->id_usuario; ?>">
+        <input type="hidden" id="id_usuario" value=" ">
         <label>Nombre</label>
-        <input type="text" name="nombre" id="nombre" placeholder="<?= $user->nombre; ?>">
+        <input type="text" name="nombre" id="nombre" placeholder=" ">
         <label>Correo electrónico</label>
-        <input type="text" name="correo" placeholder="<?= $user->correo; ?>" disabled>
+        <input type="text" name="correo" placeholder=" " disabled>
         <label>No. de identidad</label>
-        <input type="number" name="identificacion" id="identificacion" placeholder="<?= $user->identificacion; ?>" disabled>
+        <input type="number" name="identificacion" id="identificacion" placeholder=" " disabled>
         <button type="submit" class="change-prize" id="updateInfo">Actualizar</button>
       </form>
     </div>
@@ -48,7 +48,7 @@
           <img src="images/sharemodal.png">
         </div>
         <div class="img-body-modal">
-          <a href="https://api.whatsapp.com/send?text=Regístrate%20en%20Meyko%20Club%20e%20ingresa%20mi%20código%2012345678%20y%20gana%205%20puntos,%20visítanos%20en%20https://meykoclub.com" target="_blank"><img src="images/whatsapp.png">Compartir por Whatsapp</a>
+          <a href="https://api.whatsapp.com/send?text=Regístrate%20en%20Meyko%20Club%20e%20ingresa%20mi%20código%2012345678%20y%20gana%205%20puntos,%20visítanos%20en%20https://meykoclub.com" target="_blank"><img src="<?php echo base_url()?>images/whatsapp.png">Compartir por Whatsapp</a>
         </div>
       </div>
       <div class="modal-footer">

@@ -5,7 +5,7 @@
           <div class="col-md-3">
             <div class="left_menu">
               <div class="logo">
-                <a href="<?php base_url() ?>login" class="logoindex"><img src="<?php base_url() ?>images/logo.png" alt=""></a>
+                <a href="<?php echo base_url()?>login" class="logoindex"><img src="<?php echo base_url()?>images/logo.png" alt=""></a>
               </div>
             </div>
           </div>
@@ -15,7 +15,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item" id="index">
-                      <a class="nav-link" href="<?php base_url() ?>login">Inicio</a>
+                      <a class="nav-link" href="<?php echo base_url()?>login">Inicio</a>
                     </li>
                     
                     <li class="nav-item" id="">
@@ -39,7 +39,7 @@
               <div class="header_mobile">
                 
                 <div class="logo">
-                  <a href="<?php base_url() ?>login" class="logoindex"><img src="<?php base_url() ?>images/logo.png" alt=""></a>
+                  <a href=" ogin" class="logoindex"><img src="<?php echo base_url()?>images/logo.png" alt=""></a>
                 </div>
                 <div class="background-filtros-responsive header_mbl">
                   <div class="trigger">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="menu_mobile">
                     <li class="nav-item" id="index">
-                      <a class="nav-link" href="<?php base_url() ?>login">Inicio</a>
+                      <a class="nav-link" href="<?php echo base_url()?>login">Inicio</a>
                     </li>
                     
                     <li class="nav-item" id="gallery">

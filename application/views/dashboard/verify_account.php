@@ -36,25 +36,13 @@
                     <img src="images/asset-register-2.png">
                 </div>
             </div>
-            <div class="col-md-5">
-                <?php
-                if ($verify){
-                ?>
+            <div class="col-md-5"> 
                 <div class="form-login form-activate">
                     <h1>¡Cuenta verificada exitosamente!</h1>
                     <p>Inicia sesión para poder ingresar al programa de lealtad.</p>
                     <a href="login">Iniciar sesión</a>
                 </div>
-
-                <?php }else{ ?>
-
-                <div class="form-login form-activate">
-                    <h1>¡El código de registro no es válido o ya ha sido usado!</h1>
-                    <p>Registra nuevamente tu cuenta o contacta al proveedor.</p>
-                    <a href="register">Registrar cuenta</a>
-                </div>
-
-                <?php } ?>
+ 
             </div>
         </div>
     </div>

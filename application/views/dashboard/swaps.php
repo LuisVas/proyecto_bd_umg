@@ -50,42 +50,17 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
-                                          	<?php 
-                                          	if(empty($swaps)){
-                                          	?>
-                                      		<p>¡Ooops! ¡Tus clientes no han canjeado premio canjeado!</p>
-                                      		<?php
-                                      		}else{
-                                      		?>
-                                        	<?php foreach($swaps as $rec): ?>
+                                             
                                             <tr>
                                                 <th>
-                                                    <h1><?php echo $rec->nombre_premio; ?></h1>
+                                                    <h1>test 1</h1>
                                                 </th>
-                                                <td><?php echo $rec->identificacion; ?></td>
-                                                <td><?php echo $rec->codigo_canje; ?></td>
-                                                <td><?php echo $rec->cantidad_premios; ?></td>
-                                                <?php
-                                                	if($rec->status_redencion == 1){
-                                                ?>
-                                                	<td>No redimido</td>
-                                                <?php
-                                                	}else{
-                                                ?>
-                                                	<td>Redimido</td>
-                                                <?php
-                                                	}
-                                                ?>
-                                                <td><a href="#" class="swapDetail" data-toggle="modal" data-target="#swapDetail" value="<?php echo $rec->id_canje; ?>" date="<?php echo $rec->fecha_canje; ?>" name="<?php echo $rec->nombre; ?>" identificacion="<?php echo $rec->identificacion; ?>" codigo_canje="<?php echo $rec->codigo_canje; ?>" cantidad_premios="<?php echo $rec->cantidad_premios; ?>" status_canjeo="<?php echo $rec->status_redencion; ?>" nameprize="<?php echo $rec->nombre_premio; ?>">Ver más</a></td>
+                                                <td>123123</td>
+                                                <td>123123123</td>
+                                                <td>1</td>
+                                                <td>No redimido</td>
+                                                <td><a href="#" class="swapDetail" data-toggle="modal" data-target="#swapDetail" >Ver más</a></td>
                                             </tr>
-                                            
-                                            <?php endforeach;?>
-                                            
-                                            <?php
-                                      		}
-                                            ?>
-                                           
                                         </tbody>
                                     </table>
                                 </div>
@@ -155,7 +130,7 @@
                             <div class="row">
                             	<div class="col-md-12">
 			                        <div class="btn-save">
-		                                <button class="btn-save-prize" id="updateDataClient" value="<?php echo $rec->id_canje; ?>">Actualizar</button>
+		                                <button class="btn-save-prize" id="updateDataClient" value=" ">Actualizar</button>
 		                            </div>
                             	</div>
                             </div>

@@ -113,8 +113,3 @@ $route['deleteClient'] = 'GuestDashboardController/deleteClient';
 $route['deletePrize'] = 'GuestDashboardController/deletePrize';
 $route['updateDataPrize'] = 'GuestDashboardController/updateDataPrize';
 
-//APIS 
-$route['api/addUser'] = "WebServiceController/addUser";
-$route['api/addPrize'] = "WebServiceController/addPrize";
-$route['api/editSwap'] = "WebServiceController/editSwap";
-$route['api/editUser'] = "WebServiceController/editUser";

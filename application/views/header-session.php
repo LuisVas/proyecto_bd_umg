@@ -5,7 +5,7 @@
           <div class="col-md-3">
             <div class="left_menu">
               <div class="logo">
-                <a href="index.php" class="logoindex"><img src="images/logo.png" alt=""></a>
+                <a href="<?php echo base_url()?>" class="logoindex"><img src="<?php echo base_url()?>images/logo.png" alt=""></a>
               </div>
             </div>
           </div>
@@ -18,13 +18,13 @@
                       <a class="nav-link" href="<?php echo base_url()?>" id="mySession">Inicio</a>
                     </li>
                     <li class="nav-item" id="index">
-                      <a class="nav-link" href="<?php base_url()?>referral" id="referral">Programa de referidos</a>
+                      <a class="nav-link" href="<?php echo base_url()?>referral" id="referral">Programa de referidos</a>
                     </li>
                     <li class="nav-item" id="index">
-                      <a class="nav-link" href="<?php base_url()?>profile" id="myUser">Mi perfil</a>
+                      <a class="nav-link" href="<?php echo base_url()?>profile" id="myUser">Mi perfil</a>
                     </li>
                     <li class="nav-item" id="index">
-                      <a class="nav-link" href="sign_out">Cerrar sesión</a>
+                      <a class="nav-link" href="<?php echo base_url()?>sign_out">Cerrar sesión</a>
                     </li>
                     
                   </ul>

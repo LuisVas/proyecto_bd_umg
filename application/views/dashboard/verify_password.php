@@ -39,10 +39,7 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="form-login form-restore-password">
-                    <?php 
-                        if($user){
-                     ?>
+                <div class="form-login form-restore-password"> 
                     <h1>¡Cambia tu contraseña!</h1>
                     <p>Ingresa la nueva contraseña que utilizarás para ingresar al tu sistema de lealtad.</p>
                     <form class="form-login-body" autocomplete="off" id="resetPassForm" action="validate" method="POST">
@@ -68,21 +65,7 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
-                    <?php 
-                        }else{
-                    ?>
-
-                    <div class="form-login form-activate">
-                        
-                        <h1>¡Ooops, el código para cambiar tu contraseña no es válido, ya ha sido usado o venció!</h1>
-                        <p>Envía de nuevo tu solicitud para cambiar tu contraseña.</p>
-                        <a href="restore_password">Reiniciar contraseña</a>
-                    </div>
-                    <?php
-
-                        }
-                    ?>
+                    </form> 
                 </div>
             </div>
         </div>

@@ -20,10 +20,10 @@
   <div class="cover-session">
     <div class="container-in">
       <div class="referral-cover">
-        <h1>¡Hola <?= $user->nombre; ?>!</h1>
+        <h1>¡Hola usuario</h1>
         <h2>Este es tu ID</h2>
-        <p><img src="images/referido-icon.png"><?= $user->identificacion; ?></p>
-        <a href="#" data-toggle="modal" data-target="#shareID"><img src="images/share-icon.png">Comparte tu ID</a>
+        <p><img src="images/referido-icon.png">12312312312</p>
+        <a href="#" data-toggle="modal" data-target="#shareID"><img src="<?php echo base_url()?>images/share-icon.png">Comparte tu ID</a>
       </div>
     </div>
   </div>
@@ -53,10 +53,10 @@
     <div class="modal-content">
       <div class="modal-body">
         <div class="img-header-modal">
-          <img src="images/sharemodal.png">
+          <img src="<?php echo base_url()?>images/sharemodal.png">
         </div>
         <div class="img-body-modal">
-          <a href="https://api.whatsapp.com/send?text=Regístrate%20en%20Meyko%20Club%20e%20ingresa%20mi%20código'<?= $user->identificacion; ?>'%20y%20gana%205%20puntos,%20visítanos%20en%20https://meykoclub.com" target="_blank"><img src="<?php base_url()?>images/whatsapp.png">Compartir por Whatsapp</a>
+          <a href="https://api.whatsapp.com/send?text=Regístrate%20en%20Meyko%20Club%20e%20ingresa%20mi%20código'<?= $user->identificacion; ?>'%20y%20gana%205%20puntos,%20visítanos%20en%20https://meykoclub.com" target="_blank"><img src="<?php echo base_url()?>images/whatsapp.png">Compartir por Whatsapp</a>
         </div>
       </div>
       <div class="modal-footer">

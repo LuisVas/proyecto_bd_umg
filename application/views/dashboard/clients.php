@@ -44,34 +44,14 @@
                                                 <th scope="col">Detalle</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                        	<?php foreach($users as $rec): ?>
-                                        	<?php 
-                                        	if($rec->id_rol == 1){
-                                        	?>
-                                        	<tr>
-                                                <th>
-                                                    <h1><?php echo $rec->nombre; ?></h1>
-                                                </th>
-                                                <td><?php echo $rec->correo; ?></td>
-                                                <td>Usuario no editable</td>
-                                            </tr>
-                                        	<?php
-                                        	}else{
-                                        	?>
+                                        <tbody>  
                                             <tr>
                                                 <th>
-                                                    <h1><?php echo $rec->nombre; ?></h1>
+                                                    <h1>test</h1>
                                                 </th>
-                                                <td><?php echo $rec->correo; ?></td>
-                                                <td><a href="#" class="clientModal" data-toggle="modal" data-target="#clientDetail" value="<?php echo $rec->id_usuario;?>" name="<?php echo $rec->nombre; ?>" email="<?php echo $rec->correo; ?>" identificacion="<?php echo $rec->identificacion; ?>" tipo="<?php echo $rec->id_tipo_user; ?>" puntos="<?php echo $rec->puntos; ?>" sellos="<?php echo $rec->sellos; ?>" registro="<?php echo $rec->fecha_registro; ?>" status="<?php echo $rec->status; ?>" id_rol="<?php echo $rec->id_rol; ?>" password="<?php echo $rec->password; ?>">Ver detalle</a></td>
+                                                <td>test@test.com</td>
+                                                <td><a href="#" class="clientModal" data-toggle="modal" data-target="#clientDetail">Ver detalle</a></td>
                                             </tr>
-                                            
-                                        	
-                                        	<?php
-                                        	}
-                                        	?>
-                                            <?php endforeach;?>
                                             
                                            
                                         </tbody>
