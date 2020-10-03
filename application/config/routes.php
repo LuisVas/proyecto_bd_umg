@@ -54,6 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['referral'] = 'GuestController/referral';
 $route['profile'] = 'GuestController/settings';
+$route['store'] = 'GuestController/tienda';
 $route['updateData'] = 'GuestController/updateData';
 $route['add_points'] = 'GuestController/add_points';
 $route['change_prize'] = 'GuestController/change_prize';

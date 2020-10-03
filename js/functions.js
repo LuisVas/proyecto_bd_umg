@@ -1,5 +1,5 @@
 function base_url(){
-	return 'http://localhost:8888/meykoclub/';
+	return 'http://localhost:8888/proyecto_bd/';
 }
 
 $.show_loading = function(){

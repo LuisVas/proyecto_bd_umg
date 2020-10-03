@@ -16,5 +16,8 @@ class GuestController extends CI_Controller {
 		$this->load->view('profile');
 	} 
 
-	  
+ 	function store(){ 
+		$this->load->view('tienda/index.php');
+	} 
+	 
 }

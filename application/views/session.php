@@ -194,7 +194,7 @@
 	                      <div class="col-md-8">
 	                        <img src="images/icon-prize.png">
 	                         
-								<p>x <span>1 sellos</span> </p> 
+								          <p>x <span>1 sellos</span> </p> 
 	                      </div>
 	                    </div>
 	                  </div>
@@ -206,49 +206,28 @@
       </div>
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <div class="disponibles">
-          <div class="row">
-          	<?php 
-          	if(empty($swaps)){
-          	?>
-      		<p>¡Ooops! ¡No tienes ningún premio canjeado!</p>
-      		<?php
-      		}else{
-      		?>
-      		<?php foreach($swaps as $rec): ?>
+          <div class="row"> 
           		<div class="col-md-4">
 	              <div class="back-prize">
 	                <div class="img-prize">
-	                  <img src="<?php echo $rec->img_premio; ?>">
+	                  <img src=" ">
 	                </div>
 	                <div class="prize-info">
-	                  <h1><?php echo $rec->nombre_premio; ?></h1>
-	                  <p>Cantidad de premios canjeados: <span><?php echo $rec->cantidad_premios; ?></span></p>
-	                  <p>Código de la transacción: <span><?php echo $rec->codigo_canje; ?></span></p>
+	                  <h1> 1</h1>
+	                  <p>Cantidad de premios canjeados: <span>2</span></p>
+	                  <p>Código de la transacción: <span>3</span></p>
 	                  <div class="val-prize">
 	                    <div class="row">
 	                      <div class="col-md-12">
 	                        <img src="images/icon-prize.png">
-	                        <?php
-	                        if($rec->status_redencion == 1){
-	                        ?>
+	                        
 	                        <p>Premio no canjeado</p>
-	                        <?php
-	                        }else{
-	                        ?>
-	                        <p>Premio canjeado</p>
-	                        <?php
-	                        }
-	                        ?>
 	                      </div>
 	                    </div>
 	                  </div>
 	                </div>
 	              </div>
-	            </div>
-	         <?php endforeach;?>
-            <?php
-      		}
-            ?>
+	            </div> 
           </div>
         </div>
         <div class="how-change">
