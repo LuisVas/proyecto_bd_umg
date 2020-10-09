@@ -1,5 +1,5 @@
 function base_url(){
-	return 'http://localhost:8888/proyecto_bd/';
+	return 'http://localhost/proyecto_bd_umg/';
 }
 
 $.show_loading = function(){
