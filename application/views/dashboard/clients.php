@@ -44,14 +44,22 @@
                                                 <th scope="col">Detalle</th>
                                             </tr>
                                         </thead>
-                                        <tbody>  
+                                        <tbody>
+                                        	<tr>
+                                                
                                             <tr>
                                                 <th>
-                                                    <h1>test</h1>
+                                                    <h1>aasdas</h1>
                                                 </th>
-                                                <td>test@test.com</td>
-                                                <td><a href="#" class="clientModal" data-toggle="modal" data-target="#clientDetail">Ver detalle</a></td>
+                                                <td>asdasdsa</td>
+                                                <td><a href="#" class="clientModal" data-toggle="modal" data-target="#clientDetail" value="<?php echo $rec->id_usuario;?>" name="<?php echo $rec->nombre; ?>" email="<?php echo $rec->correo; ?>" identificacion="<?php echo $rec->identificacion; ?>" tipo="<?php echo $rec->id_tipo_user; ?>" puntos="<?php echo $rec->puntos; ?>" sellos="<?php echo $rec->sellos; ?>" registro="<?php echo $rec->fecha_registro; ?>" status="<?php echo $rec->status; ?>" id_rol="<?php echo $rec->id_rol; ?>" password="<?php echo $rec->password; ?>">Ver detalle</a></td>
                                             </tr>
+                                            
+                                        	
+                                        	<?php
+                                        	}
+                                        	?>
+                                            <?php endforeach;?>
                                             
                                            
                                         </tbody>

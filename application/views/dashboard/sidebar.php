@@ -3,10 +3,10 @@
 		<img src="<?php echo base_url(); ?>/images/logouser.png">
 	</div>
 	<div class="store-name">
-		<h1>Luis Fernando></h1>
-		<input type="hidden" id="id_usuario" value="<?= $user->nombre; ?>">
+		<h1>Luis Fernando</h1>
+		<!--input type="hidden" id="id_usuario" value="<?= $user->nombre; ?>"-->
 		<h2>test@test.com</h2>
-		<input type="hidden" id="id_usuario" value="<?= $user->correo; ?>">
+		<!--input type="hidden" id="id_usuario" value="<?= $user->correo; ?>"-->
 	</div> 
 	<div class="nav-sidebar">
 		<ul>

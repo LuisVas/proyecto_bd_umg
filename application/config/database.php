@@ -70,16 +70,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
+
+$tnsname = '(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
+           (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = XE)))';
+
+$db['default']['hostname'] = $tnsname;
+
 $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => $tnsname,
 	'username' => 'portal',
 	'password' => 'portal',
 	'database' => 'portal',
-	'dbdriver' => 'mysqli',
+	'dbdriver' => 'oci8',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
@@ -90,7 +96,7 @@ $db['default'] = array(
 	'swap_pre' => '',
 	'encrypt' => FALSE,
 	'compress' => FALSE,
-	'stricton' => FALSE,
+	'stricton' => true,
 	'failover' => array(),
 	'save_queries' => TRUE
 );

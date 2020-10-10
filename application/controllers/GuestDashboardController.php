@@ -4,6 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class GuestDashboardController extends CI_Controller {
 	function __construct(){
 		parent::__construct();
+
+		$this->load->model('GuestDashboardModel');
 	}
 	
 	function index(){
@@ -19,7 +21,10 @@ class GuestDashboardController extends CI_Controller {
 	}
 	
 	function clients(){
-		$this->load->view('dashboard/clients');		
+		$data['users'] = $this->GuestDashboardModel->listUsers();
+		var_dump($data['users']);
+		//$data['user'] = get_user_by_id($this->session->userdata('user_id'));
+		$this->load->view('dashboard/clients',$data);		
 	}
 	
 	function settings(){ 
