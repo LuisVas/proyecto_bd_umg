@@ -3,9 +3,9 @@
 class SessionController extends CI_Controller{
 	function __construct(){
 		parent::__construct();
-		
+		$this->load->model('SessionModel');
 	}
- 
+
 	function sign_out(){
 		$this->session->sess_destroy();
 		header('Location: '.base_url() .'login');
@@ -14,5 +14,9 @@ class SessionController extends CI_Controller{
 	function register(){
 		$this->load->view('register');
 	}
-	
+
+	function validate(){
+		echo json_encode($this->SessionModel->validate($this->input->post()));
+	}
+
 }

@@ -2,16 +2,16 @@
 
 class SessionDashboardController extends CI_Controller{
 	function __construct(){
-		parent::__construct(); 
+		parent::__construct();
 		$this->load->database();
 	}
 
 	function index(){
-		
+
 		//var_dump($this->session->all_userdata());
-		
+
 		if($this->session->userdata('user_id') == NULL){
-			$this->load->view('dashboard/login');	
+			$this->load->view('dashboard/login');
 		}else{
 			header('Location: '.base_url().'dashboard');
 			$data['user'] = get_user_by_id($this->session->userdata('user_id'));
@@ -33,8 +33,13 @@ class SessionDashboardController extends CI_Controller{
 	function restore_password(){
 		$this->load->view('dashboard/restore_password');
 	}
-	
+
 	function resetlink(){
-		$this->load->view('dashboard/verify_password');			
+		$this->load->view('dashboard/verify_password');
+	}
+
+	function sign_out(){
+		$this->session->sess_destroy();
+		header('Location: '.base_url().'dashboard/login');
 	}
 }
