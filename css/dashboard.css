@@ -1061,7 +1061,6 @@ section.register-dashboard {
     height: 70px;
     overflow: hidden;
     border-radius: 50px;
-    border: 1px solid #ececec;
 }
 .logo_dashboard img {
     width: 100%;

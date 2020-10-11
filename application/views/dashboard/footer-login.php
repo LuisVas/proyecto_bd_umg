@@ -3,7 +3,7 @@
       <div class="footer-nav">
         <div class="row">
         	<div class="col-md-12">
-    			<p>Sistema desarrollado por <a href="https://www.frenzybits.co/" target="_blank">Frenzy</a> V.2.0</p>
+    			<p>Sistema de ventas</p>
         	</div>
         </div>
       </div>

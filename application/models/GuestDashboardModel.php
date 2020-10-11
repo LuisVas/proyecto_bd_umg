@@ -5,18 +5,45 @@ class GuestDashboardModel extends CI_Model{
 		parent::__construct();
 	}
 
-	function listUsers(){
+	function updateDataProduct($data,$ID_PROD){
+		$this->db->set($data);
+		$this->db->where('ID_PROD',$ID_PROD);
+		$this->db->update('PROD');
+
+		if($this->db->affected_rows() > 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function id_prod(){
 		$this->db->select('*')
-		->from('LOGIN');
-		
+		->from('PROD')
+		->group_by('PROD.ID_PROD')
+		->order_by('PROD.ID_PROD','DESC');
+		$this->db->limit(1);
+
 		$query = $this->db->get();
+
+		if($query->num_rows() > 0){
+			return $query->result();
+		}else {
+		 	return false;
+		}
+	}
+
+	function products(){
+		$this->db->select('*')
+		->from('PROD');
+		$query = $this->db->get();
+		
 		if($query->num_rows() > 0){
 			return $query->result();
 		}else{
 			return false;
 		}
 	}
- 
 }
 
  ?>

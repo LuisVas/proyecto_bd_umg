@@ -73,32 +73,30 @@ $(function(){
 	
 	$('.prizeDetail').click(function(){
 		var id = $(this).val();
+		var idPrize = $(this).attr('value');
 		var img = $(this).attr('img');
 		var nombre = $(this).attr('name');
-		var puntos = $(this).attr('puntos');
-		var sellos = $(this).attr('sellos');
-		var description = $(this).attr('description');
-		var status = $(this).attr('status');
-		var idPrize = $(this).attr('value');
-		
+		var desc = $(this).attr('desc');
+		var proveedor = $(this).attr('proveedor');
+		var precio = $(this).attr('precio');
+		var existencia = $(this).attr('existencia');
+		var categorias = $(this).attr('categorias');
+		var subcategorias = $(this).attr('subcategorias');
+		var temporada = $(this).attr('temporada');
+
 		
 		$('#idPrize').attr('value', idPrize);
 		$('#awardPicPrevEdit').attr('src', '../'+img);
 		$('#awardPic').attr('value', '../'+img);
 		$('#prizeName').attr('value', nombre);
-		$('#prizePoints').attr('value', puntos);
-		$('#prizeSellos').attr('value', sellos);
-		$('#Desc').attr('value', description);
-		$('#Desc').val(description);
-		$('#deletePrize').attr('value',idPrize);
-		
-		if(status == 1){
-			$('#statusPrize1').attr('selected', 'selected');
-			$('#statusPrize2').removeAttr('selected');
-		}else{
-			$('#statusPrize2').attr('selected','selected');
-			$('#statusPrize1').removeAttr('selected');
-		}
+		$('#proveedor').attr('value', proveedor);
+		$('#price').attr('value', precio);
+		$('#existencias').attr('value', existencia);
+		$('#categorias').attr('value', categorias);
+		$('#subcategorias').attr('value', subcategorias);
+		$('#temporada').attr('value',temporada);
+		$('#Desc').val(desc);
+
 		
 	});
 	
@@ -123,10 +121,10 @@ $(function(){
 	});
 
 
-	$('#iAwardProgramEdit').submit(function(){
-		var data = new FormData($('#iAwardProgramEdit')[0]);
+	$('#productForm').submit(function(){
+		var data = new FormData($('#productForm')[0]);
 		$.ajax({
-			url:base_url()+'updateDataPrize',
+			url:base_url()+'updateDataProduct',
 			type:'POST',
 			dataType:'JSON',
 			data:data,

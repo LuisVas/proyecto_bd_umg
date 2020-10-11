@@ -96,7 +96,7 @@ $route['dashboard/sign_out'] = 'SessionDashboardController/sign_out';
 
 $route['dashboard'] = 'GuestDashboardController';
 $route['dashboard/see-all'] = 'GuestDashboardController/seeall';
-$route['dashboard/awards'] = 'GuestDashboardController/awards';
+$route['dashboard/products'] = 'GuestDashboardController/products';
 $route['dashboard/clients'] = 'GuestDashboardController/clients';
 $route['dashboard/settings'] = 'GuestDashboardController/settings';
 $route['dashboard/swaps'] = 'GuestDashboardController/swaps';
@@ -112,5 +112,5 @@ $route['updateSwap'] = 'GuestDashboardController/updateSwap';
 $route['add_register_user'] = 'GuestDashboardController/add_register_user';
 $route['deleteClient'] = 'GuestDashboardController/deleteClient';
 $route['deletePrize'] = 'GuestDashboardController/deletePrize';
-$route['updateDataPrize'] = 'GuestDashboardController/updateDataPrize';
+$route['updateDataProduct'] = 'GuestDashboardController/updateDataProduct';
 

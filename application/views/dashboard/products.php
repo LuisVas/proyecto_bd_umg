@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-    <title>Crear premio | Dashboard</title>
+    <title>Crear producto | Dashboard</title>
     
     <?php include ("tags.php");?>
 

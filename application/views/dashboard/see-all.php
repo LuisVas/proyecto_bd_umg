@@ -4,12 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-    <title>Ver todos los premios | Dashboard</title>
+    <title>Ver todos los productos | Dashboard</title>
         
     <?php include ("tags.php");?>
     
  </head>
-  
 <body>
 <div class="container-dash">
     <section class="dashboard-body">
@@ -22,7 +21,7 @@
                     <div class="head-dash">
                         <div class="row">
                             <div class="col-md-6">
-                                <h1>Premios</h1>
+                                <h1>Productos</h1>
                             </div>
                             <div class="col-md-6">
                                 <?php include("head-dashboard.php");?>
@@ -31,7 +30,7 @@
                     </div>
                     <div class="analytics-content">
                         <div class="seeall-body">
-                            <h1>Todos los premios</h1>
+                            <h1>Todos los productos</h1>
                             <div class="services-table">
                                 <form id="prizeList">
                                     <div class="table-responsive">
@@ -40,18 +39,30 @@
                                                 <tr>
                                                     <th scope="col">Nombre</th>
                                                     <th scope="col">Descripción</th>
-                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Existencias</th>
                                                     <th scope="col">Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody> 
+                                                <?php 
+                                                if(empty($productsList)){
+                                                ?>
+                                                <p>¡Ooops! ¡Tus tienda no tiene productos registrados!</p>
+                                                <?php
+                                                }else{
+                                                ?>
+                                                <?php foreach($productsList as $rec): ?>
                                                 <tr>
-                                                    <th>test</th>
-                                                    <td>test</td>
-                                                    <td>Activo</td> 
-                                                    <td><a href="#" id="editPrize" data-toggle="modal" data-target="#prizeDetail" class="prizeDetail">Editar</a></td>
-                                                </tr> 
-                                            </tbody>
+                                                    <th><?php echo $rec->NOMBRE; ?></th>
+                                                    <td><?php echo $rec->DESCRIPCION; ?></td>
+                                                    <td><?php echo $rec->EXISTENCIA; ?></td>
+                                                    <td><a href="#" id="edProduct" value="<?php echo $rec->ID_PROD; ?>" name="<?php echo $rec->NOMBRE; ?>" desc="<?php echo $rec->DESCRIPCION; ?>" proveedor="<?php echo $rec->PROVEEDOR; ?>" precio="<?php echo $rec->PRECIO; ?>" existencia="<?php echo $rec->EXISTENCIA; ?>" img="<?php echo $rec->IMAGEN; ?>"  categorias="<?php echo $rec->ID_CAT; ?>" subcategorias="<?php echo $rec->ID_SUBCAT; ?>" temporada="<?php echo $rec->ID_TEMP; ?>" data-toggle="modal" data-target="#editProduct" class="prizeDetail">Editar</a></td>
+                                                </tr>
+                                                <?php endforeach;?>
+
+                                                <?php
+                                                }
+                                                ?>
                                         </table>
                                     </div>
                                 </form>
@@ -84,7 +95,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title" id="exampleModalCenterTitle">Nuevo premio</h1>
+        <h1 class="modal-title" id="exampleModalCenterTitle">Nuevo producto</h1>
         <button type="button" class="closeModal" data-dismiss="modal" aria-label="Close">
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                 <path d="M512,60.3L451.7,0L256,195.7L60.3,0L0,60.3L195.7,256L0,451.7L60.3,512L256,316.3L451.7,512l60.3-60.3L316.3,256L512,60.3z"/>
@@ -95,20 +106,24 @@
         <div class="NewServices">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="<?php echo base_url();?>dashboard/awards">
+                    <a href="<?php echo base_url();?>dashboard/products">
                         <div class="NewServiceBody">
-                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 975.6 975.6" style="enable-background:new 0 0 975.6 975.6;" xml:space="preserve">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 478" style="enable-background:new 0 0 500 478;" xml:space="preserve">
                             <g>
                                 <g>
-                                    <path d="M792,618.4l-120.1-24.9l80.2-87.7V0H223.4v505.8l80.2,87.7l-120.1,24.9l138.5,152.4l-22.3,204.8l188-84.5l188,84.5
-                                        l-22.3-204.8L792,618.4z M265.5,489.6V42.1h444.6v447.5l-86.4,93.8l-33.3-7.1L487.8,397.7L385.2,576.3l-33.3,7.1L265.5,489.6z
-                                         M487.8,845.2l-138.2,62.1l16.5-150.5L264.5,644.6l147.9-31.1l75.4-131.4l75.4,131.4l147.9,31.1L609.5,756.9L626,907.3
-                                        L487.8,845.2z"/>
+                                    <path class="st0" d="M119.1,477.2c-7.7,0-15-2.4-21.2-6.9c-11.7-8.5-17.2-23.2-14-37.3l29.1-128l-98.5-86.4
+                                        c-10.9-9.5-15.1-24.6-10.6-38.4c4.5-13.7,16.7-23.5,31.1-24.8l130.4-11.9L216.8,23C222.5,9.6,235.5,1,250,1
+                                        c14.5,0,27.5,8.6,33.2,21.9l51.5,120.6l130.3,11.9c14.4,1.3,26.6,11.1,31.1,24.8c4.5,13.8,0.3,28.9-10.6,38.4L387.1,305l29,128
+                                        c3.2,14.2-2.3,28.8-14.1,37.3c-11.7,8.5-27.3,9.2-39.8,1.7L250,404.9l-112.4,67.2C132,475.5,125.6,477.2,119.1,477.2z M250,22.9
+                                        c-5.7,0-10.8,3.4-13.1,8.6l-56.7,132.6l-143.4,13c-5.6,0.5-10.5,4.4-12.2,9.8c-1.8,5.4-0.1,11.4,4.2,15.1l108.4,95l-31.9,140.7
+                                        c-1.3,5.6,0.9,11.4,5.5,14.7c4.5,3.3,10.8,3.5,15.6,0.7L250,379.4l123.6,73.9c4.9,3,11,2.7,15.6-0.7c4.6-3.3,6.8-9.1,5.5-14.7
+                                        l-31.9-140.7l108.4-95c4.3-3.7,5.9-9.7,4.1-15.1c-1.8-5.4-6.6-9.3-12.2-9.8l-143.3-13L263.1,31.5C260.8,26.3,255.7,22.9,250,22.9z
+                                        "/>
                                 </g>
                             </g>
                             </svg>
 
-                            <h1>Crear nuevo premio</h1>
+                            <h1>Crear nuevo producto</h1>
                         </div>
                     </a>
                 </div>
@@ -125,7 +140,7 @@
 
 
 <!-- Modal editar premio -->
-<div class="modal fade modalServicesBody" id="prizeDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade modalServicesBody" id="editProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bills">
@@ -139,10 +154,10 @@
             <div class="modal-body">
                 <div class="NewServices">
                     <div class="bills-body">
-                        <form id="iAwardProgramEdit">
-                                <h1>Editar premio</h1>
+                        <form id="productForm">
+                                <h1>Editar producto</h1>
                                 <input type="hidden" id="idPrize" name="id_premio" value="">
-                                <h2>Imagen del premio</h2>
+                                <h2>Imagen del producto</h2>
                                 <div class="prize-body">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -156,35 +171,44 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <h2>Información del premio</h2>
+                                    <h2>Información del producto</h2>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h1>Nombre del premio</h1>
-                                            <input type="text"id="prizeName" name="nombre_premio" value="">
+                                            <h1>Nombre</h1>
+                                            <input type="text" id="prizeName" name="nombre_premio" value="">
                                         </div>
                                         <div class="col-md-12">
-                                            <h1>Valor en puntos</h1>
-                                            <input type="number" id="prizePoints" name="valor_puntos" value="">
+                                            <h1>Descripción</h1>
+                                            <textarea id="Desc" name="desc_premio" value=""></textarea>
                                         </div>
                                         <div class="col-md-12">
-                                            <h1>Valor en sellos</h1>
-                                            <input type="number" id="prizeSellos" name="valor_sellos" value="">
+                                            <h1>Proveedor</h1>
+                                            <input type="text" id="proveedor" name="proveedor" value="">
                                         </div>
                                         <div class="col-md-12">
-                                            <h1>Status</h1>
-                                            <select id="Status_Prize" name="status_premio">
-                                            	<option value="1" id="statusPrize1">Activado</option>
-                                            	<option value="2" id="statusPrize2">Desactivado</option>
-                                            </select>
+                                            <h1>Precio</h1>
+                                            <input type="number" min="0" id="price" name="price" value="">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h1>Existencias</h1>
+                                            <input type="number" min="0" id="existencias" name="existencias" value="">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h1>Categorías</h1>
+                                            <input type="text" id="categorias" name="categorias" value="">
+                                            <p style="font-size: 10px;">*Las categorías se ingresan por número. Si son más de una, separarlas con ","</p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h1>Subcategorías</h1>
+                                            <input type="text" id="subcategorias" name="subcategorias" value="">
+                                            <p style="font-size: 10px;">*Las subcategorías se ingresan por número. Si son más de una, separarlas con ","</p>
                                         </div>
                                     </div>
-                                    <h2>Descripción</h2>
-                                    <textarea id="Desc" name="desc_premio" value=""></textarea>
                                 </div>
                             <div class="row">
                             	<div class="col-md-6">
 		                            <div class="btn-save">
-		                                <button class="btn-save-prize" id="saveAwardEdit">Guardar</button>
+		                                <button class="btn-save-prize" id="saveProductEdit">Guardar</button>
 		                            </div>
                             	</div>
                             	<div class="col-md-6">
