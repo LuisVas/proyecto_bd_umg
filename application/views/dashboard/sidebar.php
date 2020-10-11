@@ -1,6 +1,6 @@
 <div class="sidebar-dashboard">
 	<div class="logo_dashboard">
-		<img src="<?php echo base_url(); ?>/images/logo.png">
+		<img src="<?php echo base_url(); ?>/images/logouser.png">
 	</div>
 	<div class="store-name">
 		<?php $user = $this->session->userdata('user'); ?>
@@ -9,7 +9,7 @@
 	</div>
 	<div class="nav-sidebar">
 		<ul>
-			<a id="proveedores" href="<?php echo base_url() ?>dashboard"><li><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 484" style="enable-background:new 0 0 500 484;" xml:space="preserve">
+			<a id="analytics" href="<?php echo base_url() ?>dashboard"><li><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 484" style="enable-background:new 0 0 500 484;" xml:space="preserve">
 			<g>
 				<g>
 					<path class="st0" d="M310.8,172.7c3.3,3.2,8.5,3.2,11.8,0L466.7,28.6v13.2c0,4.6,3.7,8.3,8.3,8.3c4.6,0,8.3-3.7,8.3-8.3V8.5
@@ -28,7 +28,7 @@
 						c0-4.6,3.7-8.3,8.3-8.3h100c4.6,0,8.3,3.7,8.3,8.3V458.5z"/>
 				</g>
 			</g>
-			</svg>proveedores</li></a>
+			</svg>analytics</li></a>
 			<a id="services" data-toggle="collapse" href="#serviciosCollapse" role="button" aria-expanded="false" aria-controls="serviciosCollapse"><li><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 478" style="enable-background:new 0 0 500 478;" xml:space="preserve">
 			<g>
 				<g>
@@ -42,13 +42,13 @@
 						"/>
 				</g>
 			</g>
-			</svg>productos<svg class="collapse-sidebar" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 310 500" style="enable-background:new 0 0 310 500;" xml:space="preserve">
+			</svg>premios<svg class="collapse-sidebar" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 310 500" style="enable-background:new 0 0 310 500;" xml:space="preserve">
 			<path class="st0" d="M280.2,308.2L174.1,422.4V22.5c0-10.3-8.3-18.6-18.6-18.6s-18.6,8.3-18.6,18.6v400L30.8,308.2L3.5,333.6
 				L155.5,497l152-163.4L280.2,308.2z"/>
 			</svg></li></a>
 			<div class="collapse" id="serviciosCollapse">
 				<a id="vertodos" href="<?php echo base_url() ?>dashboard/see-all"><li>ver todos</li></a>
-				<a id="productos" href="<?php echo base_url() ?>dashboard/products"><li>crear producto</li></a>
+				<a id="premios" href="<?php echo base_url() ?>dashboard/awards"><li>crear premio</li></a>
 			</div>
 
 			<a id="clientes" href="<?php echo base_url() ?>dashboard/clients"><li><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 419" style="enable-background:new 0 0 500 419;" xml:space="preserve">
@@ -60,13 +60,8 @@
 					c-2.9,1.1-5.1,3.9-6.1,7.6c-1.7,6.1,0.4,12.9,4.7,15.6l240,152.6c1.3,0.8,2.7,1.2,4.2,1.2c1.4,0,2.9-0.4,4.1-1.2l240-152.6
 					c4.3-2.8,6.3-9.5,4.7-15.6C498.4,244.8,496.2,242.1,493.3,240.9z"/>
 			</g>
-<<<<<<< HEAD
-			</svg>clientes</li></a>
-			
-=======
 			</svg>usuarios</li></a>
 
->>>>>>> b924aa9b65ff89caefb0fa3e65cf894aa552fe9c
 			<a id="canjes" href="<?php echo base_url() ?>dashboard/swaps"><li><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 			<path d="M353.1,297.8c0,0.2,0.4,0.2,0.4,0C353.4,297.6,353.1,297.6,353.1,297.8z M269.7,214c-0.2,0-0.2,0.4,0,0.4
 				C269.9,214.4,269.9,214,269.7,214z M477.9,87.5H206.4c-4.7,0-8.5,3.8-8.5,8.5c0,4.7,3.8,8.5,8.5,8.5h271.5c9.4,0,17.1,7.7,17.1,17.1
@@ -77,7 +72,7 @@
 				C512,102.8,496.7,87.5,477.9,87.5z M155.7,187.1c0-4.7-3.8-8.5-8.5-8.5c-4.7,0-8.5,3.8-8.5,8.5v33.4c0,4.7,3.8,8.5,8.5,8.5
 				c4.7,0,8.5-3.8,8.5-8.5V187.1z M147.2,283c-4.7,0-8.5,3.8-8.5,8.5v33.4c0,4.7,3.8,8.5,8.5,8.5c4.7,0,8.5-3.8,8.5-8.5v-33.4
 				C155.7,286.8,151.9,283,147.2,283z"/>
-			</svg>transacciones</li></a>
+			</svg>canjes</li></a>
 			<a id="marketing" href="<?php echo base_url() ?>dashboard/marketing"><li><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 			<g>
 				<g>
