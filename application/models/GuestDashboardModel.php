@@ -17,11 +17,18 @@ class GuestDashboardModel extends CI_Model{
 		}
 	}
 
+	
+	function deleteProduct($ID_PROD){
+    	$this->db->where('ID_PROD', $ID_PROD);
+    	$this->db->delete('PROD');
+		
+		return true;
+	}	
+
 	function id_prod(){
 		$this->db->select('*')
 		->from('PROD')
-		->group_by('PROD.ID_PROD')
-		->order_by('PROD.ID_PROD','DESC');
+		->order_by('ID_PROD','DESC');
 		$this->db->limit(1);
 
 		$query = $this->db->get();
@@ -32,6 +39,7 @@ class GuestDashboardModel extends CI_Model{
 		 	return false;
 		}
 	}
+
 
 	function products(){
 		$this->db->select('*')

@@ -111,6 +111,6 @@ $route['updateDataClient'] = 'GuestDashboardController/updateDataClient';
 $route['updateSwap'] = 'GuestDashboardController/updateSwap';
 $route['add_register_user'] = 'GuestDashboardController/add_register_user';
 $route['deleteClient'] = 'GuestDashboardController/deleteClient';
-$route['deletePrize'] = 'GuestDashboardController/deletePrize';
+$route['deleteProduct'] = 'GuestDashboardController/deleteProduct';
 $route['updateDataProduct'] = 'GuestDashboardController/updateDataProduct';
 

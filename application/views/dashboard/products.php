@@ -23,7 +23,7 @@
                     <div class="head-dash">
                         <div class="row">
                             <div class="col-md-6">
-                                <h1>Premios</h1>
+                                <h1>Productos</h1>
                             </div>
                             <div class="col-md-6">
                                 <?php include("head-dashboard.php");?>
@@ -33,8 +33,8 @@
                     <div class="analytics-content">
                         <form id="iAwardProgram" >
                             <div class="loyalty-content">
-                                <h1>Crear premio</h1>
-                                <h2>Imagen del premio</h2>
+                                <h1>Crear producto</h1>
+                                <h2>Imagen del producto</h2>
                                 <div class="prize-body">
                                     <div class="row">
                                         <div class="col-md-3">
@@ -44,31 +44,49 @@
                                         </div>
                                         <div class="col-md-9">
                                             <div class="upload-logo">
-                                                <input type="file" id="awardPic" name="photoAward">
+                                                <input type="file" id="awardPic" name="IMAGEN">
                                             </div>
                                         </div>
                                     </div>
-                                    <h2>Información del premio</h2>
+                                    <h2>Información del producto</h2>
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <h1>Nombre del premio</h1>
-                                            <input type="text" name="nombre_premio" placeholder="Ej. Cintas para Glucómetro">
+                                            <h1>Nombre</h1>
+                                            <input type="text" name="NOMBRE" placeholder="Ej. Camisa Polo">
                                         </div>
                                         <div class="col-md-4">
-                                            <h1>Valor en puntos</h1>
-                                            <input type="number" name="valor_puntos" placeholder="Ej. 1500">
+                                            <h2>Descripción</h2>
+                                            <textarea id="descTA" name="DESCRIPCION"></textarea>
                                         </div>
                                         <div class="col-md-4">
-                                            <h1>Valor en sellos</h1>
-                                            <input type="number" name="valor_sellos" placeholder="Ej. 6">
+                                            <h1>Proveedor</h1>
+                                            <input type="text" name="PROVEEDOR" placeholder="Ej. Polo Ralf Lauren">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h1>Precio en GTQ.</h1>
+                                            <input type="number" min="0" name="PRECIO">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h1>Existencias</h1>
+                                            <input type="number" min="0" name="EXISTENCIA">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h1>Categorías</h1>
+                                            <input type="text" name="ID_CAT" placeholder="Ej. 1,2,3">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h1>Subcategorías</h1>
+                                            <input type="text" name="ID_SUBCAT" placeholder="Ej. 1,2,3">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h1>Temporada</h1>
+                                            <input type="number" name="ID_TEMP" placeholder="Ej. 1,2,3">
                                         </div>
                                     </div>
-                                    <h2>Descripción</h2>
-                                    <textarea id="descTA" name="desc_premio"></textarea>
                                 </div>
                             </div>
                             <div class="btn-save">
-                                <button class="btn-save-prize" id="saveAward">Guardar</button>
+                                <button class="btn-save-prize" id="saveProduct">Guardar</button>
                             </div>
                         </form>
                     </div>

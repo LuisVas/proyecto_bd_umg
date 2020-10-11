@@ -101,17 +101,16 @@ $(function(){
 	});
 	
 	$('.deletePrize').click(function(){
-		var id_premio = $(this).attr('value');
 		
-		alertify.confirm('Eliminar premio','¿Estás seguro de eliminar este registro? Esta acción no se puede revertir.',function(){
+		alertify.confirm('Eliminar producto','¿Estás seguro de eliminar este registro? Esta acción no se puede revertir.',function(){
 			$.ajax({
-				url:base_url()+'deletePrize',
+				url:base_url()+'deleteProduct',
 				type:'POST',
 				data:{
-					id_premio:id_premio
+					ID_PROD:$('#idPrize').val()
 				},
 				success:function(data){
-					alertify.alert('Premio eliminado', 'El premio se ha eliminado exitosamente.', function(){window.location.href=base_url()+'dashboard/'+'see-all';});
+					alertify.alert('Producto eliminado', 'El producto se ha eliminado exitosamente.', function(){window.location.href=base_url()+'dashboard/'+'see-all';});
 				},error:function(error){
 					console.log(JSON.stringify(error));
 				}
@@ -132,7 +131,7 @@ $(function(){
 			processData: false,
 			contentType: false,
 			success:function(data){
-				if(data==true){
+				if(data){
 					alertify.alert('¡Actualización de información!', '¡Se ha cambiado tu información del premio con éxito!', function(){ window.location.href=base_url()+'dashboard/'+'see-all';});
 				}else{
 					alertify.error('Ha ocurrido un error, intenta de nuevo');
