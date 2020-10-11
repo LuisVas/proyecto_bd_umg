@@ -3,14 +3,15 @@
  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
+    <script src="<?= base_url(); ?>js/vendor/jquery/jquery.js"></script>
+    <script src="<?= base_url(); ?>js/session.js"></script>
     <title>Login Meyko | Dashboard</title>
-        
+
 
  <?php include ("tags.php");?>
 
 </head>
-  
+
 <body>
 
 <section class="header-menu">
@@ -28,11 +29,11 @@
                 <div class="form-login">
                     <h1>¡Bienvenido de vuelta Meyko!</h1>
                     <p>Para poder iniciar sesión debes ingresar tu información de correo electrónico y contraseña.</p>
-                    <form class="form-login-body" autocomplete="off" id="loginFormMeyko" action="validate" method="POST">
+                    <form class="form-login-body" autocomplete="off" id="form_login">
                         <div class="form-login-email">
                             <div class="input-body-email">
                                 <div class="input-container-login-email">
-                                  <input id="loginEmail" autocomplete="off" type="email" name="username_login" placeholder="Ingresa tu correo electrónico" required>
+                                  <input id="loginEmail" autocomplete="off" type="email" name="email" placeholder="Ingresa tu correo electrónico" required>
                                     <label for="email" class="label-name">
                                         <img src="<?php echo base_url();?>images/correo.png"><span class="content-name">Correo electrónico</span>
                                     </label>
@@ -40,7 +41,7 @@
                             </div>
                             <div class="input-body-password">
                                 <div class="input-container-login-password">
-                                  <input id="loginPassword" autocomplete="off" type="password" name="password_login" placeholder="Ingresa tu contraseña" required>
+                                  <input id="loginPassword" autocomplete="off" type="password" name="password" placeholder="Ingresa tu contraseña" required>
                                     <label for="password" class="label-password">
                                         <img src="<?php echo base_url();?>images/lock1.png"><span class="content-password">Password</span>
                                     </label>
@@ -93,4 +94,3 @@
 </script>
 </body>
 </html>
-

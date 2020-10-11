@@ -1,18 +1,20 @@
 $(function(){
-	$('#login-meyko').submit(function(){
+	$('#form_login').submit(function(){
+
+		var formData = new FormData($('#form_login')[0]);
 
 		$.ajax({
 			url:base_url()+'validate',
 			type:'POST',
 			dataType:'JSON',
-			data:{
-				username_login:$('#loginEmailClient').val(),
-				password_login:$('#passwordEmailClient').val()
-			},
+			data:formData,
+			cache:false,
+			processData:false,
+			contentType:false,
 
 			success:function(data){
 				if(data == true){
-					window.location.href=base_url();
+					window.location.href=base_url()+'proveedores';
 				}else if(data == 200){
 					alertify.error('Ooops! Tu usuario no tiene permisos para accesar en éste dashboard.');
 				}else if(data == 202){
@@ -24,18 +26,16 @@ $(function(){
 				}else{
 					alertify.error('Datos de usuario inválidos, intenta de nuevo o solicita tu cambio de contraseña');
 				}
-			},error:function(error){
-				console.log(JSON.stringify(error));
-			}
+			},error:function(error){}
 		});
 
 		return false;
 	});
 
 	$('#register_button').click(function(){
-		
+
 		var data = new FormData($('#register-meyko')[0]);
-		
+
 		$.ajax({
 			url:base_url()+'add_register',
 			type:'POST',
@@ -87,9 +87,9 @@ $(function(){
 	})
 
 	$('#sendPassword').click(function(){
-		
+
 		var data = new FormData($('#emailForm')[0]);
-		
+
 		$.ajax({
 			url:base_url()+'verify_mail',
 			type:'POST',
@@ -119,4 +119,3 @@ $(function(){
 
 
 });
-
