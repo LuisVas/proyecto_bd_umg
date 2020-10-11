@@ -3,11 +3,10 @@
 		<img src="<?php echo base_url(); ?>/images/logo.png">
 	</div>
 	<div class="store-name">
-		<h1>Luis Fernando</h1>
-		<!--input type="hidden" id="id_usuario" value="<?= $user->nombre; ?>"-->
-		<h2>test@test.com</h2>
-		<!--input type="hidden" id="id_usuario" value="<?= $user->correo; ?>"-->
-	</div> 
+		<?php $user = $this->session->userdata('user'); ?>
+		<h1><?= $user->username; ?></h1>
+		<h2><?= $user->email; ?></h2>
+	</div>
 	<div class="nav-sidebar">
 		<ul>
 			<a id="proveedores" href="<?php echo base_url() ?>dashboard"><li><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 484" style="enable-background:new 0 0 500 484;" xml:space="preserve">
@@ -61,8 +60,13 @@
 					c-2.9,1.1-5.1,3.9-6.1,7.6c-1.7,6.1,0.4,12.9,4.7,15.6l240,152.6c1.3,0.8,2.7,1.2,4.2,1.2c1.4,0,2.9-0.4,4.1-1.2l240-152.6
 					c4.3-2.8,6.3-9.5,4.7-15.6C498.4,244.8,496.2,242.1,493.3,240.9z"/>
 			</g>
+<<<<<<< HEAD
 			</svg>clientes</li></a>
 			
+=======
+			</svg>usuarios</li></a>
+
+>>>>>>> b924aa9b65ff89caefb0fa3e65cf894aa552fe9c
 			<a id="canjes" href="<?php echo base_url() ?>dashboard/swaps"><li><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 			<path d="M353.1,297.8c0,0.2,0.4,0.2,0.4,0C353.4,297.6,353.1,297.6,353.1,297.8z M269.7,214c-0.2,0-0.2,0.4,0,0.4
 				C269.9,214.4,269.9,214,269.7,214z M477.9,87.5H206.4c-4.7,0-8.5,3.8-8.5,8.5c0,4.7,3.8,8.5,8.5,8.5h271.5c9.4,0,17.1,7.7,17.1,17.1
@@ -84,7 +88,7 @@
 				</g>
 			</g>
 			</svg>marketing</li></a>
-			
+
 			<a id="configuracion" href="<?php echo base_url() ?>dashboard/settings"><li><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 503" style="enable-background:new 0 0 500 503;" xml:space="preserve">
 			<g>
 				<path class="st0" d="M194.7,487c0,7.5,6.1,13.7,13.7,13.7h85.5c7.5,0,13.7-6.1,13.7-13.7v-26.5c18-4.8,35.2-12,51.3-21.3l18.7,18.7
@@ -107,7 +111,7 @@
 					L165.5,251.9z"/>
 			</g>
 			</svg>configuración</li></a>
-			
+
 			<a id="configuracion" href="<?php echo base_url() ?>dashboard/sign_out"><li><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 			<path d="M362,392v40c0,44.1-35.9,80-80,80H81c-44.1,0-80-35.9-80-80V80C1,35.9,36.9,0,81,0h201c44.1,0,80,35.9,80,80v40
 				c0,11-9,20-20,20s-20-9-20-20V80c0-22.1-17.9-40-40-40H81c-22.1,0-40,17.9-40,40v352c0,22.1,17.9,40,40,40h201c22.1,0,40-17.9,40-40
