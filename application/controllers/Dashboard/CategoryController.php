@@ -14,6 +14,10 @@ class CategoryController extends CI_Controller{
     echo json_encode($this->CategoryModel->get_categories());
   }
 
+  function get(){
+    echo json_encode($this->CategoryModel->get($this->input->post()));
+  }
+
   function add(){
     echo json_encode($this->CategoryModel->add_category($this->input->post()));
   }

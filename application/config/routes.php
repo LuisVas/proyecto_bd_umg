@@ -120,3 +120,4 @@ $route['dashboard/category/list']['GET'] = 'Dashboard/CategoryController/list';
 $route['dashboard/category/add']['POST'] = 'Dashboard/CategoryController/add';
 $route['dashboard/category/update']['POST'] = 'Dashboard/CategoryController/update';
 $route['dashboard/category/delete']['POST'] = 'Dashboard/CategoryController/delete';
+$route['dashboard/category/get']['POST'] = 'Dashboard/CategoryController/get';

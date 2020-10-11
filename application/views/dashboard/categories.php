@@ -99,10 +99,10 @@
       <form id="form_update_category" class="_form">
 	      <div class="modal-body">
 	        	<h5>Nombre</h5>
-	        	<input type="text" name="name" id="cat_name" placeholder="Ingresar" class="form-control" required>
+	        	<input type="text" name="name" id="cat_update_name" placeholder="Ingresar" class="form-control" required>
 	      </div>
 	      <div class="modal-footer">
-          <button type="submit" name="button" class="btn btn-success">Agregar</button>
+          <button type="submit" name="button" class="btn btn-success">Actualizar</button>
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	      </div>
 	  </form>
@@ -113,6 +113,8 @@
 
 <script>
   $(document).ready(function(){
+
+    var edit_id = 0;
 
       function list(){
 
@@ -164,10 +166,10 @@
 
             success:function(data){
               $('#new_category').modal('toggle');
-              alertify.success('Categoría agregada correctamente');
+              alertify.alert('Categoría agregada correctamente');
               list();
             },error:function(){
-              alertify.success('Ocurrió un error, intente más tarde');
+              alertify.alert('Ocurrió un error, intente más tarde');
             }
         });
 
@@ -175,11 +177,70 @@
       });
 
       $('body').on('click','._edit',function(){
-          var id = $(this).val();
+          edit_id = $(this).val();
 
           $.ajax({
+            url:base_url()+'dashboard/category/get',
+            type:'POST',
+            dataType:'JSON',
+            data:{
+              id:edit_id
+            },
 
+            success(data){
+              if(data){
+                $('#cat_update_name').val(data['NOMBRE']);
+              }
+            },error:function(error){
+
+            }
           });
+      });
+
+      $('#form_update_category').submit(function(){
+
+        $.ajax({
+            url:base_url()+'dashboard/category/update',
+            type:'POST',
+            dataType:'JSON',
+            data:{
+              name:$('#cat_update_name').val(),
+              id:edit_id
+            },
+
+            success:function(data){
+              alertify.alert('Registro eliminado correctamente');
+              $('#edit_category').modal('toggle');
+              list();
+            },error:function(error){
+              alertify.success('Ocurrió un error, intente más tarde');
+            }
+        });
+
+        return false;
+      });
+
+      $('body').on('click','._delete',function(){
+          edit_id = $(this).val();
+          alertify.confirm('¿Está seguro de eliminar este registro?',function(){
+              $.ajax({
+                  url:base_url()+'dashboard/category/delete',
+                  type:'POST',
+                  dataType:'JSON',
+                  data:{
+                    id:edit_id
+                  },
+
+                  success:function(data){
+                    if(data){
+                      alertify.alert('Registro eliminado correctamente');
+                      list();
+                    }
+                  },error:function(error){
+                    alertify.success('Ocurrió un error, intente más tarde');
+                  }
+              });
+          },function(){});
       });
 
       list();

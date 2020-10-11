@@ -16,6 +16,16 @@ class CategoryModel extends CI_Model{
     return ($this->db->affected_rows() > 0 ? true : false);
   }
 
+  function get($data){
+    $this->db->select('*')
+    ->from('CAT')
+    ->where('ID_CAT',$data['id']);
+
+    $query = $this->db->get();
+
+    return ($query->num_rows() > 0 ? $query->row() : false);
+  }
+
   function update_category($data){
     $this->db->where('ID_CAT',$data['id'])
     ->set('NOMBRE',$data['name'])
@@ -24,8 +34,8 @@ class CategoryModel extends CI_Model{
     return ($this->db->affected_rows() > 0 ? true : false);
   }
 
-  function delete_category($id){
-    $this->db->where('ID_CAT',$id)->delete('CAT');
+  function delete_category($data){
+    $this->db->where('ID_CAT',$data['id'])->delete('CAT');
     return ($this->db->affected_rows() > 0 ? true : false);
   }
 }
