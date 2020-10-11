@@ -4,7 +4,6 @@ class SessionModel extends CI_Model{
 		function __construct(){
 			parent::__construct();
 		}
-
 		function validate($data){
 			$this->db->select('*')
 			->from('LOGIN')

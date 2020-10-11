@@ -3,7 +3,7 @@
 class SessionDashboardController extends CI_Controller{
 	function __construct(){
 		parent::__construct();
-		$this->load->database();
+		$this->load->model('SessionDashboardModel');
 	}
 
 	function index(){
@@ -25,7 +25,7 @@ class SessionDashboardController extends CI_Controller{
 		);
 		echo json_encode($this->SessionDashboardModel->validate($record));
 	}
-
+	
 	function verify_account(){
 		$this->load->view('dashboard/verify_account');
 	}
