@@ -24,7 +24,7 @@ class SessionModel extends CI_Model{
 				return true;
 
 			}else{
-				return $this->db->last_query();
+				return false;
 			}
 		}
 }

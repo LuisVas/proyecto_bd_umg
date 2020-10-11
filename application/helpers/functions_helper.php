@@ -329,7 +329,18 @@ function getDayWeek($date){
     return $dayOfWeek;
 }
 
+function get_next_id($table_name,$column = 'ID'){
+	$ci = get_instance();
 
+	$ci->db->select('*')
+	->from($table_name)
+	->order_by($column,'DESC')
+	->limit(1);
+
+	$query = $ci->db->get()->row_array();
+
+	return $query ? (intval($query[$column]) + 1) : 1;
+}
 
 
 ?>
