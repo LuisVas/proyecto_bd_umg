@@ -1,33 +1,40 @@
-<?php 
+<?php
 
 function validate_session(){
 	$ci = get_instance();
-	
+
 	if($ci->session->userdata('user_id') == null){
 		header('Location: login');
 	}
 }
 
+function is_admin_login(){
+	$ci = get_instance();
+	if($ci->session->userdata('user') == null){
+		header('Location: '.base_url().'dashboard/login');
+	}
+}
+
 function is_login(){
 	$ci = get_instance();
-	if($ci->session->userdata('user_id') == null){
+	if($ci->session->userdata('user') == null){
 	   header('Location: '.base_url().'login');
 	}
 }
 
 function rol($type){
 	$ci = get_instance();
-	
-	
+
+
 	if($type == 'admin'){
 		if( $ci->session->userdata('role_id') == 4){
 			header('Location: '.base_url());
 		}
 	}
-	
+
 	if($type == 'guest'){
 		if($ci->session->userdata('role_id') == 1 || $ci->session->userdata('role_id') == 2 || $ci->session->userdata('role_id') == 3){
-			
+
 			if($ci->session->userdata('role_id') == 3){
 				header('Location: '.base_url().'dashboard/see-all');
 			}else{
@@ -40,7 +47,7 @@ function rol($type){
 
 function validatedashboardsession(){
 	$ci = get_instance();
-	
+
 	if($ci->session->userdata('user_id') == null){
 		header('Location: '.base_url().'dashboard/login');
 	}
@@ -94,13 +101,13 @@ function get_swaps_by_id($id){
 
 function get_user_by_identify($id){
 	$ci = get_instance();
-	
+
 	$ci->db->select('*')
 	->from('usuarios')
 	->where('identificacion',$id);
-	
+
 	$query = $ci->db->get();
-	
+
 	if($query->num_rows() > 0){
 		return $query->row();
 	}else{
@@ -186,7 +193,7 @@ $script = '
 ';
 
 // $script = '
-	
+
 // 	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>
 // 	<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" ></script>
 // ';
@@ -196,9 +203,9 @@ $script = '
 
 function get_users(){
 	$ci = get_instance();
-	
+
 	global $users;
-	
+
 	if(empty($users)){
 		$ci->db->select('*')
 		->from('users')
@@ -206,38 +213,38 @@ function get_users(){
 		->or_where('role_id',3)
 		->or_where('role_id',4)
 		->or_where('role_id',5);
-		
+
 		$query = $ci->db->get();
-		
+
 		if($query->num_rows() > 0){
 			$users = $query->result();
 		}else{
 			$users = null;
 		}
 	}
-	
+
 	return $users;
 }
 
 function get_collaborators(){
 	$ci = get_instance();
-	
+
 	global $collaborators;
-		
+
 	if(empty($collaborators)){
 		$ci->db->select('*')
 		->from('users')
 		->where('role_id',5);
-		
+
 		$query = $ci->db->get();
-		
+
 		if($query->num_rows() > 0){
 			$collaborators = $query->result();
 		}else{
 			$collaborators = null;
 		}
 	}
-	
+
 	return $collaborators;
 }
 
@@ -323,6 +330,6 @@ function getDayWeek($date){
 }
 
 
- 
+
 
 ?>
