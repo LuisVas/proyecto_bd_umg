@@ -1,6 +1,6 @@
 <div class="sidebar-dashboard">
 	<div class="logo_dashboard">
-		<img src="<?php echo base_url(); ?>/images/logouser.png">
+		<img src="<?php echo base_url(); ?>/images/logo.png">
 	</div>
 	<div class="store-name">
 		<?php $user = $this->session->userdata('user'); ?>

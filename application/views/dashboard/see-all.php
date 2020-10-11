@@ -156,7 +156,7 @@
                     <div class="bills-body">
                         <form id="productForm">
                                 <h1>Editar producto</h1>
-                                <input type="hidden" id="idPrize" name="id_premio" value="">
+                                <input type="hidden" id="idPrize" name="ID_PROD" value="">
                                 <h2>Imagen del producto</h2>
                                 <div class="prize-body">
                                     <div class="row">
@@ -175,32 +175,32 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h1>Nombre</h1>
-                                            <input type="text" id="prizeName" name="nombre_premio" value="">
+                                            <input type="text" id="prizeName" name="NOMBRE" value="">
                                         </div>
                                         <div class="col-md-12">
                                             <h1>Descripción</h1>
-                                            <textarea id="Desc" name="desc_premio" value=""></textarea>
+                                            <textarea id="Desc" name="DESCRIPCION" value=""></textarea>
                                         </div>
                                         <div class="col-md-12">
                                             <h1>Proveedor</h1>
-                                            <input type="text" id="proveedor" name="proveedor" value="">
+                                            <input type="text" id="proveedor" name="PROVEEDOR" value="">
                                         </div>
                                         <div class="col-md-12">
                                             <h1>Precio</h1>
-                                            <input type="number" min="0" id="price" name="price" value="">
+                                            <input type="number" min="0" id="price" name="PRECIO" value="">
                                         </div>
                                         <div class="col-md-12">
                                             <h1>Existencias</h1>
-                                            <input type="number" min="0" id="existencias" name="existencias" value="">
+                                            <input type="number" min="0" id="existencias" name="EXISTENCIA" value="">
                                         </div>
                                         <div class="col-md-12">
                                             <h1>Categorías</h1>
-                                            <input type="text" id="categorias" name="categorias" value="">
+                                            <input type="text" id="categorias" name="ID_CAT" value="">
                                             <p style="font-size: 10px;">*Las categorías se ingresan por número. Si son más de una, separarlas con ","</p>
                                         </div>
                                         <div class="col-md-12">
                                             <h1>Subcategorías</h1>
-                                            <input type="text" id="subcategorias" name="subcategorias" value="">
+                                            <input type="text" id="subcategorias" name="ID_SUBCAT" value="">
                                             <p style="font-size: 10px;">*Las subcategorías se ingresan por número. Si son más de una, separarlas con ","</p>
                                         </div>
                                     </div>

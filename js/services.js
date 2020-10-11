@@ -132,7 +132,7 @@ $(function(){
 			processData: false,
 			contentType: false,
 			success:function(data){
-				if(data){
+				if(data==true){
 					alertify.alert('¡Actualización de información!', '¡Se ha cambiado tu información del premio con éxito!', function(){ window.location.href=base_url()+'dashboard/'+'see-all';});
 				}else{
 					alertify.error('Ha ocurrido un error, intenta de nuevo');
@@ -145,6 +145,7 @@ $(function(){
 		return false;
 	});
 	
+
 	$('.swapDetail').click(function(){
 		var id = $(this).val();
 		var id_canje = $(this).attr('value');

@@ -6,8 +6,8 @@ class GuestDashboardModel extends CI_Model{
 	}
 
 	function updateDataProduct($data,$ID_PROD){
-		$this->db->set($data);
-		$this->db->where('ID_PROD',$ID_PROD);
+		$this->db->set($data)
+		->where('ID_PROD',$ID_PROD);
 		$this->db->update('PROD');
 
 		if($this->db->affected_rows() > 0){
