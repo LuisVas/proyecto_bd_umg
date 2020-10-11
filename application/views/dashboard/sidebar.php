@@ -4,8 +4,10 @@
 	</div>
 	<div class="store-name">
 		<?php $user = $this->session->userdata('user'); ?>
-		<h1><?= $user->username; ?></h1>
-		<h2><?= $user->email; ?></h2>
+		<?php if($user){ ?>
+			<h1><?= $user->username; ?></h1>
+			<h2><?= $user->email; ?></h2>
+		<?php } ?>
 	</div>
 	<div class="nav-sidebar">
 		<ul>
