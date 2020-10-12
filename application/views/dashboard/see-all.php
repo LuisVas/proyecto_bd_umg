@@ -144,7 +144,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bills">
-                <h1 class="modal-title" id="exampleModalCenterTitle">Detalle del premio</h1>
+                <h1 class="modal-title" id="exampleModalCenterTitle">Detalle del producto</h1>
                 <button type="button" class="closeModal" data-dismiss="modal" aria-label="Close">
                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                         <path d="M512,60.3L451.7,0L256,195.7L60.3,0L0,60.3L195.7,256L0,451.7L60.3,512L256,316.3L451.7,512l60.3-60.3L316.3,256L512,60.3z"/>
@@ -203,6 +203,11 @@
                                             <input type="text" id="subcategorias" name="ID_SUBCAT" value="">
                                             <p style="font-size: 10px;">*Las subcategorías se ingresan por número. Si son más de una, separarlas con ","</p>
                                         </div>
+                                        <div class="col-md-12">
+                                            <h1>Temporadas</h1>
+                                            <input type="text" id="temporada" name="ID_TEMP" value="">
+                                            <p style="font-size: 10px;">*Las temporadas se ingresan por número. Si son más de una, separarlas con ","</p>
+                                        </div>
                                     </div>
                                 </div>
                             <div class="row">
@@ -213,7 +218,7 @@
                             	</div>
                             	<div class="col-md-6">
 		                            <div class="btn-delete">
-		                                <a class="btn-delete-prize deletePrize" id="deletePrize">Eliminar</a>
+		                                <a class="btn-delete-prize deletePrize" id="deleteProd">Eliminar</a>
 		                            </div>
                             	</div>
                             </div>
