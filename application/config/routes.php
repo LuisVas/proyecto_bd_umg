@@ -77,7 +77,7 @@ $route['sendPass'] = 'SessionController/sendPass';
 $route['sign_out'] = 'SessionController/sign_out';
 
 
-//SESION DASHBOARD 
+//SESION DASHBOARD
 // $route['validate_email'] = 'SessionDashboardController/validate_email';
 $route['dashboard/validate'] = 'SessionDashboardController/validate';
 $route['dashboard/restorePass'] = 'SessionDashboardController/restorePass';
@@ -114,3 +114,10 @@ $route['deleteClient'] = 'GuestDashboardController/deleteClient';
 $route['deletePrize'] = 'GuestDashboardController/deletePrize';
 $route['updateDataProduct'] = 'GuestDashboardController/updateDataProduct';
 
+// Categorías
+$route['dashboard/categories']['GET'] = 'Dashboard/CategoryController';
+$route['dashboard/category/list']['GET'] = 'Dashboard/CategoryController/list';
+$route['dashboard/category/add']['POST'] = 'Dashboard/CategoryController/add';
+$route['dashboard/category/update']['POST'] = 'Dashboard/CategoryController/update';
+$route['dashboard/category/delete']['POST'] = 'Dashboard/CategoryController/delete';
+$route['dashboard/category/get']['POST'] = 'Dashboard/CategoryController/get';
