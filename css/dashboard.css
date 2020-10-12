@@ -607,7 +607,7 @@ section.register-dashboard {
     background: -ms-linear-gradient(left, rgba(56,157,246,1) 0%, rgba(63,138,251,1) 100%);
     background: linear-gradient(to right, rgba(56,157,246,1) 0%, rgba(63,138,251,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#389df6', endColorstr='#3f8afb', GradientType=1 );
-    padding: 10px;    
+    padding: 10px;
     float: left;
     width: 40%;
     border-radius: 50px;
@@ -628,7 +628,7 @@ section.register-dashboard {
 #msform .action-button-previous {
     border: 1px solid #fff;
     background: #fff;
-    padding: 10px 35px;    
+    padding: 10px 35px;
     float: left;
     width: 40%;
     margin-right: 15px;
@@ -1115,7 +1115,7 @@ section.register-dashboard {
 .sidebar-dashboard .nav-sidebar .active-dashboard{
 	color: #3F8AFB;
 	transition:all 0.3s;
-} 
+}
 .sidebar-dashboard .nav-sidebar ul a{
     color: #2c2c2c;
     transition: all 0.3s;
@@ -1491,7 +1491,7 @@ section.register-dashboard {
     font-size: 10px;
     color: #6A6A6A;
     font-family: poppins;
-} 
+}
 .col-md-12 .top-users-body .row .col-md-4 .top-users .col-md-12 .row .col-md-4 p{
     margin: 9px 0;
     font-size: 10px;
@@ -2470,3 +2470,11 @@ section.register-dashboard {
 .upload-logo input {
     border: none!important;
 }
+
+ul.ul_categories{padding: 0px;}
+ul.ul_categories li{list-style: none;display: flex;justify-content: flex-start;  align-items: center;}
+ul.ul_categories li input{display: inline-block;max-width: 30px;}
+.block{display: block;}
+.w100{width:100%;}
+.pointer{cursor:pointer;}
+.content_sub{margin-top:30px;}

@@ -121,3 +121,6 @@ $route['dashboard/category/add']['POST'] = 'Dashboard/CategoryController/add';
 $route['dashboard/category/update']['POST'] = 'Dashboard/CategoryController/update';
 $route['dashboard/category/delete']['POST'] = 'Dashboard/CategoryController/delete';
 $route['dashboard/category/get']['POST'] = 'Dashboard/CategoryController/get';
+$route['dashboard/category/get_sub_categories']['POST'] = 'Dashboard/CategoryController/get_sub_categories';
+$route['dashboard/category/list_sub_categories']['GET'] = 'Dashboard/CategoryController/list_sub_categories';
+$route['dashboard/category/add_sub_categories']['POST'] = 'Dashboard/CategoryController/add_sub_categories';

@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <title>Crear producto | Dashboard</title>
-    
+
     <?php include ("tags.php");?>
 
 
  </head>
-  
+
 <body>
 <div class="container-dash">
     <section class="dashboard-body">
@@ -72,11 +72,26 @@
                                         </div>
                                         <div class="col-md-4">
                                             <h1>Categorías</h1>
-                                            <input type="text" name="ID_CAT" placeholder="Ej. 1,2,3">
+                                            <?php $categories = get_the_categories(); ?>
+                                            <?php if($categories){ ?>
+                                              <ul class="ul_categories">
+                                                <?php foreach($categories as $rec){ ?>
+                                                  <li>
+                                                    <label class="block w100 pointer">
+                                                      <input type="checkbox" class="select_category" value="<?= $rec->ID_CAT; ?>" name="<?= $rec->NOMBRE; ?>">
+                                                      <span><?= $rec->NOMBRE; ?></span>
+                                                    </label>
+                                                  </li>
+                                                <?php } ?>
+                                              </ul>
+                                            <?php } ?>
                                         </div>
                                         <div class="col-md-4">
                                             <h1>Subcategorías</h1>
-                                            <input type="text" name="ID_SUBCAT" placeholder="Ej. 1,2,3">
+                                            <!-- <input type="text" name="ID_SUBCAT" placeholder="Ej. 1,2,3"> -->
+                                            <div>
+                                              <ul class="ul_sub"></ul>
+                                            </div>
                                         </div>
                                         <div class="col-md-4">
                                             <h1>Temporada</h1>
@@ -103,6 +118,30 @@
     $('#services').addClass('active-dashboard');
     $('#premios').addClass('active-dashboard');
 </script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('body').on('click','.select_category',function(){
+           var id = $(this).val();
+
+           $.ajax({
+              url:base_url()+'dashboard/category/get_sub_categories',
+              type:'POST',
+              dataType:'JSON',
+              data:{
+                id:id
+              },success:function(data){
+                if(data){
+
+                }
+              },error:function(error){
+
+              }
+           });
+      });
+  });
+</script>
+
+
 </body>
 </html>
-

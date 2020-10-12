@@ -20,7 +20,7 @@
             <div class="col-md-9">
 
                 <div class="_content">
-                  <br><br><button class="btn btn-success" data-toggle="modal" data-target="#new_category">Agregar</button><br><br>
+                  <br><br><button class="btn btn-success _new" data-toggle="modal" data-target="#new_category">Agregar</button><br><br>
                   <table class="table table-hover">
                       <thead>
                         <tr>
@@ -47,6 +47,7 @@
 
     <div class="modal-content">
       <div class="modal-header">
+        <h5>Nueva categoría</h5>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
@@ -54,29 +55,16 @@
 	      <div class="modal-body">
 	        	<h5>Nombre</h5>
 	        	<input type="text" name="name" id="cat_name" placeholder="Ingresar" class="form-control" required>
-	      </div>
-	      <div class="modal-footer">
-          <button type="submit" name="button" class="btn btn-success">Agregar</button>
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	      </div>
-	  </form>
-    </div>
 
-  </div>
-</div>
-
-<div id="new_category" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <form id="form_category" class="_form">
-	      <div class="modal-body">
-	        	<h5>Nombre</h5>
-	        	<input type="text" name="name" id="cat_name" placeholder="Ingresar" class="form-control" required>
+            <div class="content_sub">
+              <p>Asignar sub categorías</p>
+              <ul class="ul_sub ul_categories"></ul>
+              <div>
+                <input type="text" class="new_sub_name" class="form-control">
+                <button type="button" id="add_new_sub">Agregar</button>
+              </div>
+              <!-- <div class="new_sub"></div> -->
+            </div>
 	      </div>
 	      <div class="modal-footer">
           <button type="submit" name="button" class="btn btn-success">Agregar</button>
@@ -154,6 +142,75 @@
         });
       }
 
+      function list_sub_categories(){
+        $.ajax({
+            url:base_url()+'dashboard/category/list_sub_categories',
+            type:'GET',
+            dataType:'JSON',
+            success:function(data){
+
+              if(data){
+                var html = '';
+                $.each(data,function(i,item){
+                    html += '<li><label><input type="checkbox" value="'+item.ID_SUBCAT+'" class="" > <span>'+item.NOMBRE+'</span></label></li>';
+                });
+
+                $('.ul_sub').html(html);
+              }
+
+            },error:function(error){
+
+            }
+        });
+      }
+
+      $('._new').click(function(){
+          list_sub_categories();
+      });
+
+      function add_new_sub(){
+        var value = $('.new_sub_name').val();
+        $.ajax({
+            url:base_url()+'dashboard/category/add_sub_categories',
+            type:'POST',
+            dataType:'JSON',
+            data:{
+              name:value
+            },
+
+            success:function(data){
+              if(data){
+                list_sub_categories();
+                $('.new_sub_name').val('');
+              }
+            },error:function(error){
+
+            }
+        });
+      }
+
+      $('.new_sub_name').keypress(function(e){
+          var key = e.which;
+          if(key == 13){
+            add_new_sub();
+            return false;
+          }
+      });
+
+      $('#add_new_sub').click(function(){
+          add_new_sub();
+      });
+
+      function get_sub_categories(){
+        var data = [];
+        $('.ul_sub li').each(function(){
+          if($(this).find('input').is(':checked')){
+            data.push({value:$(this).find('input').val()})
+          }
+        });
+
+        return data;
+      }
 
       $('#form_category').submit(function(){
         $.ajax({
@@ -161,7 +218,8 @@
             type:'POST',
             dataType:'JSON',
             data:{
-              name:$('#cat_name').val()
+              name:$('#cat_name').val(),
+              sub:get_sub_categories()
             },
 
             success:function(data){

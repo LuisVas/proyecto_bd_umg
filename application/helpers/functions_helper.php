@@ -342,5 +342,15 @@ function get_next_id($table_name,$column = 'ID'){
 	return $query ? (intval($query[$column]) + 1) : 1;
 }
 
+function get_the_categories(){
+	$ci = get_instance();
+	$ci->db->select('*')
+	->from('CAT');
+
+	$query = $ci->db->get();
+
+	return ($query->num_rows() > 0 ? $query->result() : false);
+}
+
 
 ?>
