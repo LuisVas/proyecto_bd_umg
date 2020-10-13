@@ -1,9 +1,9 @@
 
 #directories ignored
 
-application/config/database.php
-application/config/config.php
-js/functions.js
+/application/config/database.php
+/application/config/config.php
+/js/functions.js
 
 
 
