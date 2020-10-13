@@ -3,7 +3,8 @@
 class CategoryModel extends CI_Model{
   function get_categories(){
     $this->db->select('*')
-    ->from('CAT');
+    ->from('CAT')
+    ->order_by('ID_CAT','ASC');
 
     $query = $this->db->get();
 
@@ -18,21 +19,30 @@ class CategoryModel extends CI_Model{
 
   function assign_sub_categories($data,$cat_id){
     $args = array();
+    $id = get_next_id('DETALLE_CAT_SUB');
     foreach($data as $rec){
       array_push($args,array(
-        'SUBCAT_ID_SUBCAT'=>$rec['value'],
-        'SUBCAT_ID_SUBCAT1'=>$cat_id
+        'ID'=>$id,
+        'CAT_ID'=>$cat_id,
+        'SUB_ID'=>$rec['value']
       ));
+
+      $id++;
     }
 
-    $this->db->insert_batch('SUBCATSUB',$args);
+    $this->db->insert_batch('DETALLE_CAT_SUB',$args);
     return ($this->db->affected_rows() > 0 ? true : false);
   }
 
-  function get($data){
+  function unassign_sub_categories($cat_id){
+    $this->db->where('CAT_ID',$cat_id)->delete('DETALLE_CAT_SUB');
+    return ($this->db->affected_rows() > 0 ? true : false);
+  }
+
+  function get_assign_categories($id){
     $this->db->select('*')
     ->from('CAT')
-    ->where('ID_CAT',$data['id']);
+    ->where('ID_CAT',$id);
 
     $query = $this->db->get();
 
@@ -52,10 +62,9 @@ class CategoryModel extends CI_Model{
     return ($this->db->affected_rows() > 0 ? true : false);
   }
 
-  function get_sub_categories($id){
+  function get_sub_categories(){
     $this->db->select('*')
-    ->from('SUBCATSUB')
-    ->where('SUBCAT_ID_SUBCAT1',$id);
+    ->from('SUBCAT');
 
     $query = $this->db->get();
     return ($query->num_rows() > 0 ? $query->result() : false);
@@ -63,7 +72,8 @@ class CategoryModel extends CI_Model{
 
   function list_sub_categories(){
     $this->db->select('*')
-    ->from('SUBCAT');
+    ->from('SUBCAT')
+    ->order_by('ID_SUBCAT','DESC');
 
     $query = $this->db->get();
     return ($query->num_rows() > 0 ? $query->result() : false);
@@ -81,6 +91,28 @@ class CategoryModel extends CI_Model{
   function update_sub_categories($data){
     $this->db->set(array('NOMBRE'=>$data['name']))->where('ID_SUBCAT',$data['id'])->update('SUBCAT');
     return ($this->db->affected_rows() > 0 ? true : false);
+  }
+
+  function get_assign_sub_categories($cat_id){
+
+    $sub_categories = $this->get_sub_categories();
+
+    $this->db->select('*')
+    ->from('DETALLE_CAT_SUB')
+    ->where('CAT_ID',$cat_id);
+
+    $query = $this->db->get();
+
+    $data = array();
+    foreach($sub_categories as $rec){
+      array_push($data,array(
+          'id_subcat'=>$rec->ID_SUBCAT,
+          'nombre'=>$rec->NOMBRE,
+          'selected'=>(is_in_array($query->result_array(),'SUB_ID',$rec->ID_SUBCAT))
+      ));
+    }
+
+    return $data;
   }
 }
 

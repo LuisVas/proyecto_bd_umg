@@ -17,7 +17,14 @@ class CategoryController extends CI_Controller{
   }
 
   function get(){
-    echo json_encode($this->CategoryModel->get($this->input->post()));
+
+    $cat_id = $this->input->post('id');
+    $args = array(
+      'data'=>$this->CategoryModel->get_assign_categories($cat_id),
+      'sub'=>$this->CategoryModel->get_assign_sub_categories($cat_id)
+    );
+
+    echo json_encode($args);
   }
 
   function add(){
@@ -26,7 +33,15 @@ class CategoryController extends CI_Controller{
   }
 
   function update(){
-    echo json_encode($this->CategoryModel->update_category($this->input->post()));
+    if($this->CategoryModel->update_category($this->input->post())){
+      if($this->CategoryModel->unassign_sub_categories($this->input->post('id'))){
+          echo json_encode($this->CategoryModel->assign_sub_categories($this->input->post('sub'),$this->input->post('id')));
+      }else{
+          echo json_encode(false);
+      }
+  }else{
+      echo json_encode(false);
+    }
   }
 
   function delete(){

@@ -63,7 +63,6 @@
                 <input type="text" class="new_sub_name" class="form-control">
                 <button type="button" id="add_new_sub">Agregar</button>
               </div>
-              <!-- <div class="new_sub"></div> -->
             </div>
 	      </div>
 	      <div class="modal-footer">
@@ -88,6 +87,12 @@
 	      <div class="modal-body">
 	        	<h5>Nombre</h5>
 	        	<input type="text" name="name" id="cat_update_name" placeholder="Ingresar" class="form-control" required>
+
+            <div class="content_sub">
+              <p>Asignar sub categorías</p>
+              <ul class="ul_sub ul_categories update"></ul>
+            </div>
+
 	      </div>
 	      <div class="modal-footer">
           <button type="submit" name="button" class="btn btn-success">Actualizar</button>
@@ -165,7 +170,7 @@
         });
       }
 
-      $('._new').click(function(){
+      $('body').on('click','._new',function(){
           list_sub_categories();
       });
 
@@ -202,9 +207,10 @@
           add_new_sub();
       });
 
-      function get_sub_categories(){
+      function get_sub_categories(edit = false){
         var data = [];
-        $('.ul_sub li').each(function(){
+        var doom = ".ul_sub"+(edit ? '.update' : '')+" li";
+        $(doom).each(function(){
           if($(this).find('input').is(':checked')){
             data.push({value:$(this).find('input').val()})
           }
@@ -248,7 +254,15 @@
 
             success(data){
               if(data){
-                $('#cat_update_name').val(data['NOMBRE']);
+                $('#cat_update_name').val(data['data']['NOMBRE']);
+                if(data['sub']){
+                  var html = '';
+                  $.each(data['sub'],function(i,item){
+                      html += '<li><label><input type="checkbox" '+(item.selected ? 'checked' : '')+' value="'+item.id_subcat+'"> <span>'+item.nombre+'</span></label></li>';
+                  });
+
+                  $('.ul_sub').html(html);
+                }
               }
             },error:function(error){
 
@@ -264,7 +278,8 @@
             dataType:'JSON',
             data:{
               name:$('#cat_update_name').val(),
-              id:edit_id
+              id:edit_id,
+              sub:get_sub_categories(true)
             },
 
             success:function(data){
