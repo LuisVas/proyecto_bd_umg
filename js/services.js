@@ -102,7 +102,7 @@ $(function(){
 	
 	$('.deletePrize').click(function(){
 		
-		alertify.confirm('Eliminar producto','¿Estás seguro de eliminar este registro? Esta acción no se puede revertir.',function(){
+		alertify.confirm('¡Alto ahí vaquero!','¿Estás seguro de eliminar este registro? Esta acción no se puede revertir.',function(){
 			$.ajax({
 				url:base_url()+'deleteProduct',
 				type:'POST',
@@ -201,4 +201,141 @@ $(function(){
 		return false;
 	});
 	
+	$('.cardDetail').click(function(){
+		var id = $(this).val();
+		var idCard = $(this).attr('value');
+		var tarName = $(this).attr('name');
+		var tarNumber = $(this).attr('num');
+		var tarVenc = $(this).attr('venc');
+		var tarCvv = $(this).attr('cvv');
+		var tarSaldo = $(this).attr('saldo');
+
+		
+		$('#idCard').attr('value', idCard);
+		$('#tarName').attr('value', tarName);
+		$('#tarNumber').attr('value', tarNumber);
+		$('#tarVenc').attr('value', tarVenc);
+		$('#tarCvv').attr('value', tarCvv);
+		$('#tarSaldo').attr('value', tarSaldo);
+		
+	});	
+
+	$('#cardForm').submit(function(){
+		var data = new FormData($('#cardForm')[0]);
+		$.ajax({
+			url:base_url()+'updateDataCard',
+			type:'POST',
+			dataType:'JSON',
+			data:data,
+			cache: false,
+			processData: false,
+			contentType: false,
+			success:function(data){
+				if(data){
+					alertify.alert('¡Actualización de información!', '¡Se ha cambiado la información de la tarjeta con éxito!', function(){ window.location.href=base_url()+'dashboard/'+'cards';});
+				}else{
+					alertify.error('Ha ocurrido un error, intenta de nuevo');
+				}
+			},error:function(error){
+				console.log(JSON.stringify(error));
+			}
+		});
+
+		return false;
+	});
+	$('#addCard').click(function(){
+		
+		var data = new FormData($('#NewCardForm')[0]);
+		
+		$.ajax({
+			url:base_url()+'dashboard/addCard',
+			type:'POST',
+			dataType:'JSON',
+			data:data,
+			cache: false,
+			processData: false,
+			contentType: false,
+
+			success:function(data){
+				if(data){
+					alertify.success('Tarjeta agregada exitosamente!');
+					$('input[type="text"]').val('');
+					$('input[type="number"]').val('');
+				}else {
+					alertify.error('Ooops! Ha ocurrido un error, intenta de nuevo.');
+				}
+			},error:function(error){
+				console.log(JSON.stringify(error));
+			}
+		});
+		return false;
+	});
+	$('.deleteCard').click(function(){
+		
+		alertify.confirm('¡Alto ahí vaquero!','¿Estás seguro de eliminar este registro? Esta acción no se puede revertir.',function(){
+			$.ajax({
+				url:base_url()+'deleteCard',
+				type:'POST',
+				data:{
+					ID_TAR:$('#idCard').val()
+				},
+				success:function(data){
+					alertify.alert('Tarjeta eliminada', 'La tarjeta se ha eliminado exitosamente.', function(){window.location.href=base_url()+'dashboard/'+'cards';});
+				},error:function(error){
+					console.log(JSON.stringify(error));
+				}
+			});
+			return false;
+		},function(){});
+	});
+
+	$('.userDetail').click(function(){
+		var id = $(this).val();
+		var idUsu = $(this).attr('value');
+		var nomUsu = $(this).attr('name');
+		var apUsu = $(this).attr('apellido');
+		var edUsu = $(this).attr('edad');
+		var sexUsu = $(this).attr('sexo');
+		var emUsu = $(this).attr('email');
+		var codUsu = $(this).attr('codpostal');
+		var nacUsu = $(this).attr('nacionalidad');
+		var passUsu = $(this).attr('password');
+
+		
+		$('#idUsu').attr('value', idUsu);
+		$('#nomUsu').attr('value', nomUsu);
+		$('#apUsu').attr('value', apUsu);
+		$('#edUsu').attr('value', edUsu);
+		$('#sexUsu').attr('value', sexUsu);
+		$('#emUsu').attr('value', emUsu);
+		$('#codUsu').attr('value', codUsu);
+		$('#nacUsu').attr('value', nacUsu);
+		$('#passUsu').attr('value', passUsu);
+		
+	});	
+
+	$('#usereditForm').submit(function(){
+		var data = new FormData($('#usereditForm')[0]);
+		$.ajax({
+			url:base_url()+'updateDataUser',
+			type:'POST',
+			dataType:'JSON',
+			data:data,
+			cache: false,
+			processData: false,
+			contentType: false,
+			success:function(data){
+				if(data){
+					alertify.alert('¡Actualización de información!', '¡Se ha cambiado la información del usuario con éxito!', function(){ window.location.href=base_url()+'dashboard/'+'clients';});
+				}else{
+					alertify.error('Ha ocurrido un error, intenta de nuevo');
+				}
+			},error:function(error){
+				console.log(JSON.stringify(error));
+			}
+		});
+
+		return false;
+	});
+
 })

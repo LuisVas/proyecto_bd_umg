@@ -14,7 +14,7 @@ outline: 0 !important;
 }
 
 @font-face {
- font-family: poppinsbold;
+ font-family: poppins-bold;
  src: url("../fonts/poppins-bold.ttf"); /* TTF file for CSS3 browsers */
 }
 body {

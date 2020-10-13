@@ -94,6 +94,11 @@ $route['add_register_user'] = 'GuestDashboardController/add_register_user';
 $route['deleteClient'] = 'GuestDashboardController/deleteClient';
 $route['deleteProduct'] = 'GuestDashboardController/deleteProduct';
 $route['updateDataProduct'] = 'GuestDashboardController/updateDataProduct';
+$route['updateDataCard'] = 'GuestDashboardController/updateDataCard';
+$route['dashboard/cards'] = 'GuestDashboardController/seeCards';
+$route['dashboard/addCard'] = 'GuestDashboardController/addCard';
+$route['deleteCard'] = 'GuestDashboardController/deleteCard';
+$route['updateDataUser'] = 'GuestDashboardController/updateDataUser';
 
 // Categorías
 $route['dashboard/categories']['GET'] = 'Dashboard/CategoryController';

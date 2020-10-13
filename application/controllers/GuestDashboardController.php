@@ -99,7 +99,8 @@ class GuestDashboardController extends CI_Controller {
 	}
 
 	function clients(){
-		$this->load->view('dashboard/clients');
+		$data['userList'] = $this->GuestDashboardModel->userList();
+		$this->load->view('dashboard/clients',$data);
 	}
 
 	function settings(){
@@ -110,9 +111,34 @@ class GuestDashboardController extends CI_Controller {
 		$this->load->view('dashboard/orders');
 	}
 
+	function seeCards(){
+		$data['cardsList'] = $this->GuestDashboardModel->cardsList();
+		$this->load->view('dashboard/cards',$data);
+	}
 
-	function marketing(){
-		$this->load->view('dashboard/marketing');
+	function updateDataCard(){
+		$data = $this->input->post();
+		
+		echo json_encode($this->GuestDashboardModel->updateDataCard($data,$data['ID_TAR']));
+	}
+
+	function addCard(){
+
+		$data = $this->input->post();
+		$data['ID_TAR'] = 3;
+		echo json_encode($this->GuestDashboardModel->addCard($data));
+	}
+
+	function deleteCard(){
+		$data = $this->input->post();
+		$data['ID_TAR'] = $data['ID_TAR'];
+		echo json_encode($this->GuestDashboardModel->deleteCard($data['ID_TAR']));
+	}
+
+	function updateDataUser(){
+		$data = $this->input->post();
+		
+		echo json_encode($this->GuestDashboardModel->updateDataUser($data,$data['ID_USU']));
 	}
 
 

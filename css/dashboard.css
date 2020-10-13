@@ -2478,3 +2478,21 @@ ul.ul_categories li input{display: inline-block;max-width: 30px;}
 .w100{width:100%;}
 .pointer{cursor:pointer;}
 .content_sub{margin-top:30px;}
+.btnsCat  {
+    border: none;
+    background: transparent;
+    color: #000;
+    transition: all 0.3s;
+}
+.btnsCat:hover  {
+    color: #3f8bfb;
+    transition: all 0.3s;
+}
+.btn-save {
+    position: relative;
+    margin: 20px 0;
+}
+.btn-delete {
+    position: relative;
+    margin: 20px 0;
+}

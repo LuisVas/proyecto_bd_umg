@@ -18,19 +18,49 @@
                 <?php include("sidebar.php");?>
             </div>
             <div class="col-md-9">
-
-                <div class="_content">
-                  <br><br><button class="btn btn-success _new" data-toggle="modal" data-target="#new_category">Agregar</button><br><br>
-                  <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>Nombre</th>
-                          <th>Acción</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tbody"></tbody>
-                  </table>
+                <div class="dash-content-body">
+                    <div class="head-dash">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1>Categorías</h1>
+                            </div>
+                            <div class="col-md-6">
+                                <?php include("head-dashboard.php");?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="analytics-content">
+                        <div class="seeall-body">
+                            <h1>Todas las categorías disponibles</h1>
+                            <div class="services-table">
+                                <form id="prizeList">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                  <th scope="col">ID</th>
+                                                  <th scope="col">Nombre</th>
+                                                  <th scope="col">Acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody"></tbody>
+                                        </table>
+                                    </div>
+                                </form>
+                                <div class="add-service">
+                                    <button type="button" class="_new" data-toggle="modal" data-target="#new_category">
+                                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                            <g>
+                                                <g>
+                                                    <path d="M492,236H276V20c0-11-9-20-20-20c-11,0-20,9-20,20v216H20c-11,0-20,9-20,20c0,11,9,20,20,20h216v216c0,11,9,20,20,20 c11,0,20-9,20-20V276h216c11,0,20-9,20-20C512,245,503,236,492,236z"/>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -42,71 +72,108 @@
     </section>
 </div>
 
-<div id="new_category" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5>Nueva categoría</h5>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <form id="form_category" class="_form">
-	      <div class="modal-body">
-	        	<h5>Nombre</h5>
-	        	<input type="text" name="name" id="cat_name" placeholder="Ingresar" class="form-control" required>
-
-            <div class="content_sub">
-              <p>Asignar sub categorías</p>
-              <ul class="ul_sub ul_categories"></ul>
-              <div>
-                <input type="text" class="new_sub_name" class="form-control">
-                <button type="button" id="add_new_sub">Agregar</button>
-              </div>
+<!-- Modal -->
+<div id="new_category" class="modal fade modalServicesBody" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bills">
+                <h1 class="modal-title">Crear nueva categoría</h1>
+                <button type="button" class="closeModal" data-dismiss="modal" aria-label="Close">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <path d="M512,60.3L451.7,0L256,195.7L60.3,0L0,60.3L195.7,256L0,451.7L60.3,512L256,316.3L451.7,512l60.3-60.3L316.3,256L512,60.3z"/>
+                    </svg>
+                </button>
             </div>
-	      </div>
-	      <div class="modal-footer">
-          <button type="submit" name="button" class="btn btn-success">Agregar</button>
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	      </div>
-	  </form>
+            <div class="modal-body">
+                <div class="NewServices">
+                    <div class="bills-body">
+                        <form id="form_category" class="_form">
+                          <div class="prize-body">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <h2>Nombre</h2>
+                                  <input type="text" name="name" id="cat_name" placeholder="Ingresar" class="form-control" required>
+                                </div>
+                                <div class="col-md-12">
+                                  <h2>Asignar sub categorías</h2>
+                                  <ul class="ul_sub ul_categories"></ul>
+                                </div>
+                                <div class="col-md-12">
+                                  <input type="text" class="new_sub_name" class="form-control">
+                                </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="btn-save">
+                                          <button class="btn-save-prize" id="add_new_sub">Agregar</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-  </div>
 </div>
 
-<div id="edit_category" class="modal fade" role="dialog">
-  <div class="modal-dialog">
 
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <form id="form_update_category" class="_form">
-	      <div class="modal-body">
-	        	<h5>Nombre</h5>
-	        	<input type="text" name="name" id="cat_update_name" placeholder="Ingresar" class="form-control" required>
-
-            <div class="content_sub">
-              <p>Asignar sub categorías</p>
-              <ul class="ul_sub ul_categories update"></ul>
+ 
+<!-- Modal -->
+<div  id="edit_category" class="modal fade modalServicesBody" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bills">
+                <h1 class="modal-title">Editar categoría</h1>
+                <button type="button" class="closeModal" data-dismiss="modal" aria-label="Close">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <path d="M512,60.3L451.7,0L256,195.7L60.3,0L0,60.3L195.7,256L0,451.7L60.3,512L256,316.3L451.7,512l60.3-60.3L316.3,256L512,60.3z"/>
+                    </svg>
+                </button>
             </div>
-            <div>
-              <input type="text" class="new_sub_name2" class="form-control">
-              <button type="button" id="add_new_sub2">Agregar</button>
-            </div>
+            <div class="modal-body">
+                <div class="NewServices">
+                    <div class="bills-body">
+                        <form id="form_update_category" class="_form">
+                                <div class="prize-body">
+                                    <h2>Información de categoría</h2>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h1>Nombre</h1>
+                                            <input type="text" name="name" id="cat_update_name" placeholder="Ingresar" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h1>Asignar subcategorías</h1>
+                                            <ul class="ul_sub ul_categories update"></ul>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="text" class="new_sub_name2" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="btn-save">
+                                            <button type="button" class="btn-save-prize" id="add_new_sub2">Agregar</button>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="row">
 
-	      </div>
-	      <div class="modal-footer">
-          <button type="submit" name="button" class="btn btn-success">Actualizar</button>
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	      </div>
-	  </form>
+                                <div class="col-md-6">
+                                    <div class="btn-save">
+                                        <button type="submit" class="btn-save-prize">Actualizar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-  </div>
 </div>
+
+ 
 
 <script>
   $('#categories').addClass('active-dashboard');
@@ -133,8 +200,8 @@
                       html += '<td>'+item.ID_CAT+'</td>';
                       html += '<td>'+item.NOMBRE+'</td>';
                       html += '<td>\
-                                <button class="btn btn-warning _edit" data-toggle="modal" data-target="#edit_category" value="'+item.ID_CAT+'">Editar</button>\
-                                <button class="btn btn-danger _delete" value="'+item.ID_CAT+'">Eliminar</button>\
+                                <button type="button" class="btnsCat _edit" data-toggle="modal" data-target="#edit_category" value="'+item.ID_CAT+'">Editar</button>\
+                                <button type="button" class="btnsCat _delete" value="'+item.ID_CAT+'">Eliminar</button>\
                               </td>';
                     html += '</tr>';
                 });
@@ -266,7 +333,7 @@
 
             success:function(data){
               $('#new_category').modal('toggle');
-              alertify.alert('Categoría agregada correctamente');
+              alertify.alert('¡Urra!','Categoría agregada correctamente');
               list();
             },error:function(){
               alertify.alert('Ocurrió un error, intente más tarde');
@@ -331,7 +398,7 @@
 
       $('body').on('click','._delete',function(){
           edit_id = $(this).val();
-          alertify.confirm('¿Está seguro de eliminar este registro?',function(){
+          alertify.confirm('¡Alto ahí vaquero!','¿Está seguro de eliminar este registro?',function(){
               $.ajax({
                   url:base_url()+'dashboard/category/delete',
                   type:'POST',
@@ -342,7 +409,7 @@
 
                   success:function(data){
                     if(data){
-                      alertify.alert('Registro eliminado correctamente');
+                      alertify.alert('¡Categoría eliminada!','La categoría se ha eliminado exitosamente.');
                       list();
                     }
                   },error:function(error){
