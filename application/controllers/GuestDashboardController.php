@@ -55,7 +55,7 @@ class GuestDashboardController extends CI_Controller {
 		echo json_encode($this->GuestDashboardModel->deleteProduct($data['ID_PROD']));
 	}
 
-function addProduct(){
+	function addProduct(){
 
 		$data = $this->input->post();
 		$lastId = $this->GuestDashboardModel->id_prod();
@@ -99,18 +99,15 @@ function addProduct(){
 	}
 
 	function clients(){
-		$data['users'] = $this->GuestDashboardModel->listUsers();
-		var_dump($data['users']);
-		//$data['user'] = get_user_by_id($this->session->userdata('user_id'));
-		$this->load->view('dashboard/clients',$data);
+		$this->load->view('dashboard/clients');
 	}
 
 	function settings(){
 		$this->load->view('dashboard/settings');
 	}
 
-	function swaps(){
-		$this->load->view('dashboard/swaps');
+	function orders(){
+		$this->load->view('dashboard/orders');
 	}
 
 

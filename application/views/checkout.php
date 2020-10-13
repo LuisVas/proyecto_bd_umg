@@ -16,49 +16,67 @@
 		<!-- Page -->
 		<div class="page-wrapper">
 		<?php include("header.php"); ?>
-	<div id="wrapper">
-		<!-- Page -->
-		<div class="page-wrapper">
+			<!-- Page Content -->
 			<main class="page-main">
-				<div class="block fullheight coming-soon">
+				<div class="block">
 					<div class="container">
-						<div class="logo">
-							<a href="index.html" title="Logo"><img src="images/logo.png" alt="Logo" /></a>
-						</div>
-						<div class="title">Coming soon</div>
-						<div class="countdown-squared">
-							<div class="countdown-wrapper">
-								<div class="countdown" data-promoperiod="100000000"></div>
+						<ul class="breadcrumbs">
+							<li><a href="index.html"><i class="icon icon-home"></i></a></li>
+							<li>/<span>Checkout</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="block">
+					<div class="container">
+						 
+						<div class="row">
+							<div class="col-sm-6 col-md-9">
+								<h2>Datos de envío</h2>
+								<form class="white" action="#">
+									<label>País<span class="required">*</span></label>
+									<input type="text" class="form-control">
+									<label>Dirección <span class="required">*</span></label>
+									<input type="text" class="form-control">
+									<label>Teléfono</label>
+									<input type="number" class="form-control">
+									<h2>Datos de pago</h2>
+									<label>Número de tarjeta<span class="required">*</span></label>
+									<input type="number" class="form-control">
+									<label>Vencimiento <span class="required">*</span></label>
+									<input type="number" class="form-control">
+									<label>CVV</label>
+									<input type="number" class="form-control">
+								</form>
 							</div>
-						</div>
-						<div class="wrapper wrapper-form">
-							<div class="left-col">
-								<h3>Subscribe to our news</h3>
-								<div class="clearfix"></div>
-								<input class="form-control input-lg" type="text" />
-								<button class="btn btn-lg btn-alt"><i class="icon icon-close-envelope"></i><span>Submit</span></button>
-							</div>
-							<div class="right-col">
-								<h3>Login to secret room</h3>
-								<div class="clearfix"></div>
-								<input class="form-control input-lg" type="text" />
-								<button class="btn btn-lg"><i class="icon icon-user"></i><span>Enter</span></button>
-							</div>
-							<div class="center-col">
-								<a class="icon icon-star-fill bookmark" href="#"></a>
+							<div class="col-md-3 total-wrapper">
+								<table class="total-price">
+									<tr>
+										<td>Subtotal</td>
+										<td>$241.00</td>
+									</tr> 
+									<tr class="total">
+										<td>Total</td>
+										<td>$229.00</td>
+									</tr>
+								</table>
+								<div class="cart-action">
+									<div>
+										<button class="btn">Proceder al pago</button>
+									</div> 
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</main>
-
-		</div>
-		<!-- /Page -->
-		<!-- /Page Content -->
-		<!-- Footer -->
+			<!-- /Page Content -->
+			<!-- Footer -->
 			<?php include("footer.php"); ?>
-		<!-- /Footer -->
+			<!-- /Footer -->
+		</div>
+		<!-- Page Content -->
 	</div>
+	
 	<!-- jQuery Scripts  -->
 	<script src="js/vendor/jquery/jquery.js"></script>
 	<script src="js/vendor/bootstrap/bootstrap.min.js"></script>

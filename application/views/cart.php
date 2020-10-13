@@ -22,33 +22,79 @@
 					<div class="container">
 						<ul class="breadcrumbs">
 							<li><a href="index.html"><i class="icon icon-home"></i></a></li>
-							<li>/<span>Inicio de sesión</span></li>
+							<li>/<span>Carrito de Compra</span></li>
 						</ul>
 					</div>
 				</div>
 				<div class="block">
 					<div class="container">
-						<div class="row row-eq-height">
-							<div class="col-sm-6">
-								<div class="form-card">
-									<h4>New Customers</h4>
-									<p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-									<div><a href="account-create.php" class="btn btn-lg"><i class="icon icon-user"></i><span>Create An Account</span></a></div>
+						<div class="cart-table">
+							<div class="table-header">
+								<div class="photo">
+									Imagen
+								</div>
+								<div class="name">
+									Nombre
+								</div>
+								<div class="price">
+									Precio unitario
+								</div>
+								<div class="qty">
+									Cantidad
+								</div>
+								<div class="subtotal">
+									Subtotal
+								</div>
+								<div class="remove">
+									<span class="hidden-sm hidden-xs">Remover</span>
 								</div>
 							</div>
-							<div class="col-sm-6">
-								<div class="form-card">
-									<h4>Registered Customers</h4>
-									<p>If you have an account with us, please log in.</p>
-									<form class="account-create" action="#">
-										<label>E-mail<span class="required">*</span></label>
-										<input type="text" class="form-control input-lg">
-										<label>Password<span class="required">*</span></label>
-										<input type="password" class="form-control input-lg">
-										<div>
-											<button class="btn btn-lg">Create</button><span class="required-text">* Required Fields</span></div>
-										<div class="back"><a href="#">Forgot Your Password?</a></div>
-									</form>
+							<div class="table-row">
+								<div class="photo">
+									<a href="product.html"><img src="images/products/product-1.jpg" alt=""></a>
+								</div>
+								<div class="name">
+									<a href="product.html">Boyfriend Short</a>
+								</div>
+								<div class="price">
+									$85.00
+								</div>
+								<div class="qty qty-changer">
+									<fieldset>
+										<input type="button" value="&#8210;" class="decrease">
+										<input type="text" class="qty-input" value="2" data-min="0" data-max="5">
+										<input type="button" value="+" class="increase">
+									</fieldset>
+								</div>
+								<div class="subtotal">
+									$85.00
+								</div>
+								<div class="remove">
+									<a href="#" class="icon icon-close-2"></a>
+								</div>
+							</div> 
+							<div class="table-footer">
+								<button class="btn btn-alt">Continuar comprando</button>
+								<button class="btn btn-alt pull-right"><i class="icon icon-bin"></i><span>Limpiar carrito</span></button>
+								<button class="btn btn-alt pull-right"><i class="icon icon-sync"></i><span>Actualizar</span></button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 total-wrapper">
+								<table class="total-price">
+									<tr>
+										<td>Subtotal</td>
+										<td>$241.00</td>
+									</tr> 
+									<tr class="total">
+										<td>Total</td>
+										<td>$229.00</td>
+									</tr>
+								</table>
+								<div class="cart-action">
+									<div>
+										<button class="btn">Proceder al pago</button>
+									</div> 
 								</div>
 							</div>
 						</div>
@@ -57,38 +103,7 @@
 			</main>
 			<!-- /Page Content -->
 			<!-- Footer -->
-			<footer class="page-footer variant1">
-				<div class="container">
-					<div class="under-footer">
-						<a href="#"><img src="images/banners/footer-banner.jpg" alt="Footer Banner" class="img-responsive"></a>
-					</div>
-					<div class="footer-bot">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="footer-logo">
-										<a href="#"><img src="images/logo-footer-small.png" alt="Footer Logo"></a>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="footer-social"> <a href="#" data-tooltip="Facebook"><i class="icon icon-facebook-logo icon-circled"></i></a> <a href="#" data-tooltip="Twitter"><i class="icon icon-twitter-logo icon-circled"></i></a> <a href="#" data-tooltip="Skype"><i class="icon icon-skype-logo icon-circled"></i></a> <a href="#" data-tooltip="Vimeo"><i class="icon icon-vimeo icon-circled"></i></a> </div>
-								</div>
-								<div class="col-md-4">
-									<div class="footer-payment-link">
-										<a href="#"><img src="images/payment-logo/icon-pay-1.png" alt=""></a>
-										<a href="#"><img src="images/payment-logo/icon-pay-2.png" alt=""></a>
-										<a href="#"><img src="images/payment-logo/icon-pay-3.png" alt=""></a>
-										<a href="#"><img src="images/payment-logo/icon-pay-4.png" alt=""></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="after-footer">
-						<div class="footer-copyright text-center"> © 2016 Demo Store. All Rights Reserved. </div>
-					</div>
-				</div>
-			</footer>
+			<?php include("footer.php"); ?>
 			<!-- /Footer -->
 		</div>
 		<!-- Page Content -->

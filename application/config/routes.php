@@ -52,7 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'GuestController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['referral'] = 'GuestController/referral';
+$route['cart'] = 'GuestController/cart';
+$route['checkout'] = 'GuestController/checkout';
 $route['profile'] = 'GuestController/settings';
 $route['store'] = 'GuestController/store';
 $route['updateData'] = 'GuestController/updateData';
@@ -67,13 +68,14 @@ $route['validate'] = 'SessionController/validate';
 $route['restorePass'] = 'SessionController/restorePass';
 $route['add_register'] = 'SessionController/add_register';
 $route['login'] = 'SessionController';
+$route['register'] = 'SessionController/register';
 $route['sendMail'] = 'SessionController/sendMail';
 $route['verify_account'] = 'SessionController/verify_account';
 $route['verify_email'] = 'SessionController/verify_email';
 $route['verify_mail'] = 'SessionController/verify_mail';
-$route['restore_password'] = 'SessionController/restore_password';
-$route['resetlink'] = 'SessionController/resetlink';
-$route['sendPass'] = 'SessionController/sendPass';
+//$route['restore_password'] = 'SessionController/restore_password';
+//$route['resetlink'] = 'SessionController/resetlink';
+//$route['sendPass'] = 'SessionController/sendPass';
 $route['sign_out'] = 'SessionController/sign_out';
 
 
@@ -92,17 +94,17 @@ $route['dashboard/sendPass'] = 'SessionDashboardController/sendPass';
 $route['dashboard/sign_out'] = 'SessionDashboardController/sign_out';
 
 
-//SERVICIOS DASHBOARD MEYKO
+//SERVICIOS DASHBOARD PRODUCTOS
 
 $route['dashboard'] = 'GuestDashboardController';
 $route['dashboard/see-all'] = 'GuestDashboardController/seeall';
 $route['dashboard/products'] = 'GuestDashboardController/products';
 $route['dashboard/clients'] = 'GuestDashboardController/clients';
 $route['dashboard/settings'] = 'GuestDashboardController/settings';
-$route['dashboard/swaps'] = 'GuestDashboardController/swaps';
-$route['dashboard/bills'] = 'GuestDashboardController/bills';
+$route['dashboard/orders'] = 'GuestDashboardController/orders';
+//$route['dashboard/bills'] = 'GuestDashboardController/bills';
 $route['dashboard/marketing'] = 'GuestDashboardController/marketing';
-$route['dashboard/add_instantAward'] = 'GuestDashboardController/add_instantAward';
+$route['dashboard/addProduct'] = 'GuestDashboardController/addProduct';
 $route['dashboard/addImage'] = 'GuestDashboardController/addImage';
 $route['sendMarketing'] = 'GuestDashboardController/sendMarketing';
 $route['sendMail'] = 'GuestDashboardController/sendMail';

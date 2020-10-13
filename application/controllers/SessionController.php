@@ -6,6 +6,10 @@ class SessionController extends CI_Controller{
 		$this->load->model('SessionModel');
 	}
 
+	function index(){
+		$this->load->view('login');
+	}
+
 	function sign_out(){
 		$this->session->sess_destroy();
 		header('Location: '.base_url() .'login');

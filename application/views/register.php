@@ -22,26 +22,26 @@
 					<div class="container">
 						<ul class="breadcrumbs">
 							<li><a href="index.html"><i class="icon icon-home"></i></a></li>
-							<li>/<span>Faq</span></li>
+							<li>/<span>Registro</span></li>
 						</ul>
 					</div>
 				</div>
 				<div class="block">
 					<div class="container">
 						<div class="form-card">
-							<h3>Personal Information</h3>
+							<h3>Información personal</h3>
 							<form class="account-create" action="#">
-								<label>First Name<span class="required">*</span></label>
+								<label>Nombre<span class="required">*</span></label>
 								<input type="text" class="form-control input-lg">
-								<label>Last Name<span class="required">*</span></label>
+								<label>Apellido<span class="required">*</span></label>
 								<input type="text" class="form-control input-lg">
 								<label>E-mail<span class="required">*</span></label>
 								<input type="text" class="form-control input-lg">
 								<label>Password<span class="required">*</span></label>
 								<input type="password" class="form-control input-lg">
 								<div>
-									<button class="btn btn-lg">Create</button><span class="required-text">* Required Fields</span></div>
-								<div class="back">or <a href="#">Return to Store <i class="icon icon-undo"></i></a></div>
+									<button class="btn btn-lg">Crear</button><span class="required-text">*Campos requeridos</span></div>
+								<div class="back">o <a href="<?php echo base_url()?>">Regresa a la tienda <i class="icon icon-undo"></i></a></div>
 							</form>
 						</div>
 					</div>

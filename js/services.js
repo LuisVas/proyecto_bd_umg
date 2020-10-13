@@ -1,11 +1,11 @@
 $(function(){
 	
-	$('#saveAward').click(function(){
+	$('#saveProduct').click(function(){
 		
-		var data = new FormData($('#iAwardProgram')[0]);
+		var data = new FormData($('#productForm')[0]);
 		
 		$.ajax({
-			url:base_url()+'dashboard/add_instantAward',
+			url:base_url()+'dashboard/addProduct',
 			type:'POST',
 			dataType:'JSON',
 			data:data,

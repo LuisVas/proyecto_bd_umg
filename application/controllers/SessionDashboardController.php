@@ -15,7 +15,7 @@ class SessionDashboardController extends CI_Controller{
 		}else{
 			header('Location: '.base_url().'dashboard');
 			$data['user'] = get_user_by_id($this->session->userdata('user_id'));
-			$this->load->view('dashboard/analytics',$data);
+			$this->load->view('dashboard/orders',$data);
 		}
 	}
 	function validate(){
@@ -26,18 +26,7 @@ class SessionDashboardController extends CI_Controller{
 		echo json_encode($this->SessionDashboardModel->validate($record));
 	}
 	
-	function verify_account(){
-		$this->load->view('dashboard/verify_account');
-	}
-
-	function restore_password(){
-		$this->load->view('dashboard/restore_password');
-	}
-
-	function resetlink(){
-		$this->load->view('dashboard/verify_password');
-	}
-
+ 
 	function sign_out(){
 		$this->session->sess_destroy();
 		header('Location: '.base_url().'dashboard/login');

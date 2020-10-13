@@ -4,25 +4,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class GuestController extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-
 		$this->load->model('GuestModel');
 	}
 
 	function index(){
-		$this->load->view('session');
+		$this->load->view('productos');
 	}
 
-
-
-	function referral(){
-		$this->load->view('referral');
+	function cart(){
+		$this->load->view('cart');
 	}
 
-	function settings(){
-
-		$this->load->view('profile');
+	function checkout(){
+		$this->load->view('checkout');
 	}
-
 
 	function store(){
 

@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="analytics-content">
-                        <form id="iAwardProgram" >
+                        <form id="productForm" >
                             <div class="loyalty-content">
                                 <h1>Crear producto</h1>
                                 <h2>Imagen del producto</h2>
@@ -53,10 +53,6 @@
                                         <div class="col-md-4">
                                             <h1>Nombre</h1>
                                             <input type="text" name="NOMBRE" placeholder="Ej. Camisa Polo">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <h2>Descripción</h2>
-                                            <textarea id="descTA" name="DESCRIPCION"></textarea>
                                         </div>
                                         <div class="col-md-4">
                                             <h1>Proveedor</h1>
@@ -93,9 +89,13 @@
                                               <ul class="ul_sub"></ul>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-12">
                                             <h1>Temporada</h1>
                                             <input type="number" name="ID_TEMP" placeholder="Ej. 1,2,3">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h2>Descripción</h2>
+                                            <textarea id="descTA" name="DESCRIPCION"></textarea>
                                         </div>
                                     </div>
                                 </div>
