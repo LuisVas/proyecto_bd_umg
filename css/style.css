@@ -17571,7 +17571,8 @@ select.input-sm {
 /* 5.3 Modal Popup
 -----------------------------------------------------------------*/
 body.modal-open .modal .modal-dialog {
-  margin: auto;
+    margin: auto;
+    padding: 40px;
 }
 .modal {
   text-align: center;

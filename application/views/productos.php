@@ -106,6 +106,15 @@
 						<div class="col-md-9 aside">
 							<!-- Products Grid -->
 							<div class="products-grid four-in-row product-variant-5">
+								<?php 
+                                    if(empty($productsList)){
+                                    ?>
+                                    <p>¡Ooops! ¡Tus tienda no tiene productos registrados!</p>
+                                    <?php
+                                    }else{
+                                    ?>
+                                    <?php foreach($productsList as $rec): ?>
+                                    
 								<!-- Product Item -->
 								<div class="product-item large category1">
 									<div class="product-item-inside">
@@ -117,21 +126,21 @@
 												<div class="carousel-inside slide" data-ride="carousel">
 													<div class="carousel-inner" role="listbox">
 														<div class="item active">
-															<a href="#"><img class="product-image-photo" src="images/products/product-20.jpg" alt=""></a>
+															<a href="#"><img class="product-image-photo" src="<?php echo base_url()?><?php echo $rec->IMAGEN; ?>" alt=""></a>
 														</div> 
 													</div> 
 												</div>
 												<!-- /product inside carousel -->
-												<a href="<?php base_url()?>quick-view" title="Quick View" class="quick-view-link quick-view-btn"> <i class="icon icon-eye"></i><span>Ver producto</span></a>
+												<a href="<?php base_url()?>quick-view" title="Quick View" value="<?php echo $rec->ID_PROD; ?>" name="<?php echo $rec->NOMBRE; ?>" desc="<?php echo $rec->DESCRIPCION; ?>" proveedor="<?php echo $rec->PROVEEDOR; ?>" precio="<?php echo $rec->PRECIO; ?>" existencia="<?php echo $rec->EXISTENCIA; ?>" img="<?php echo $rec->IMAGEN; ?>"  categorias="<?php echo $rec->ID_CAT; ?>" subcategorias="<?php echo $rec->ID_SUBCAT; ?>" temporada="<?php echo $rec->ID_TEMP; ?>" class="quick-view-link quick-view-btn prizeDetailSite"><span>Ver producto</span></a>
 												<!-- /product main photo  -->
 												 
 											</div>
 											<!-- /Product Photo -->
 											<!-- Product Details -->
 											<div class="product-item-details">
-												<div class="product-item-name"> <a title="Lace back mini dress" href="product-single.php" class="product-item-link">Lace back mini dress</a> </div>
-												<div class="product-item-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-												<div class="price-box"> <span class="price-container"> <span class="price-wrapper"><span class="price">$239.00</span> </span>
+												<div class="product-item-name"> <a title="<?php echo $rec->NOMBRE; ?>" href="#" class="product-item-link"><?php echo $rec->NOMBRE; ?></a> </div>
+												<div class="product-item-description"><?php echo $rec->DESCRIPCION; ?></div>
+												<div class="price-box"> <span class="price-container"> <span class="price-wrapper"><span class="price">Q.<?php echo $rec->PRECIO; ?></span> </span>
 													</span>
 												</div> 
 												<button class="btn add-to-cart" data-product="789123"> <i class="icon icon-cart"></i><span>Agregar a carrito</span> </button>
@@ -141,6 +150,11 @@
 									</div>
 								</div>
 								
+                                <?php endforeach;?>
+
+                                <?php
+                                }
+                                ?>
 
 							</div>
 							<!-- /Products Grid -->
@@ -181,15 +195,73 @@
 
 	<!-- Modal Quick View -->
 	<div class="modal quick-view zoom" id="quickView">
-		<div class="modal-dialog">
-			<div class="modalLoader-wrapper">
-				<div class="modalLoader bg-striped"></div>
-			</div>
+		<div class="modal-dialog"> 
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">&#10006;</button>
 			</div>
 			<div class="modal-content">
-				<iframe></iframe>
+				<div class="row">
+					<div class="col-sm-5">
+						<!-- Product Gallery -->
+						<div class="main-image">
+							<img id="imgProd" src="" class="zoom" alt=""/>
+						</div> 
+						<!-- /Product Gallery -->
+					</div>
+					<div class="col-sm-7">
+						<div class="product-info-block classic"> 
+							<div class="product-availability">Disponibilidad: 
+								<?php
+								if($rec->NOMBRE === 0){
+                                ?>
+									<span>Sin inventario</span>
+                                <?php
+                                }else{
+                                ?>
+                                <span>En Stock</span>
+                                <?php
+                            	}
+                                ?>
+							</div>
+							<div class="product-description">
+								<p id="descProd"></p>
+							</div>
+							<div class="product-options">
+								<div class="product-size swatches">
+									<span class="option-label">Size:</span> 
+									<ul class="size-list">
+										<li><a href="#" data-value='38'><span class="value">38</span></a></li>
+										<li><a href="#" data-value='40'><span class="value">40</span></a></li>
+										<li><a href="#" data-value='42'><span class="value">42</span></a></li>
+									</ul>
+								</div>
+								 
+								<div class="product-qty">
+									<span class="option-label">Cantidad:</span>
+									<div class="qty qty-changer">
+										<fieldset>
+											<input type="button" value="&#8210;" class="decrease">
+											<input type="text" class="qty-input" value="2" data-min="0">
+											<input type="button" value="+" class="increase">
+										</fieldset>
+									</div>
+								</div>
+							</div>
+							<div class="product-actions">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="price">
+											<span class="special-price"><span id="PriceProd"></span></span>
+										</div>
+										<div class="actions">
+											<button data-loading-text='<i class="icon icon-spinner spin"></i><span>Agregando...</span>' class="btn btn-lg btn-loading"><i class="icon icon-cart"></i><span>Agregar a carrito</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

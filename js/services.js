@@ -145,61 +145,6 @@ $(function(){
 	});
 	
 
-	$('.swapDetail').click(function(){
-		var id = $(this).val();
-		var id_canje = $(this).attr('value');
-		var date = $(this).attr('date');
-		var name = $(this).attr('name');
-		var identificacion = $(this).attr('identificacion');
-		var codigo_canje = $(this).attr('codigo_canje');
-		var cantidad_premios = $(this).attr('cantidad_premios');
-		var nombre_premio = $(this).attr('nameprize');
-		var status_redencion =$(this).attr('status_canjeo');
-		
-		
-		$('#idCanje').attr('value', id_canje);
-		$('#nameCanje').attr('value', name);
-		$('#idCliente').attr('value', identificacion);
-		$('#namePremio').attr('value', nombre_premio);
-		$('#cantPremios').attr('value', cantidad_premios);
-		$('#codCanje').attr('value', codigo_canje);
-		$('#dateCanje').attr('value', date);
-		$('#prizeStatus').attr('value', status_redencion);
-		
-		if(status_redencion == 1 ){
-			$('#prizeNotChange').attr('selected', 'selected');
-			$('#prizeChanged').removeAttr('selected');
-		}else{
-			$('#prizeNotChange').removeAttr('selected');
-			$('#prizeChanged').attr('selected', 'selected');
-		}
-		
-	});
-	
-
-	$('#canjeFormEdit').submit(function(){
-
-		$.ajax({
-			url:base_url()+'updateSwap',
-			type:'POST',
-			dataType:'JSON',
-			data:{
-				id_canje:$('#idCanje').val(),
-				status_redencion:$('#prizeStatus').val()
-			},
-			success:function(data){
-				if(data){
-					alertify.alert('¡Premio redimido!', '¡El premio se ha redimido exitosamente!', function(){ window.location.href=base_url()+'dashboard/'+'swaps';});
-				}else{
-					alertify.error('Ha ocurrido un error, intenta de nuevo');
-				}
-			},error:function(error){
-				console.log(JSON.stringify(error));
-			}
-		});
-
-		return false;
-	});
 	
 	$('.cardDetail').click(function(){
 		var id = $(this).val();

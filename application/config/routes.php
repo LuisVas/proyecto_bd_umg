@@ -56,7 +56,6 @@ $route['cart'] = 'GuestController/cart';
 $route['checkout'] = 'GuestController/checkout';
 $route['profile'] = 'GuestController/settings';
 $route['store'] = 'GuestController/store';
-$route['quick-view'] = 'GuestController/quickView';
 $route['updateData'] = 'GuestController/updateData'; 
 $route['change_prize'] = 'GuestController/change_prize';
 
@@ -66,7 +65,6 @@ $route['register'] = 'SessionController/register';
 $route['validate'] = 'SessionController/validate'; 
 $route['add_register'] = 'SessionController/add_register';
 $route['login'] = 'SessionController';
-$route['register'] = 'SessionController/register'; 
 $route['verify_email'] = 'SessionController/verify_email';
 $route['verify_mail'] = 'SessionController/verify_mail'; 
 $route['sign_out'] = 'SessionController/sign_out';
@@ -74,7 +72,6 @@ $route['sign_out'] = 'SessionController/sign_out';
 
 //SESION DASHBOARD 
 $route['dashboard/validate'] = 'SessionDashboardController/validate';
-$route['dashboard/restorePass'] = 'SessionDashboardController/restorePass';
 $route['dashboard/login'] = 'SessionDashboardController'; 
 $route['dashboard/sign_out'] = 'SessionDashboardController/sign_out';
 

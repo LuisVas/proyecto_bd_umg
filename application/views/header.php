@@ -102,8 +102,8 @@
 						<!-- Mega Menu -->
 						<div class="megamenu fadein blackout">
 							<ul class="nav"> 
-								<li class="simple-dropdowns"><a href="productos.php">Productos</a></li>  
-								<li class="simple-dropdowns"><a href="login.php">Login</a></li>
+								<li class="simple-dropdowns"><a href="<?php echo base_url()?>">Productos</a></li>  
+								<li class="simple-dropdowns"><a href="<?php echo base_url()?>login">Login</a></li>
 								
 							</ul>
 						</div>

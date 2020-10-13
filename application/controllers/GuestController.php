@@ -8,7 +8,8 @@ class GuestController extends CI_Controller {
 	}
 
 	function index(){
-		$this->load->view('productos');
+		$data['productsList'] = $this->GuestModel->productsList();
+		$this->load->view('productos',$data);
 	}
 
 	function cart(){
