@@ -56,41 +56,26 @@ $route['cart'] = 'GuestController/cart';
 $route['checkout'] = 'GuestController/checkout';
 $route['profile'] = 'GuestController/settings';
 $route['store'] = 'GuestController/store';
-$route['updateData'] = 'GuestController/updateData';
-$route['add_points'] = 'GuestController/add_points';
+$route['quick-view'] = 'GuestController/quickView';
+$route['updateData'] = 'GuestController/updateData'; 
 $route['change_prize'] = 'GuestController/change_prize';
 
 //SESION CLIENTE
 
-$route['register'] = 'SessionController/register';
-$route['validate_email'] = 'SessionController/validate_email';
-$route['validate'] = 'SessionController/validate';
-$route['restorePass'] = 'SessionController/restorePass';
+$route['register'] = 'SessionController/register'; 
+$route['validate'] = 'SessionController/validate'; 
 $route['add_register'] = 'SessionController/add_register';
 $route['login'] = 'SessionController';
-$route['register'] = 'SessionController/register';
-$route['sendMail'] = 'SessionController/sendMail';
-$route['verify_account'] = 'SessionController/verify_account';
+$route['register'] = 'SessionController/register'; 
 $route['verify_email'] = 'SessionController/verify_email';
-$route['verify_mail'] = 'SessionController/verify_mail';
-//$route['restore_password'] = 'SessionController/restore_password';
-//$route['resetlink'] = 'SessionController/resetlink';
-//$route['sendPass'] = 'SessionController/sendPass';
+$route['verify_mail'] = 'SessionController/verify_mail'; 
 $route['sign_out'] = 'SessionController/sign_out';
 
 
-//SESION DASHBOARD
-// $route['validate_email'] = 'SessionDashboardController/validate_email';
+//SESION DASHBOARD 
 $route['dashboard/validate'] = 'SessionDashboardController/validate';
 $route['dashboard/restorePass'] = 'SessionDashboardController/restorePass';
-$route['dashboard/login'] = 'SessionDashboardController';
-$route['dashboard/sendMail'] = 'SessionDashboardController/sendMail';
-$route['dashboard/verify_account'] = 'SessionDashboardController/verify_account';
-$route['dashboard/verify_email'] = 'SessionDashboardController/verify_email';
-$route['dashboard/verify_mail'] = 'SessionDashboardController/verify_mail';
-$route['dashboard/restore_password'] = 'SessionDashboardController/restore_password';
-$route['dashboard/resetlink'] = 'SessionDashboardController/resetlink';
-$route['dashboard/sendPass'] = 'SessionDashboardController/sendPass';
+$route['dashboard/login'] = 'SessionDashboardController'; 
 $route['dashboard/sign_out'] = 'SessionDashboardController/sign_out';
 
 
@@ -99,18 +84,12 @@ $route['dashboard/sign_out'] = 'SessionDashboardController/sign_out';
 $route['dashboard'] = 'GuestDashboardController';
 $route['dashboard/see-all'] = 'GuestDashboardController/seeall';
 $route['dashboard/products'] = 'GuestDashboardController/products';
-$route['dashboard/clients'] = 'GuestDashboardController/clients';
-$route['dashboard/settings'] = 'GuestDashboardController/settings';
+$route['dashboard/clients'] = 'GuestDashboardController/clients'; 
 $route['dashboard/orders'] = 'GuestDashboardController/orders';
-//$route['dashboard/bills'] = 'GuestDashboardController/bills';
-$route['dashboard/marketing'] = 'GuestDashboardController/marketing';
 $route['dashboard/addProduct'] = 'GuestDashboardController/addProduct';
 $route['dashboard/addImage'] = 'GuestDashboardController/addImage';
-$route['sendMarketing'] = 'GuestDashboardController/sendMarketing';
-$route['sendMail'] = 'GuestDashboardController/sendMail';
 $route['updateDataDashboard'] = 'GuestDashboardController/updateDataDashboard';
 $route['updateDataClient'] = 'GuestDashboardController/updateDataClient';
-$route['updateSwap'] = 'GuestDashboardController/updateSwap';
 $route['add_register_user'] = 'GuestDashboardController/add_register_user';
 $route['deleteClient'] = 'GuestDashboardController/deleteClient';
 $route['deleteProduct'] = 'GuestDashboardController/deleteProduct';

@@ -9,7 +9,7 @@ class GuestDashboardController extends CI_Controller {
 	}
 
 	function index(){
-		$this->load->view('dashboard/analytics');
+		$this->load->view('dashboard/orders');
 	}
 
 	function seeall(){

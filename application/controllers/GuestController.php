@@ -19,6 +19,10 @@ class GuestController extends CI_Controller {
 		$this->load->view('checkout');
 	}
 
+	function quickView(){
+		$this->load->view('quick-view');
+	}
+
 	function store(){
 
 		$this->load->view('tienda/index');

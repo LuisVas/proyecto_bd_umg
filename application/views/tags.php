@@ -1,7 +1,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Tienda de ropa Rubik y Fernando</title>
+	<title>Tienda de ropa</title>
 	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="favicon.ico">
 

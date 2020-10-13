@@ -1,24 +1,10 @@
 	<!-- Header -->
-			<header class="page-header fullboxed variant-9 sticky always">
-				<!-- Header Top Row -->
-				<div class="header-top-row">
-					<div class="container">
-						<div class="header-top-left">
-							<div class="header-custom-text">
-								<span class="hidden-xs"><i class="icon icon-location"></i> Guatemala City</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /Header Top Row -->
+			<header class="page-header fullboxed variant-9 sticky always"> 
 				<div class="navbar">
-					<div class="container">
-						<!-- Menu Toggle -->
-						<div class="menu-toggle"><a href="#" class="mobilemenu-toggle"><i class="icon icon-menu"></i></a></div>
-						<!-- /Menu Toggle -->
+					<div class="container"> 
 						<!-- Header Cart -->
 						<div class="header-link dropdown-link header-cart variant-1">
-							<a href="<?php echo base_url()?>cart"> <i class="icon icon-cart"></i> <span class="badge">3</span> </a>
+							<a href="<?php echo base_url()?>cart"> <i class="icon icon-cart"></i> <span class="badge">0</span> </a>
 							<!-- minicart wrapper -->
 							<div class="dropdown-container right">
 								<!-- minicart content -->
@@ -109,7 +95,7 @@
 						
 						<!-- Logo -->
 						<div class="header-logo">
-							<a href="index.html" title="Logo"><img src="images/logo.png" alt="Logo" /></a>
+							<a href="<?php echo base_url()?>" title="Logo"><img src="images/logo.png" alt="Logo" /></a>
 						</div>
 						<!-- /Logo -->
 						
