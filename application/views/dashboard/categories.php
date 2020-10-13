@@ -92,6 +92,10 @@
               <p>Asignar sub categorías</p>
               <ul class="ul_sub ul_categories update"></ul>
             </div>
+            <div>
+              <input type="text" class="new_sub_name2" class="form-control">
+              <button type="button" id="add_new_sub2">Agregar</button>
+            </div>
 
 	      </div>
 	      <div class="modal-footer">
@@ -202,9 +206,40 @@
             return false;
           }
       });
-
       $('#add_new_sub').click(function(){
           add_new_sub();
+      });
+
+      function add_new_sub2(){
+        var value = $('.new_sub_name2').val();
+        $.ajax({
+            url:base_url()+'dashboard/category/add_sub_categories',
+            type:'POST',
+            dataType:'JSON',
+            data:{
+              name:value
+            },
+
+            success:function(data){
+              if(data){
+                list_sub_categories();
+                $('.new_sub_name2').val('');
+              }
+            },error:function(error){
+
+            }
+        });
+      }
+
+      $('.new_sub_name2').keypress(function(e){
+          var key = e.which;
+          if(key == 13){
+            add_new_sub2();
+            return false;
+          }
+      });
+      $('#add_new_sub2').click(function(){
+          add_new_sub2();
       });
 
       function get_sub_categories(edit = false){

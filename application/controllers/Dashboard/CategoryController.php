@@ -34,11 +34,8 @@ class CategoryController extends CI_Controller{
 
   function update(){
     if($this->CategoryModel->update_category($this->input->post())){
-      if($this->CategoryModel->unassign_sub_categories($this->input->post('id'))){
-          echo json_encode($this->CategoryModel->assign_sub_categories($this->input->post('sub'),$this->input->post('id')));
-      }else{
-          echo json_encode(false);
-      }
+      $this->CategoryModel->unassign_sub_categories($this->input->post('id'));
+      echo json_encode($this->CategoryModel->assign_sub_categories($this->input->post('sub'),$this->input->post('id')));
   }else{
       echo json_encode(false);
     }
@@ -51,7 +48,7 @@ class CategoryController extends CI_Controller{
   // SubCategories -------------------------------------------------------------
 
   function get_sub_categories(){
-    echo json_encode($this->CategoryModel->get_sub_categories($this->input->post('id')));
+    echo json_encode($this->CategoryModel->get_sub_categories($this->input->post('sub')));
   }
 
   function list_sub_categories(){

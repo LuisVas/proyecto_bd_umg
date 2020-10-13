@@ -62,12 +62,29 @@ class CategoryModel extends CI_Model{
     return ($this->db->affected_rows() > 0 ? true : false);
   }
 
-  function get_sub_categories(){
-    $this->db->select('*')
-    ->from('SUBCAT');
+  function get_sub_categories($sub){
+    if(!$sub) return false;
+
+    $this->db->select('SUB_ID,CAT_ID,ID_SUBCAT,NOMBRE')
+    ->from('DETALLE_CAT_SUB')
+    ->join('SUBCAT','SUBCAT.ID_SUBCAT = DETALLE_CAT_SUB.SUB_ID')
+    ->where("CAT_ID IN (".$sub.")",NULL, false);
 
     $query = $this->db->get();
-    return ($query->num_rows() > 0 ? $query->result() : false);
+
+    if($query->num_rows() > 0){
+      $args = array();
+      foreach($query->result_array() as $rec){
+        if(!is_in_array($args,'SUB_ID',$rec['SUB_ID'])){
+          array_push($args,$rec);
+        }
+      }
+
+      return $args ?? false;
+
+    }else{
+      return false;
+    }
   }
 
   function list_sub_categories(){
@@ -95,7 +112,7 @@ class CategoryModel extends CI_Model{
 
   function get_assign_sub_categories($cat_id){
 
-    $sub_categories = $this->get_sub_categories();
+    $sub_categories = $this->db->select('*')->from('SUBCAT')->get()->result();
 
     $this->db->select('*')
     ->from('DETALLE_CAT_SUB')

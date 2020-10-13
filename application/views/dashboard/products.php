@@ -121,6 +121,20 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
+
+      function get_sub_categories(edit = false){
+        var data = "";
+        var count = 0;
+        $('.ul_categories li').each(function(){
+          if($(this).find('input').is(':checked')){
+            data += (count > 0 ? "," : "") + $(this).find('input').val();
+            count++;
+          }
+        });
+
+        return data;
+      }
+
       $('body').on('click','.select_category',function(){
            var id = $(this).val();
 
@@ -129,10 +143,25 @@
               type:'POST',
               dataType:'JSON',
               data:{
-                id:id
+                sub:get_sub_categories()
+
               },success:function(data){
                 if(data){
+                  var html = '';
+                  $.each(data,function(i,item){
+                    html += '\
+                      <li>\
+                        <label class="block w100 pointer">\
+                          <input type="checkbox" class="select_sub_category" value="'+item.ID_SUBCAT+'" name="'+item.NOMBRE+'">\
+                          <span>'+item.NOMBRE+'</span>\
+                        </label>\
+                      </li>\
+                    ';
+                  });
 
+                  $('.ul_sub').html(html);
+                }else{
+                  $('.ul_sub').html('');
                 }
               },error:function(error){
 
@@ -142,6 +171,12 @@
   });
 </script>
 
+<style media="screen">
+  .ul_sub{padding: 0px;margin:0px;}
+  .ul_sub li{list-style: none;width:100%;}
+  .ul_sub li label{display: flex;width:100%;align-items: center;}
+  .ul_sub li label input{max-width: 10px;margin-right: 10px;}
+</style>
 
 </body>
 </html>

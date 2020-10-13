@@ -42,7 +42,7 @@
 				</g>
 			</g>
 		</svg>categorías</li></a>
-			
+
 			<a id="services" data-toggle="collapse" href="#serviciosCollapse" role="button" aria-expanded="false" aria-controls="serviciosCollapse"><li><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 478" style="enable-background:new 0 0 500 478;" xml:space="preserve">
 			<g>
 				<g>
@@ -62,7 +62,7 @@
 			</svg></li></a>
 			<div class="collapse" id="serviciosCollapse">
 				<a id="vertodos" href="<?php echo base_url() ?>dashboard/see-all"><li>ver todos</li></a>
-				<a id="premios" href="<?php echo base_url() ?>dashboard/awards"><li>crear producto</li></a>
+				<a id="premios" href="<?php echo base_url() ?>dashboard/products"><li>crear producto</li></a>
 			</div>
 
 			<a id="clientes" href="<?php echo base_url() ?>dashboard/clients"><li><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 419" style="enable-background:new 0 0 500 419;" xml:space="preserve">
@@ -76,7 +76,7 @@
 			</g>
 			</svg>clientes</li></a>
 
-			
+
 			<a id="marketing" href="<?php echo base_url() ?>dashboard/marketing"><li><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 			<g>
 				<g>
@@ -115,7 +115,7 @@
 			</g>
 			</svg>tarjetas para compras</li></a>
 
-			
+
 
 			<a id="configuracion" href="<?php echo base_url() ?>dashboard/sign_out"><li><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 			<path d="M362,392v40c0,44.1-35.9,80-80,80H81c-44.1,0-80-35.9-80-80V80C1,35.9,36.9,0,81,0h201c44.1,0,80,35.9,80,80v40
