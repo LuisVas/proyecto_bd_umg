@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <script src="<?= base_url(); ?>js/vendor/jquery/jquery.js"></script>
     <script src="<?= base_url(); ?>js/session.js"></script>
-    <title>Login Meyko | Dashboard</title>
+    <title>Login | Dashboard</title>
 
 
  <?php include ("tags.php");?>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-    <title>Analytics | Dashboard</title>
+    <title>Categorías | Dashboard</title>
 
     <?php include ("tags.php");?>
 
@@ -100,6 +100,7 @@
 </div>
 
 <script>
+  $('#categories').addClass('active-dashboard');
   $(document).ready(function(){
 
     var edit_id = 0;
