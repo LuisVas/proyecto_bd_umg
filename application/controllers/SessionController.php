@@ -23,4 +23,8 @@ class SessionController extends CI_Controller{
 		echo json_encode($this->SessionModel->validate($this->input->post()));
 	}
 
+	function validate_user(){
+		echo json_encode($this->SessionModel->validate_user($this->input->post()));
+	}
+
 }

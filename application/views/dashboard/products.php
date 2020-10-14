@@ -8,6 +8,8 @@
 
     <?php include ("tags.php");?>
 
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
  </head>
 
@@ -31,7 +33,7 @@
                         </div>
                     </div>
                     <div class="analytics-content">
-                        <form id="productForm" >
+                        <form id="productForm">
                             <div class="loyalty-content">
                                 <h1>Crear producto</h1>
                                 <h2>Imagen del producto</h2>
@@ -44,12 +46,12 @@
                                         </div>
                                         <div class="col-md-9">
                                             <div class="upload-logo">
-                                                <input type="file" id="awardPic" name="IMAGEN">
+                                                <input type="file" id="awardPic" name="photoAward">
                                             </div>
                                         </div>
                                     </div>
                                     <h2>Información del producto</h2>
-                                    <div class="row">
+                                    <div class="row _parameters">
                                         <div class="col-md-4">
                                             <h1>Nombre</h1>
                                             <input type="text" name="NOMBRE" placeholder="Ej. Camisa Polo">
@@ -74,7 +76,7 @@
                                                 <?php foreach($categories as $rec){ ?>
                                                   <li>
                                                     <label class="block w100 pointer">
-                                                      <input type="checkbox" class="select_category" value="<?= $rec->ID_CAT; ?>" name="<?= $rec->NOMBRE; ?>">
+                                                      <input type="checkbox" class="select_category" value="<?= $rec->ID_CAT; ?>">
                                                       <span><?= $rec->NOMBRE; ?></span>
                                                     </label>
                                                   </li>
@@ -91,7 +93,12 @@
                                         </div>
                                         <div class="col-md-12">
                                             <h1>Temporada</h1>
-                                            <input type="number" name="ID_TEMP" placeholder="Ej. 1,2,3">
+                                            <select class="" name="ID_TEMP" id="ID_TEMP">
+                                              <option value="1">Invierno</option>
+                                              <option value="2">Verano</option>
+                                              <option value="3">Otoño</option>
+                                              <option value="4">Primavera</option>
+                                            </select>
                                         </div>
                                         <div class="col-md-12">
                                             <h2>Descripción</h2>
@@ -101,7 +108,7 @@
                                 </div>
                             </div>
                             <div class="btn-save">
-                                <button class="btn-save-prize" id="saveProduct">Guardar</button>
+                                <button class="btn-save-prize" type="submit">Guardar</button>
                             </div>
                         </form>
                     </div>
@@ -121,6 +128,8 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
+
+    $('#ID_TEMP').select2();
 
       function get_sub_categories(edit = false){
         var data = "";
@@ -152,7 +161,7 @@
                     html += '\
                       <li>\
                         <label class="block w100 pointer">\
-                          <input type="checkbox" class="select_sub_category" value="'+item.ID_SUBCAT+'" name="'+item.NOMBRE+'">\
+                          <input type="checkbox" class="select_sub_category" value="'+item.ID_SUBCAT+'">\
                           <span>'+item.NOMBRE+'</span>\
                         </label>\
                       </li>\
@@ -176,6 +185,7 @@
   .ul_sub li{list-style: none;width:100%;}
   .ul_sub li label{display: flex;width:100%;align-items: center;}
   .ul_sub li label input{max-width: 10px;margin-right: 10px;}
+  ._parameters > div{margin:25px 0px;}
 </style>
 
 </body>

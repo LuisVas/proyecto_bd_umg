@@ -6,7 +6,7 @@
 </head>
 
 <body class="boxed bg-white">
-	
+
 	<div class="fixed-btns">
 		<!-- Back To Top -->
 		<a href="#" class="top-fixed-btn back-to-top"><i class="icon icon-arrow-up"></i></a>
@@ -28,13 +28,15 @@
 				</div>
 				<div class="block">
 					<div class="container">
-						 
+
+						<?php $user = get_user_by_id($this->session->userdata('user')->ID_USU); ?>
+
 						<div class="row">
 							<div class="col-sm-6 col-md-9">
 								<h2>Datos de envío</h2>
 								<form class="white" action="#">
 									<label>País<span class="required">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?= $user->NACIONALIDAD; ?>">
 									<label>Dirección <span class="required">*</span></label>
 									<input type="text" class="form-control">
 									<label>Teléfono</label>
@@ -53,7 +55,7 @@
 									<tr>
 										<td>Subtotal</td>
 										<td>$241.00</td>
-									</tr> 
+									</tr>
 									<tr class="total">
 										<td>Total</td>
 										<td>$229.00</td>
@@ -62,7 +64,7 @@
 								<div class="cart-action">
 									<div>
 										<button class="btn">Proceder al pago</button>
-									</div> 
+									</div>
 								</div>
 							</div>
 						</div>
@@ -76,7 +78,7 @@
 		</div>
 		<!-- Page Content -->
 	</div>
-	
+
 	<!-- jQuery Scripts  -->
 	<script src="js/vendor/jquery/jquery.js"></script>
 	<script src="js/vendor/bootstrap/bootstrap.min.js"></script>

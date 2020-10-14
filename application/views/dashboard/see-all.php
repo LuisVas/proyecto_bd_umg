@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <title>Ver todos los productos | Dashboard</title>
-        
+
     <?php include ("tags.php");?>
-    
+
  </head>
 <body>
 <div class="container-dash">
@@ -43,8 +43,8 @@
                                                     <th scope="col">Acciones</th>
                                                 </tr>
                                             </thead>
-                                            <tbody> 
-                                                <?php 
+                                            <tbody>
+                                                <?php
                                                 if(empty($productsList)){
                                                 ?>
                                                 <p>¡Ooops! ¡Tus tienda no tiene productos registrados!</p>
@@ -154,7 +154,7 @@
             <div class="modal-body">
                 <div class="NewServices">
                     <div class="bills-body">
-                        <form id="productForm">
+                        <form id="form_update_product">
                                 <h1>Editar producto</h1>
                                 <input type="hidden" id="idPrize" name="ID_PROD" value="">
                                 <h2>Imagen del producto</h2>
@@ -237,4 +237,3 @@
 </script>
 </body>
 </html>
-

@@ -17,33 +17,23 @@ class GuestDashboardController extends CI_Controller {
 		$this->load->view('dashboard/see-all',$data);
 	}
 	function updateDataProduct(){
-		//$id_nuevo = $this->GuestDashboardModel->id_prod() + 1;
 		$data = $this->input->post();
-		//var_dump($_FILES['photoLoyalty']);
 
 		if($_FILES['photoAward']){
 
-			// Set preference
-			$config['upload_path'] = 'images/'; 
-			$config['allowed_types'] = '*';
-			$config['max_size'] = '7167800'; // max_size in kb
-			$config['file_name'] = $_FILES['photoAward']['name'];
+				$config['upload_path'] = 'images/';
+				$config['allowed_types'] = '*';
+				$config['max_size'] = '7167800'; // max_size in kb
+				$config['file_name'] = $_FILES['photoAward']['name'];
 
-			//Load upload library
-			$this->load->library('upload',$config); 
-				// File upload
-			if($this->upload->do_upload('photoAward')){
-			// Get data about the file
-			$uploadData = $this->upload->data();
+				$this->load->library('upload',$config);
+				if($this->upload->do_upload('photoAward')){
+					$uploadData = $this->upload->data();
 
-			$data['IMAGEN'] = 'images/'.$uploadData['file_name'];
+					$data['IMAGEN'] = 'images/'.$uploadData['file_name'];
 
-			}else{
-				//echo "error";
-			}
+				}
 		}
-
-		
 
 		echo json_encode($this->GuestDashboardModel->updateDataProduct($data,$data['ID_PROD']));
 	}
@@ -58,44 +48,31 @@ class GuestDashboardController extends CI_Controller {
 	function addProduct(){
 
 		$data = $this->input->post();
-		$lastId = $this->GuestDashboardModel->id_prod();
-		//var_dump($lastId);
-		$data['ID_PROD'] = $lastId + 1;
-
-		//var_dump($_FILES['photoLoyalty']);
+		$data['ID_PROD'] = get_next_id('PROD','ID_PROD');
 
 		if($_FILES['photoAward']){
 
-			// Set preference
 			$config['upload_path'] = 'images/';
 			$config['allowed_types'] = '*';
-			$config['max_size'] = '7167800'; // max_size in kb
+			$config['max_size'] = '7167800';
 			$config['file_name'] = $_FILES['photoAward']['name'];
 
-			//Load upload library
 			$this->load->library('upload',$config);
-				// File upload
 			if($this->upload->do_upload('photoAward')){
-			// Get data about the file
-			$uploadData = $this->upload->data();
-
-			$data['img_premio'] = 'images/'.$uploadData['file_name'];
-
-			}else{
-				echo "error";
+				$uploadData = $this->upload->data();
+				$data['IMAGEN'] = 'images/'.$uploadData['file_name'];
 			}
 		}
 
-
-		echo json_encode($this->GuestDashboardModel->add_service($data));
+		echo json_encode($this->GuestDashboardModel->addProduct($data));
 	}
 
 
 
-	function products(){ 
+	function products(){
 		$lastId = $this->GuestDashboardModel->id_prod();
 		//var_dump($lastId);
-		$this->load->view('dashboard/products');		
+		$this->load->view('dashboard/products');
 	}
 
 	function clients(){
@@ -119,14 +96,14 @@ class GuestDashboardController extends CI_Controller {
 
 	function updateDataCard(){
 		$data = $this->input->post();
-		
+
 		echo json_encode($this->GuestDashboardModel->updateDataCard($data,$data['ID_TAR']));
 	}
 
 	function addCard(){
 
 		$data = $this->input->post();
-		$data['ID_TAR'] = 3;
+		$data['ID_TAR'] = get_next_id('TAR','ID_TAR');
 		echo json_encode($this->GuestDashboardModel->addCard($data));
 	}
 
@@ -138,7 +115,7 @@ class GuestDashboardController extends CI_Controller {
 
 	function updateDataUser(){
 		$data = $this->input->post();
-		
+
 		echo json_encode($this->GuestDashboardModel->updateDataUser($data,$data['ID_USU']));
 	}
 

@@ -25,8 +25,11 @@ class GuestController extends CI_Controller {
 	}
 
 	function store(){
-
 		$this->load->view('tienda/index');
+	}
+
+	function get_product(){
+		echo json_encode($this->GuestModel->get_product($this->input->post('id')));
 	}
 
 }

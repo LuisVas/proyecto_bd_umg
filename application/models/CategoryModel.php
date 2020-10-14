@@ -80,7 +80,7 @@ class CategoryModel extends CI_Model{
         }
       }
 
-      return $args ?? false;
+      return $args;
 
     }else{
       return false;

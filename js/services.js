@@ -1,11 +1,11 @@
 $(function(){
-	
-	$('#saveProduct').click(function(){
-		
-		var data = new FormData($('#productForm')[0]);
-		
+
+	$('#form_update_product').submit(function(){
+
+		var data = new FormData($('#form_update_product')[0]);
+
 		$.ajax({
-			url:base_url()+'dashboard/addProduct',
+			url:base_url()+'updateDataProduct',
 			type:'POST',
 			dataType:'JSON',
 			data:data,
@@ -15,7 +15,7 @@ $(function(){
 
 			success:function(data){
 				if(data){
-					alertify.success('¡Premio agregado exitosamente!');
+					// alertify.success('¡Premio agregado exitosamente!');
 					$('input[type="text"]').val('');
 					$('#awardPicPrev').attr('src','../images/uploadimage.png');
 					$('#awardPic').val('');
@@ -40,18 +40,18 @@ $(function(){
 		var file, img;
 		if ((file = this.files[0])) {
 			 img = new Image();
-			 img.onload = function () {					 	
+			 img.onload = function () {
 
 				 for (var i = 0, f; f = files[i]; i++) {
 					 if (!f.type.match('image.*')) {
 						 continue;
 					 }
- 					
+
  					var reader = new FileReader();
 					reader.onload = (function(theFile) {
-						
+
 					return function(e) {
-						
+
 						if(img.naturalWidth > 768 || img.naturalHeight > 2432){
 							alertify.alert('Uuups', 'La imagen que intentas subir excede los límites permitidos, te sugerimos que la misma tenga las siguientes dimensiones: 768 x 2432 píxeles.');
 							return;
@@ -70,7 +70,7 @@ $(function(){
 			 img.src = _URL.createObjectURL(file);
 		}
 	});
-	
+
 	$('.prizeDetail').click(function(){
 		var id = $(this).val();
 		var idPrize = $(this).attr('value');
@@ -84,7 +84,7 @@ $(function(){
 		var subcategorias = $(this).attr('subcategorias');
 		var temporada = $(this).attr('temporada');
 
-		
+
 		$('#idPrize').attr('value', idPrize);
 		$('#awardPicPrevEdit').attr('src', '../'+img);
 		$('#awardPic').attr('value', '../'+img);
@@ -97,11 +97,11 @@ $(function(){
 		$('#temporada').attr('value',temporada);
 		$('#Desc').val(desc);
 
-		
+
 	});
-	
+
 	$('.deletePrize').click(function(){
-		
+
 		alertify.confirm('¡Alto ahí vaquero!','¿Estás seguro de eliminar este registro? Esta acción no se puede revertir.',function(){
 			$.ajax({
 				url:base_url()+'deleteProduct',
@@ -119,11 +119,39 @@ $(function(){
 		},function(){});
 	});
 
+	function get_categories(edit = false){
+		var data = "";
+		var count = 0;
+		$('.ul_categories li').each(function(){
+			if($(this).find('input').is(':checked')){
+				data += (count > 0 ? "," : "") + $(this).find('input').val();
+				count++;
+			}
+		});
+
+		return data;
+	}
+
+	function get_sub_categories(){
+		var data = "";
+		var count = 0;
+		$('.ul_sub li').each(function(){
+			if($(this).find('input').is(':checked')){
+				data += (count > 0 ? "," : "") + $(this).find('input').val();
+				count++;
+			}
+		});
+
+		return data;
+	}
 
 	$('#productForm').submit(function(){
 		var data = new FormData($('#productForm')[0]);
+		data.append('ID_CAT',get_categories());
+		data.append('ID_SUBCAT',get_sub_categories());
+
 		$.ajax({
-			url:base_url()+'updateDataProduct',
+			url:base_url()+'dashboard/addProduct',
 			type:'POST',
 			dataType:'JSON',
 			data:data,
@@ -143,9 +171,9 @@ $(function(){
 
 		return false;
 	});
-	
 
-	
+
+
 	$('.cardDetail').click(function(){
 		var id = $(this).val();
 		var idCard = $(this).attr('value');
@@ -155,15 +183,15 @@ $(function(){
 		var tarCvv = $(this).attr('cvv');
 		var tarSaldo = $(this).attr('saldo');
 
-		
+
 		$('#idCard').attr('value', idCard);
 		$('#tarName').attr('value', tarName);
 		$('#tarNumber').attr('value', tarNumber);
 		$('#tarVenc').attr('value', tarVenc);
 		$('#tarCvv').attr('value', tarCvv);
 		$('#tarSaldo').attr('value', tarSaldo);
-		
-	});	
+
+	});
 
 	$('#cardForm').submit(function(){
 		var data = new FormData($('#cardForm')[0]);
@@ -189,9 +217,9 @@ $(function(){
 		return false;
 	});
 	$('#addCard').click(function(){
-		
+
 		var data = new FormData($('#NewCardForm')[0]);
-		
+
 		$.ajax({
 			url:base_url()+'dashboard/addCard',
 			type:'POST',
@@ -216,7 +244,7 @@ $(function(){
 		return false;
 	});
 	$('.deleteCard').click(function(){
-		
+
 		alertify.confirm('¡Alto ahí vaquero!','¿Estás seguro de eliminar este registro? Esta acción no se puede revertir.',function(){
 			$.ajax({
 				url:base_url()+'deleteCard',
@@ -246,7 +274,7 @@ $(function(){
 		var nacUsu = $(this).attr('nacionalidad');
 		var passUsu = $(this).attr('password');
 
-		
+
 		$('#idUsu').attr('value', idUsu);
 		$('#nomUsu').attr('value', nomUsu);
 		$('#apUsu').attr('value', apUsu);
@@ -256,8 +284,8 @@ $(function(){
 		$('#codUsu').attr('value', codUsu);
 		$('#nacUsu').attr('value', nacUsu);
 		$('#passUsu').attr('value', passUsu);
-		
-	});	
+
+	});
 
 	$('#usereditForm').submit(function(){
 		var data = new FormData($('#usereditForm')[0]);

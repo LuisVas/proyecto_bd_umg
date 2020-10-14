@@ -17,13 +17,13 @@ class GuestDashboardModel extends CI_Model{
 		}
 	}
 
-	
+
 	function deleteProduct($ID_PROD){
     	$this->db->where('ID_PROD', $ID_PROD);
     	$this->db->delete('PROD');
-		
+
 		return true;
-	}	
+	}
 
 	function id_prod(){
 		$this->db->select('*')
@@ -45,19 +45,24 @@ class GuestDashboardModel extends CI_Model{
 		$this->db->select('*')
 		->from('PROD');
 		$query = $this->db->get();
-		
+
 		if($query->num_rows() > 0){
 			return $query->result();
 		}else{
 			return false;
 		}
-	}	
+	}
+
+	function addProduct($data){
+		$this->db->insert('PROD',$data);
+		return ($this->db->affected_rows() > 0 ? true : false);
+	}
 
 	function cardsList(){
 		$this->db->select('*')
 		->from('TAR');
 		$query = $this->db->get();
-		
+
 		if($query->num_rows() > 0){
 			return $query->result();
 		}else{
@@ -86,19 +91,19 @@ class GuestDashboardModel extends CI_Model{
 		}else{
 			return false;
 		}
-	}	
+	}
 	function deleteCard($ID_TAR){
     	$this->db->where('ID_TAR', $ID_TAR);
     	$this->db->delete('TAR');
-		
+
 		return true;
-	}	
+	}
 
 	function userList(){
 		$this->db->select('*')
 		->from('USU');
 		$query = $this->db->get();
-		
+
 		if($query->num_rows() > 0){
 			return $query->result();
 		}else{

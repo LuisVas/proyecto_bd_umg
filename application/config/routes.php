@@ -56,23 +56,25 @@ $route['cart'] = 'GuestController/cart';
 $route['checkout'] = 'GuestController/checkout';
 $route['profile'] = 'GuestController/settings';
 $route['store'] = 'GuestController/store';
-$route['updateData'] = 'GuestController/updateData'; 
+$route['updateData'] = 'GuestController/updateData';
 $route['change_prize'] = 'GuestController/change_prize';
+$route['get_product'] = 'GuestController/get_product';
 
 //SESION CLIENTE
 
-$route['register'] = 'SessionController/register'; 
-$route['validate'] = 'SessionController/validate'; 
+$route['register'] = 'SessionController/register';
+$route['validate'] = 'SessionController/validate';
+$route['validate_user'] = 'SessionController/validate_user';
 $route['add_register'] = 'SessionController/add_register';
 $route['login'] = 'SessionController';
 $route['verify_email'] = 'SessionController/verify_email';
-$route['verify_mail'] = 'SessionController/verify_mail'; 
+$route['verify_mail'] = 'SessionController/verify_mail';
 $route['sign_out'] = 'SessionController/sign_out';
 
 
-//SESION DASHBOARD 
+//SESION DASHBOARD
 $route['dashboard/validate'] = 'SessionDashboardController/validate';
-$route['dashboard/login'] = 'SessionDashboardController'; 
+$route['dashboard/login'] = 'SessionDashboardController';
 $route['dashboard/sign_out'] = 'SessionDashboardController/sign_out';
 
 
@@ -81,7 +83,7 @@ $route['dashboard/sign_out'] = 'SessionDashboardController/sign_out';
 $route['dashboard'] = 'GuestDashboardController';
 $route['dashboard/see-all'] = 'GuestDashboardController/seeall';
 $route['dashboard/products'] = 'GuestDashboardController/products';
-$route['dashboard/clients'] = 'GuestDashboardController/clients'; 
+$route['dashboard/clients'] = 'GuestDashboardController/clients';
 $route['dashboard/orders'] = 'GuestDashboardController/orders';
 $route['dashboard/addProduct'] = 'GuestDashboardController/addProduct';
 $route['dashboard/addImage'] = 'GuestDashboardController/addImage';

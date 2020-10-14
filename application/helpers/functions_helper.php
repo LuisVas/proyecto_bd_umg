@@ -73,9 +73,7 @@ function load_lang(){
 
 function get_user_by_id($id){
     $ci = get_instance();
-    $ci->db->select('*')->from('usuarios')->where('id_usuario',$id);
-
-
+    $ci->db->select('*')->from('USU')->where('ID_USU',$id);
 
     $query = $ci->db->get();
 
