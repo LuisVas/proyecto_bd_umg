@@ -118,6 +118,18 @@ class GuestDashboardModel extends CI_Model{
 			return false;
 		}
 	}
+
+	function ordersList(){
+		$this->db->select('*')
+		->from('TRANS');
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0){
+			return $query->result();
+		}else{
+			return false;
+		}
+	}
 }
 
  ?>

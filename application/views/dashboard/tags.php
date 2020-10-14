@@ -1,5 +1,4 @@
-<link rel="icon" href="<?php echo base_url() ?>images/favicon.ico" type="image/x-icon"/>
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="<?php echo base_url() ?>js/bootstrap.js"></script>
 <script src="<?php echo base_url() ?>js/alertify.js"></script>

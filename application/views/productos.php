@@ -42,7 +42,7 @@
 					<!-- Two columns -->
 					<div class="row row-table">
 						<!-- Left column -->
-						<div class="col-md-3 filter-col fixed aside">
+						<!--div class="col-md-3 filter-col fixed aside">
 							<div class="filter-container">
 								<div class="fstart"></div>
 								<div class="fixed-wrapper">
@@ -100,7 +100,7 @@
 								</div>
 								<div class="fend"></div>
 							</div>
-						</div>
+						</div-->
 						<!-- /Left column -->
 						<!-- Center column -->
 						<div class="col-md-9 aside">
@@ -109,7 +109,7 @@
 								<?php 
                                     if(empty($productsList)){
                                     ?>
-                                    <p>¡Ooops! ¡Tus tienda no tiene productos registrados!</p>
+                                    <p>¡Ooops! ¡Tu tienda no tiene productos registrados!</p>
                                     <?php
                                     }else{
                                     ?>

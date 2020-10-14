@@ -27,7 +27,7 @@
             </div>
             <div class="col-md-5">
                 <div class="form-login">
-                    <h1>¡Bienvenido de vuelta Meyko!</h1>
+                    <h1>¡Bienvenido de vuelta!</h1>
                     <p>Para poder iniciar sesión debes ingresar tu información de correo electrónico y contraseña.</p>
                     <form class="form-login-body" autocomplete="off" id="form_login">
                         <div class="form-login-email">
@@ -35,7 +35,7 @@
                                 <div class="input-container-login-email">
                                   <input id="loginEmail" autocomplete="off" type="email" name="email" placeholder="Ingresa tu correo electrónico" required>
                                     <label for="email" class="label-name">
-                                        <img src="<?php echo base_url();?>images/correo.png"><span class="content-name">Correo electrónico</span>
+                                        <span class="content-name">Correo electrónico</span>
                                     </label>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                                 <div class="input-container-login-password">
                                   <input id="loginPassword" autocomplete="off" type="password" name="password" placeholder="Ingresa tu contraseña" required>
                                     <label for="password" class="label-password">
-                                        <img src="<?php echo base_url();?>images/lock1.png"><span class="content-password">Password</span>
+                                        <span class="content-password">Password</span>
                                     </label>
                                 </div>
                             </div>

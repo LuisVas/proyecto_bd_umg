@@ -144,10 +144,11 @@
                                             <input type="text" name="name" id="cat_update_name" placeholder="Ingresar" class="form-control" required>
                                         </div>
                                         <div class="col-md-12">
-                                            <h1>Asignar subcategorías</h1>
+                                            <h1>Asignar subcategorías existentes</h1>
                                             <ul class="ul_sub ul_categories update"></ul>
                                         </div>
                                         <div class="col-md-12">
+                                            <h1>Añadir subcategoría nueva</h1>
                                             <input type="text" class="new_sub_name2" class="form-control">
                                         </div>
                                         <div class="col-md-6">

@@ -30,17 +30,29 @@
 					<div class="container">
 						<div class="form-card">
 							<h3>Información personal</h3>
-							<form class="account-create" action="#">
+							<form class="account-create" id="registerUser" action="#">
 								<label>Nombre<span class="required">*</span></label>
-								<input type="text" class="form-control input-lg">
+								<input type="text" name="NOMBRE" class="form-control input-lg">
 								<label>Apellido<span class="required">*</span></label>
-								<input type="text" class="form-control input-lg">
+								<input type="text" name="APELLIDO" class="form-control input-lg">
+								<label>Edad<span class="required">*</span></label>
+								<input type="number" name="EDAD" min="18" value="18" class="form-control input-lg">
+								<label>Sexo<span class="required">*</span></label>
+								<select name="SEXO" class="form-control">
+									<option value="Masculino">Masculino</option>
+									<option value="Femenino">Femenino</option>
+									<option value="Prefiero no decirlo">Prefiero no decirlo</option>
+								</select>
 								<label>E-mail<span class="required">*</span></label>
 								<input type="text" class="form-control input-lg">
+								<label>Código Postal<span class="required">*</span></label>
+								<input type="text" name="CODIGO_POSTAL" class="form-control input-lg">
+								<label>Nacionalidad<span class="required">*</span></label>
+								<input type="text" name="NACIONALIDAD" class="form-control input-lg">
 								<label>Password<span class="required">*</span></label>
 								<input type="password" class="form-control input-lg">
 								<div>
-									<button class="btn btn-lg">Crear</button><span class="required-text">*Campos requeridos</span></div>
+									<button class="btn btn-lg" id="registrarUsuario">Crear cuenta</button><span class="required-text">*Campos requeridos</span></div>
 								<div class="back">o <a href="<?php echo base_url()?>">Regresa a la tienda <i class="icon icon-undo"></i></a></div>
 							</form>
 						</div>

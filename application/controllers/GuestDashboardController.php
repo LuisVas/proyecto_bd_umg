@@ -108,7 +108,8 @@ class GuestDashboardController extends CI_Controller {
 	}
 
 	function orders(){
-		$this->load->view('dashboard/orders');
+		$data['orderList'] = $this->GuestDashboardModel->ordersList();
+		$this->load->view('dashboard/orders',$data);
 	}
 
 	function seeCards(){
