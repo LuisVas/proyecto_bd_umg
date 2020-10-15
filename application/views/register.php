@@ -21,7 +21,7 @@
 				<div class="block">
 					<div class="container">
 						<ul class="breadcrumbs">
-							<li><a href="index.html"><i class="icon icon-home"></i></a></li>
+							<li><a href="<?php echo base_url();?>"><i class="icon icon-home"></i></a></li>
 							<li>/<span>Registro</span></li>
 						</ul>
 					</div>
@@ -30,7 +30,7 @@
 					<div class="container">
 						<div class="form-card">
 							<h3>Información personal</h3>
-							<form class="account-create" id="registerUser" action="#">
+							<form id="userNew">
 								<label>Nombre<span class="required">*</span></label>
 								<input type="text" name="NOMBRE" class="form-control input-lg">
 								<label>Apellido<span class="required">*</span></label>
@@ -43,18 +43,19 @@
 									<option value="Femenino">Femenino</option>
 									<option value="Prefiero no decirlo">Prefiero no decirlo</option>
 								</select>
-								<label>E-mail<span class="required">*</span></label>
-								<input type="text" class="form-control input-lg">
 								<label>Código Postal<span class="required">*</span></label>
 								<input type="text" name="CODIGO_POSTAL" class="form-control input-lg">
 								<label>Nacionalidad<span class="required">*</span></label>
 								<input type="text" name="NACIONALIDAD" class="form-control input-lg">
+								<label>Correo<span class="required">*</span></label>
+								<input type="email" name="EMAIL" class="form-control input-lg">
 								<label>Password<span class="required">*</span></label>
-								<input type="password" class="form-control input-lg">
+								<input type="password" name="CONTRASENA" class="form-control input-lg">
 								<div>
-									<button class="btn btn-lg" id="registrarUsuario">Crear cuenta</button><span class="required-text">*Campos requeridos</span></div>
-								<div class="back">o <a href="<?php echo base_url()?>">Regresa a la tienda <i class="icon icon-undo"></i></a></div>
+									<button class="btn btn-lg">Crear cuenta</button><span class="required-text">*Campos requeridos</span></div>
+								
 							</form>
+							<div class="back">o <a href="<?php echo base_url()?>">Regresa a la tienda y comprar como invitado <i class="icon icon-undo"></i></a></div>
 						</div>
 					</div>
 				</div>
@@ -64,96 +65,7 @@
 		</div>
 		<!-- Page Content -->
 	</div>
-	<!-- ProductStack -->
-	<div class="productStack disable hide_on_scroll"> <a href="#" class="toggleStack"><i class="icon icon-cart"></i> (6) items</a>
-		<div class="productstack-content">
-			<div class="products-list-wrapper">
-				<ul class="products-list">
-					<li>
-						<a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="images/products/product-10.jpg" alt=""></a> <span class="item-qty">3</span>
-						<div class="actions"> <a href="#" class="action edit" title="Edit item"><i class="icon icon-pencil"></i></a> <a class="action delete" href="#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-							<div class="edit-qty">
-								<input type="number" value="3">
-								<button type="button" class="btn">Apply</button>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="images/products/product-11.jpg" alt=""></a> <span class="item-qty">3</span>
-						<div class="actions"> <a class="action edit" href="#" title="Edit item"><i class="icon icon-pencil"></i></a> <a class="action delete" href="#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-							<div class="edit-qty">
-								<input type="number" value="3">
-								<button type="button" class="btn">Apply</button>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="images/products/product-12.jpg" alt=""></a> <span class="item-qty">3</span>
-						<div class="actions"> <a class="action edit" href="#" title="Edit item"><i class="icon icon-pencil"></i></a> <a class="action delete" href="#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-							<div class="edit-qty">
-								<input type="number" value="3">
-								<button type="button" class="btn">Apply</button>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="images/products/product-13.jpg" alt=""></a> <span class="item-qty">3</span>
-						<div class="actions"> <a class="action edit" href="#" title="Edit item"><i class="icon icon-pencil"></i></a> <a class="action delete" href="#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-							<div class="edit-qty">
-								<input type="number" value="3">
-								<button type="button" class="btn">Apply</button>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="images/products/product-14.jpg" alt=""></a> <span class="item-qty">3</span>
-						<div class="actions"> <a class="action edit" href="#" title="Edit item"><i class="icon icon-pencil"></i></a> <a class="action delete" href="#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-							<div class="edit-qty">
-								<input type="number" value="3">
-								<button type="button" class="btn">Apply</button>
-							</div>
-						</div>
-					</li>
-					<li>
-						<a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="images/products/product-15.jpg" alt=""></a> <span class="item-qty">3</span>
-						<div class="actions"> <a class="action edit" href="#" title="Edit item"><i class="icon icon-pencil"></i></a> <a class="action delete" href="#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-							<div class="edit-qty">
-								<input type="number" value="3">
-								<button type="button" class="btn">Apply</button>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="action-cart">
-				<button type="button" class="btn" title="Checkout"> <span>Checkout</span> </button>
-				<button type="button" class="btn" title="Go to Cart"> <span>Go to Cart</span> </button>
-			</div>
-			<div class="total-cart">
-				<div class="items-total">Items <span class="count">6</span></div>
-				<div class="subtotal">Subtotal <span class="price">2.150</span></div>
-			</div>
-		</div>
-	</div>
-	<!-- /ProductStack -->
-
-	<!-- Modal Quick View -->
-	<div class="modal quick-view zoom" id="quickView">
-		<div class="modal-dialog">
-			<div class="modalLoader-wrapper">
-				<div class="modalLoader bg-striped"></div>
-			</div>
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">&#10006;</button>
-			</div>
-			<div class="modal-content">
-				<iframe></iframe>
-			</div>
-		</div>
-	</div>
-	<!-- /Modal Quick View -->
-
-	<!-- jQuery Scripts  -->
+<!-- jQuery Scripts  -->
 	<script src="js/vendor/jquery/jquery.js"></script>
 	<script src="js/vendor/bootstrap/bootstrap.min.js"></script>
 	<script src="js/vendor/swiper/swiper.min.js"></script>
@@ -172,6 +84,35 @@
 	<script src="js/vendor/instafeed/instafeed.min.js"></script>
 	<script src="js/megamenu.min.js"></script>
 	<script src="js/app.js"></script>
+	<script type="text/javascript" src="<?= base_url(); ?>js/functions.js"></script>
+<script>
+$(document).ready(function(){
+	$('#userNew').submit(function(){
+		var data = new FormData($('#userNew')[0]);
+		$.ajax({
+			url:base_url()+'add_register',
+			type:'POST',
+			dataType:'JSON',
+			data:data,
+
+			success:function(data){
+			if(data){
+				alertify.alert('¡Urra!', '¡Te has registrado a la tienda con éxito!', function(){ window.location.href=base_url()+'login';});
+				$('input[type="text"]').val('');
+				$('input[type="number"]').val('');
+				$('input[type="email"]').val('');
+			}
+			},error:function(error){
+				alertify.error('Ooops! Ha ocurrido un error, intenta de nuevo.');
+			}
+		});
+
+		return false;
+	});
+});
+
+
+</script>
 
 
 </body>

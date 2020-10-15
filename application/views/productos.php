@@ -212,7 +212,7 @@
 						<div class="product-info-block classic">
 							<div class="product-availability">Disponibilidad:
 								<?php
-								if($rec->EXISTENCIA === 0){
+								if($rec->EXISTENCIA == 0){
                                 ?>
 									<span>Sin inventario</span>
                                 <?php

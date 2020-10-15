@@ -50,6 +50,16 @@ class SessionModel extends CI_Model{
 				return false;
 			}
 		}
+
+		function addRegister($data){
+			$this->db->insert('USU',$data);
+
+			if($this->db->affected_rows() > 0){
+				return true;
+			}else{
+				return false;
+			}
+		}
 }
 
 ?>

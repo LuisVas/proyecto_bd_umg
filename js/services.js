@@ -1,6 +1,6 @@
 $(function(){
 
-	$('#form_update_product').submit(function(){
+	$('#saveProductEdit').click(function(){
 
 		var data = new FormData($('#form_update_product')[0]);
 
@@ -15,12 +15,7 @@ $(function(){
 
 			success:function(data){
 				if(data){
-					// alertify.success('¡Premio agregado exitosamente!');
-					$('input[type="text"]').val('');
-					$('#awardPicPrev').attr('src','../images/uploadimage.png');
-					$('#awardPic').val('');
-					$('input[type="number"]').val('');
-					$('#descTA').val('');
+					alertify.alert('¡Actualización correcta!','¡Producto actualizado exitosamente!', function(){window.location.href=base_url()+'dashboard/'+'see-all';});
 				}else {
 					alertify.error('Ooops! Ha ocurrido un error, intenta de nuevo.');
 				}
@@ -216,6 +211,7 @@ $(function(){
 
 		return false;
 	});
+
 	$('#addCard').click(function(){
 
 		var data = new FormData($('#NewCardForm')[0]);
@@ -243,6 +239,7 @@ $(function(){
 		});
 		return false;
 	});
+	
 	$('.deleteCard').click(function(){
 
 		alertify.confirm('¡Alto ahí vaquero!','¿Estás seguro de eliminar este registro? Esta acción no se puede revertir.',function(){
@@ -310,5 +307,7 @@ $(function(){
 
 		return false;
 	});
+
+
 
 })

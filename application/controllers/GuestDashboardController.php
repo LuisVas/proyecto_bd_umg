@@ -16,6 +16,7 @@ class GuestDashboardController extends CI_Controller {
 		$data['productsList'] = $this->GuestDashboardModel->products();
 		$this->load->view('dashboard/see-all',$data);
 	}
+	
 	function updateDataProduct(){
 		$data = $this->input->post();
 

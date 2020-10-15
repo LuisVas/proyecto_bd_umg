@@ -47,7 +47,7 @@
                                                 <?php
                                                 if(empty($productsList)){
                                                 ?>
-                                                <p>¡Ooops! ¡Tus tienda no tiene productos registrados!</p>
+                                                <p>¡Ooops! ¡Tu tienda no tiene productos registrados!</p>
                                                 <?php
                                                 }else{
                                                 ?>
@@ -204,9 +204,9 @@
                                             <p style="font-size: 10px;">*Las subcategorías se ingresan por número. Si son más de una, separarlas con ","</p>
                                         </div>
                                         <div class="col-md-12">
-                                            <h1>Temporadas</h1>
+                                            <h1>Temporada</h1>
                                             <input type="text" id="temporada" name="ID_TEMP" value="">
-                                            <p style="font-size: 10px;">*Las temporadas se ingresan por número. Si son más de una, separarlas con ","</p>
+                                            <p style="font-size: 10px;">*La temporada se ingresa por número de id. Ej: 1</p>
                                         </div>
                                     </div>
                                 </div>

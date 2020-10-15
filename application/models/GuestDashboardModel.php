@@ -25,20 +25,6 @@ class GuestDashboardModel extends CI_Model{
 		return true;
 	}
 
-	function id_prod(){
-		$this->db->select('*')
-		->from('PROD')
-		->order_by('ID_PROD','DESC');
-		$this->db->limit(1);
-
-		$query = $this->db->get();
-
-		if($query->num_rows() > 0){
-			return $query->result();
-		}else {
-		 	return false;
-		}
-	}
 
 
 	function products(){
@@ -92,6 +78,7 @@ class GuestDashboardModel extends CI_Model{
 			return false;
 		}
 	}
+	
 	function deleteCard($ID_TAR){
     	$this->db->where('ID_TAR', $ID_TAR);
     	$this->db->delete('TAR');

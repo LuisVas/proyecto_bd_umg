@@ -27,4 +27,15 @@ class SessionController extends CI_Controller{
 		echo json_encode($this->SessionModel->validate_user($this->input->post()));
 	}
 
+	function add_register(){
+		$data = $this->input->post();
+		$data['CONTRASENA'] = md5($data['CONTRASENA']);
+		$data['ID_USU'] = get_next_id('USU','ID_USU');
+		$data['ID_TAR'] = 1;
+		$data['NOMBRE'] = $data['NOMBRE'];
+
+		echo json_encode($this->SessionModel->addRegister($data));
+
+	}
+
 }

@@ -17,11 +17,6 @@
 	<!-- Custom -->
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/megamenu.css" rel="stylesheet">
-
-	<!-- Color Schemes -->
-	<!-- your style-color.css here  -->
-
-
 	<!-- Icon Font -->
 	<link href="fonts/icomoon-reg/style.css" rel="stylesheet">
 
