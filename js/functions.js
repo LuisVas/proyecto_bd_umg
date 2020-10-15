@@ -1,5 +1,5 @@
 function base_url(){
-	return 'http://localhost/proyecto_bd_umg/';
+	return 'http://localhost:8083/umg/';
 }
 
 $.show_loading = function(){
@@ -79,6 +79,50 @@ function core_cart(){
 	if(!products) return;
 
 	$('.header-cart .badge').text(get_cart_count_products());
+}
+
+function get_subtotal(price,qty){
+	return parseFloat(price) * parseFloat(qty);
+}
+
+function remove_cart_product_id(id){
+	var list_products = get_cart_products();
+	var args = [];
+	for(var x in list_products){
+		if(list_products[x].id != id){
+			args.push(list_products[x]);
+		}
+	}
+
+	remove_cart_products();
+	set_cart_products(args);
+}
+
+function update_cart(data){
+	var list_products = get_cart_products();
+	var args = [];
+	for(var x in list_products){
+		for(var c = 0; c < data.length; c++){
+			if(list_products[x].id == data[c].id){
+				list_products[x].qty = data[c].qty;
+			}
+		}
+
+		args.push(list_products[x]);
+	}
+
+	remove_cart_products();
+	set_cart_products(args);
+}
+
+function get_cart_total(){
+	var list_products = get_cart_products();
+	var total = 0;
+	for(var x in list_products){
+		total += get_subtotal(list_products[x].price,list_products[x].qty);
+	}
+
+	return total;
 }
 
 core_cart();

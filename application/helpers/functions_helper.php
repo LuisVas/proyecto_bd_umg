@@ -368,5 +368,14 @@ function get_the_categories(){
 	return ($query->num_rows() > 0 ? $query->result() : false);
 }
 
+function get_register_tars($id){
+	$ci = get_instance();
+	$ci->db->select('*')
+	->from('TAR')
+	->where('ID_TAR',$id);
+
+	$query = $ci->db->get();
+	return ($query->num_rows() > 0 ? $query->row() : false);
+}
 
 ?>

@@ -6,7 +6,7 @@
 </head>
 
 <body class="boxed bg-white">
-	
+
 	<div class="fixed-btns">
 		<!-- Back To Top -->
 		<a href="#" class="top-fixed-btn back-to-top"><i class="icon icon-arrow-up"></i></a>
@@ -30,7 +30,7 @@
 					<div class="container">
 						<div class="form-card">
 							<h3>Información personal</h3>
-							<form id="userNew">
+							<form id="userNew" enctype="multipart/form-data">
 								<label>Nombre<span class="required">*</span></label>
 								<input type="text" name="NOMBRE" class="form-control input-lg">
 								<label>Apellido<span class="required">*</span></label>
@@ -52,8 +52,9 @@
 								<label>Password<span class="required">*</span></label>
 								<input type="password" name="CONTRASENA" class="form-control input-lg">
 								<div>
-									<button class="btn btn-lg">Crear cuenta</button><span class="required-text">*Campos requeridos</span></div>
-								
+									<button class="btn btn-lg" type="submit">Crear cuenta</button>
+									<span class="required-text">*Campos requeridos</span>
+								</div>
 							</form>
 							<div class="back">o <a href="<?php echo base_url()?>">Regresa a la tienda y comprar como invitado <i class="icon icon-undo"></i></a></div>
 						</div>
@@ -84,24 +85,33 @@
 	<script src="js/vendor/instafeed/instafeed.min.js"></script>
 	<script src="js/megamenu.min.js"></script>
 	<script src="js/app.js"></script>
-	<script type="text/javascript" src="<?= base_url(); ?>js/functions.js"></script>
+	<script src="js/functions.js"></script>
+
+	<!-- <script type="text/javascript" src="<?//= base_url(); ?>js/functions.js"></script> -->
+
 <script>
 $(document).ready(function(){
+
 	$('#userNew').submit(function(){
+
 		var data = new FormData($('#userNew')[0]);
+
 		$.ajax({
 			url:base_url()+'add_register',
 			type:'POST',
 			dataType:'JSON',
 			data:data,
+			cache:false,
+			processData:false,
+			contentType:false,
 
 			success:function(data){
-			if(data){
-				alertify.alert('¡Urra!', '¡Te has registrado a la tienda con éxito!', function(){ window.location.href=base_url()+'login';});
-				$('input[type="text"]').val('');
-				$('input[type="number"]').val('');
-				$('input[type="email"]').val('');
-			}
+				if(data){
+					alertify.alert('¡Urra!', '¡Te has registrado a la tienda con éxito!', function(){ window.location.href=base_url()+'login';});
+					$('input[type="text"]').val('');
+					$('input[type="number"]').val('');
+					$('input[type="email"]').val('');
+				}
 			},error:function(error){
 				alertify.error('Ooops! Ha ocurrido un error, intenta de nuevo.');
 			}

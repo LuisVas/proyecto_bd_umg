@@ -32,4 +32,28 @@ class GuestController extends CI_Controller {
 		echo json_encode($this->GuestModel->get_product($this->input->post('id')));
 	}
 
+	function get_total($list){
+		$total = 0;
+		foreach($list as $rec){
+			$total += floatval($rec['price']) * floatval($rec['qty']);
+		}
+
+		return $total;
+	}
+
+	function payment(){
+		$list = json_decode($this->input->post('list'),true);
+		$data = $this->input->post('form');
+		$amount = $this->get_total($list);
+		$card = $this->GuestModel->verify_tar($amount);
+
+		// Verify TAR
+		if($card){
+			$this->GuestModel->discount_products($list);
+			$this->GuestModel->add_order($amount);
+			echo json_encode($this->GuestModel->payment($amount."",$card));
+		}else{
+			echo json_encode(201); /*Cantidad insuficiente*/
+		}
+	}
 }

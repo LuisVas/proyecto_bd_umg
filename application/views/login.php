@@ -6,7 +6,7 @@
 </head>
 
 <body class="boxed bg-white">
-	
+
 	<div class="fixed-btns">
 		<!-- Back To Top -->
 		<a href="#" class="top-fixed-btn back-to-top"><i class="icon icon-arrow-up"></i></a>
@@ -40,13 +40,13 @@
 								<div class="form-card">
 									<h4>Usuarios registrados</h4>
 									<p>Si ya tienes una cuenta por favor inicia sesión.</p>
-									<form class="account-create" action="#">
+									<form class="account-create" id="form_login">
 										<label>E-mail<span class="required">*</span></label>
-										<input type="text" class="form-control input-lg">
+										<input type="text" id="email" class="form-control input-lg">
 										<label>Password<span class="required">*</span></label>
-										<input type="password" class="form-control input-lg">
+										<input type="password" id="password" class="form-control input-lg">
 										<div>
-											<button class="btn btn-lg">Iniciar sesión</button><span class="required-text">*Campos requeridos</span></div>
+											<button type="submit" class="btn btn-lg">Iniciar sesión</button><span class="required-text">*Campos requeridos</span></div>
 									</form>
 								</div>
 							</div>
@@ -56,13 +56,13 @@
 			</main>
 			<!-- /Page Content -->
 			<!-- Footer -->
-			
+
 			<?php include("footer.php"); ?>
 			<!-- /Footer -->
 		</div>
 		<!-- Page Content -->
 	</div>
-	
+
 	<!-- jQuery Scripts  -->
 	<script src="js/vendor/jquery/jquery.js"></script>
 	<script src="js/vendor/bootstrap/bootstrap.min.js"></script>
@@ -82,7 +82,36 @@
 	<script src="js/vendor/instafeed/instafeed.min.js"></script>
 	<script src="js/megamenu.min.js"></script>
 	<script src="js/app.js"></script>
+	<script type="text/javascript" src="<?= base_url(); ?>js/functions.js"></script>
 
+
+	<script>
+
+		$(document).ready(function(){
+				$('#form_login').submit(function(){
+						$.ajax({
+							url:base_url()+'validate_user',
+							type:'POST',
+							dataType:'JSON',
+							data:{
+									email:$('#email').val(),
+									password:$('#password').val()
+							},
+
+							success:function(data){
+								if(data){
+									window.location.href=base_url();
+								}
+							},error:function(error){
+
+							}
+						});
+
+						return false;
+				});
+		});
+
+	</script>
 
 </body>
 

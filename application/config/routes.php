@@ -59,13 +59,14 @@ $route['store'] = 'GuestController/store';
 $route['updateData'] = 'GuestController/updateData';
 $route['change_prize'] = 'GuestController/change_prize';
 $route['get_product'] = 'GuestController/get_product';
+$route['payment'] = 'GuestController/payment';
 
 //SESION CLIENTE
 
 $route['register'] = 'SessionController/register';
 $route['validate'] = 'SessionController/validate';
 $route['validate_user'] = 'SessionController/validate_user';
-$route['add_register'] = 'SessionController/add_register';
+$route['add_register']['POST'] = 'SessionController/add_register';
 $route['login'] = 'SessionController';
 $route['verify_email'] = 'SessionController/verify_email';
 $route['verify_mail'] = 'SessionController/verify_mail';

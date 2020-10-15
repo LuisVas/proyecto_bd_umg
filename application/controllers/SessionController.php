@@ -35,7 +35,5 @@ class SessionController extends CI_Controller{
 		$data['NOMBRE'] = $data['NOMBRE'];
 
 		echo json_encode($this->SessionModel->addRegister($data));
-
 	}
-
 }

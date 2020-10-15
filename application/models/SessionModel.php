@@ -33,8 +33,6 @@ class SessionModel extends CI_Model{
 			$email = $data['email'];
 			$password = md5($data['password']);
 
-			// $query = $this->db->query("SELECT * FROM USU WHERE EMAIL = '$email' AND CONTRASENA = '$password' ");
-
 			$this->db->select('*')
 			->from('USU')
 			->where('EMAIL',$data['email'])
@@ -43,7 +41,8 @@ class SessionModel extends CI_Model{
 			$query = $this->db->get();
 
 			if($query->num_rows() > 0){
-				$query = $query->row();
+				$query = $query->row_array();
+				unset($query['CONTRASENA']);
 				$this->session->set_userdata('user',(object)$query);
 				return true;
 			}else{

@@ -6,7 +6,7 @@
 </head>
 
 <body class="boxed bg-white">
-	
+
 	<div class="fixed-btns">
 		<!-- Back To Top -->
 		<a href="#" class="top-fixed-btn back-to-top"><i class="icon icon-arrow-up"></i></a>
@@ -29,72 +29,53 @@
 				<div class="block">
 					<div class="container">
 						<div class="cart-table">
-							<div class="table-header">
-								<div class="photo">
-									Imagen
-								</div>
-								<div class="name">
-									Nombre
-								</div>
-								<div class="price">
-									Precio unitario
-								</div>
-								<div class="qty">
-									Cantidad
-								</div>
-								<div class="subtotal">
-									Subtotal
-								</div>
-								<div class="remove">
-									<span class="hidden-sm hidden-xs">Remover</span>
-								</div>
-							</div>
-							<div class="table-row">
-								<div class="photo">
-									<a href="product.html"><img src="images/products/product-1.jpg" alt=""></a>
-								</div>
-								<div class="name">
-									<a href="product.html">Boyfriend Short</a>
-								</div>
-								<div class="price">
-									$85.00
-								</div>
-								<div class="qty qty-changer">
-									<fieldset>
-										<input type="button" value="&#8210;" class="decrease">
-										<input type="text" class="qty-input" value="2" data-min="0" data-max="5">
-										<input type="button" value="+" class="increase">
-									</fieldset>
-								</div>
-								<div class="subtotal">
-									$85.00
-								</div>
-								<div class="remove">
-									<a href="#" class="icon icon-close-2"></a>
-								</div>
-							</div> 
+							<table class="table table-hover table-products">
+								<thead>
+									<th>
+										Imagen
+									</th>
+									<th>
+										Nombre
+									</th>
+									<th>
+										Precio unitario
+									</th>
+									<th>
+										Cantidad
+									</th>
+									<th>
+										Subtotal
+									</th>
+									<th>
+										<span class="hidden-sm hidden-xs">Remover</span>
+									</th>
+								</thead>
+								<tbody id="list_products"></tbody>
+							</table>
+
+
 							<div class="table-footer">
 								<button class="btn btn-alt">Continuar comprando</button>
-								<button class="btn btn-alt pull-right"><i class="icon icon-bin"></i><span>Limpiar carrito</span></button>
-								<button class="btn btn-alt pull-right"><i class="icon icon-sync"></i><span>Actualizar</span></button>
+								<button class="btn btn-alt pull-right" id="clean_cart"><i class="icon icon-bin"></i><span>Limpiar carrito</span></button>
+								<button class="btn btn-alt pull-right" id="update_cart"><i class="icon icon-sync"></i><span>Actualizar</span></button>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-3 total-wrapper">
 								<table class="total-price">
-									<tr>
+									<!-- <tr>
 										<td>Subtotal</td>
 										<td>$241.00</td>
-									</tr> 
+									</tr> -->
 									<tr class="total">
 										<td>Total</td>
-										<td>$229.00</td>
+										<td id="total"></td>
 									</tr>
 								</table>
 								<div class="cart-action">
 									<div>
-										<button class="btn">Proceder al pago</button>
-									</div> 
+										<a href="<?= base_url(); ?>checkout"><button class="btn">Proceder al pago</button></a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -216,7 +197,89 @@
 	<script src="js/vendor/instafeed/instafeed.min.js"></script>
 	<script src="js/megamenu.min.js"></script>
 	<script src="js/app.js"></script>
+	<script src="js/functions.js"></script>
 
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+
+			function list(){
+					var list_products = get_cart_products();
+					var html = '';
+					var total = 0;
+
+					if(list_products.length > 0){
+						for(var x in list_products){
+							total += get_subtotal(list_products[x].price,list_products[x].qty);
+							html += '<tr class="_tr" value="'+list_products[x].id+'">\
+									<td class="photo">\
+										<a href="#"><img src="'+list_products[x].img+'" alt=""></a>\
+									</td>\
+									<td class="name">\
+										<a href="#">'+list_products[x].name+'</a>\
+									</td>\
+									<td class="price">\
+										Q '+add_commas(convert_price(list_products[x].price))+'\
+									</td>\
+									<td class="qty qty-changer">\
+										<fieldset>\
+											<input type="button" value="&#8210;" class="decrease">\
+											<input type="text" class="qty-input" value="'+list_products[x].qty+'" data-min="0" data-max="5">\
+											<input type="button" value="+" class="increase">\
+										</fieldset>\
+									</td>\
+									<td class="subtotal">\
+										'+add_commas(convert_price(get_subtotal(list_products[x].price,list_products[x].qty)))+'\
+									</td>\
+									<td class="_remove" value="'+list_products[x].id+'">\
+										<a href="#" class="icon icon-close-2"></a>\
+									</td>\
+								</tr>\
+							';
+						}
+					}else{
+						html += '<tr><td colspan="6"><div style="display: flex;flex-direction: column;width: 100%;justify-content: center;align-items: center;  margin: 15px 0px;">No tienes productos agregados al carrito <a href="'+base_url()+'">Volver a la tienda</a></div></td></tr>';
+					}
+
+					$('#total').text("Q "+add_commas(convert_price(total)));
+					$('#list_products').html(html);
+				}
+
+				list();
+
+				$('#clean_cart').click(function(){
+						remove_cart_products();
+						core_cart();
+						list();
+				});
+
+				$('#update_cart').click(function(){
+						var data = [];
+						$('#list_products ._tr').each(function(){
+								data.push({
+										id:$(this).attr('value'),
+										qty:$(this).find('.qty-input').val()
+								});
+						});
+
+						update_cart(data);
+						core_cart();
+						list();
+				});
+
+				$('body').on('click','._remove',function(){
+						var id = $(this).attr('value');
+						remove_cart_product_id(id);
+						core_cart();
+						list();
+				});
+
+		});
+	</script>
+
+	<style>
+		.table-products img{max-width:100%;}
+	</style>
 
 </body>
 
